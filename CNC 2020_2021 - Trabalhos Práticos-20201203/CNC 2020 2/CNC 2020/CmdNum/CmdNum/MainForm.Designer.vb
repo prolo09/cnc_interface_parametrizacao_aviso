@@ -73,14 +73,13 @@ Partial Class MainForm
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.cb_endereçoIP = New System.Windows.Forms.ComboBox()
-        Me.cb_protocolo = New System.Windows.Forms.ComboBox()
-        Me.lb_endereçoIP = New System.Windows.Forms.Label()
-        Me.lb_protocolo = New System.Windows.Forms.Label()
-        Me.cb_baudrate = New System.Windows.Forms.ComboBox()
-        Me.lb_baudrate = New System.Windows.Forms.Label()
-        Me.cb_portcom = New System.Windows.Forms.ComboBox()
-        Me.lb_portcom = New System.Windows.Forms.Label()
+        Me.param_cb_protocolo = New System.Windows.Forms.ComboBox()
+        Me.param_lbl_endereçoIP = New System.Windows.Forms.Label()
+        Me.param_lbl_protocolo = New System.Windows.Forms.Label()
+        Me.param_cb_baudrate = New System.Windows.Forms.ComboBox()
+        Me.param_lbl_baudrate = New System.Windows.Forms.Label()
+        Me.param_cb_portcom = New System.Windows.Forms.ComboBox()
+        Me.param_lbl_portcom = New System.Windows.Forms.Label()
         Me.btd_cancelar = New System.Windows.Forms.Button()
         Me.btd_guardar = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
@@ -122,6 +121,7 @@ Partial Class MainForm
         Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
         Me.param_laser_power = New System.Windows.Forms.Label()
         Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
+        Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -482,15 +482,15 @@ Partial Class MainForm
         '
         'param_tab_geral
         '
+        Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
         Me.param_tab_geral.Controls.Add(Me.Label13)
-        Me.param_tab_geral.Controls.Add(Me.cb_endereçoIP)
-        Me.param_tab_geral.Controls.Add(Me.cb_protocolo)
-        Me.param_tab_geral.Controls.Add(Me.lb_endereçoIP)
-        Me.param_tab_geral.Controls.Add(Me.lb_protocolo)
-        Me.param_tab_geral.Controls.Add(Me.cb_baudrate)
-        Me.param_tab_geral.Controls.Add(Me.lb_baudrate)
-        Me.param_tab_geral.Controls.Add(Me.cb_portcom)
-        Me.param_tab_geral.Controls.Add(Me.lb_portcom)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_endereçoIP)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_protocolo)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_baudrate)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_baudrate)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_portcom)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_portcom)
         Me.param_tab_geral.Controls.Add(Me.btd_cancelar)
         Me.param_tab_geral.Controls.Add(Me.btd_guardar)
         resources.ApplyResources(Me.param_tab_geral, "param_tab_geral")
@@ -502,49 +502,45 @@ Partial Class MainForm
         resources.ApplyResources(Me.Label13, "Label13")
         Me.Label13.Name = "Label13"
         '
-        'cb_endereçoIP
+        'param_cb_protocolo
         '
-        Me.cb_endereçoIP.FormattingEnabled = True
-        resources.ApplyResources(Me.cb_endereçoIP, "cb_endereçoIP")
-        Me.cb_endereçoIP.Name = "cb_endereçoIP"
+        Me.param_cb_protocolo.FormattingEnabled = True
+        Me.param_cb_protocolo.Items.AddRange(New Object() {resources.GetString("param_cb_protocolo.Items"), resources.GetString("param_cb_protocolo.Items1"), resources.GetString("param_cb_protocolo.Items2")})
+        resources.ApplyResources(Me.param_cb_protocolo, "param_cb_protocolo")
+        Me.param_cb_protocolo.Name = "param_cb_protocolo"
         '
-        'cb_protocolo
+        'param_lbl_endereçoIP
         '
-        Me.cb_protocolo.FormattingEnabled = True
-        resources.ApplyResources(Me.cb_protocolo, "cb_protocolo")
-        Me.cb_protocolo.Name = "cb_protocolo"
+        resources.ApplyResources(Me.param_lbl_endereçoIP, "param_lbl_endereçoIP")
+        Me.param_lbl_endereçoIP.Name = "param_lbl_endereçoIP"
         '
-        'lb_endereçoIP
+        'param_lbl_protocolo
         '
-        resources.ApplyResources(Me.lb_endereçoIP, "lb_endereçoIP")
-        Me.lb_endereçoIP.Name = "lb_endereçoIP"
+        resources.ApplyResources(Me.param_lbl_protocolo, "param_lbl_protocolo")
+        Me.param_lbl_protocolo.Name = "param_lbl_protocolo"
         '
-        'lb_protocolo
+        'param_cb_baudrate
         '
-        resources.ApplyResources(Me.lb_protocolo, "lb_protocolo")
-        Me.lb_protocolo.Name = "lb_protocolo"
+        Me.param_cb_baudrate.FormattingEnabled = True
+        Me.param_cb_baudrate.Items.AddRange(New Object() {resources.GetString("param_cb_baudrate.Items"), resources.GetString("param_cb_baudrate.Items1"), resources.GetString("param_cb_baudrate.Items2"), resources.GetString("param_cb_baudrate.Items3"), resources.GetString("param_cb_baudrate.Items4"), resources.GetString("param_cb_baudrate.Items5"), resources.GetString("param_cb_baudrate.Items6")})
+        resources.ApplyResources(Me.param_cb_baudrate, "param_cb_baudrate")
+        Me.param_cb_baudrate.Name = "param_cb_baudrate"
         '
-        'cb_baudrate
+        'param_lbl_baudrate
         '
-        Me.cb_baudrate.FormattingEnabled = True
-        resources.ApplyResources(Me.cb_baudrate, "cb_baudrate")
-        Me.cb_baudrate.Name = "cb_baudrate"
+        resources.ApplyResources(Me.param_lbl_baudrate, "param_lbl_baudrate")
+        Me.param_lbl_baudrate.Name = "param_lbl_baudrate"
         '
-        'lb_baudrate
+        'param_cb_portcom
         '
-        resources.ApplyResources(Me.lb_baudrate, "lb_baudrate")
-        Me.lb_baudrate.Name = "lb_baudrate"
+        Me.param_cb_portcom.FormattingEnabled = True
+        resources.ApplyResources(Me.param_cb_portcom, "param_cb_portcom")
+        Me.param_cb_portcom.Name = "param_cb_portcom"
         '
-        'cb_portcom
+        'param_lbl_portcom
         '
-        Me.cb_portcom.FormattingEnabled = True
-        resources.ApplyResources(Me.cb_portcom, "cb_portcom")
-        Me.cb_portcom.Name = "cb_portcom"
-        '
-        'lb_portcom
-        '
-        resources.ApplyResources(Me.lb_portcom, "lb_portcom")
-        Me.lb_portcom.Name = "lb_portcom"
+        resources.ApplyResources(Me.param_lbl_portcom, "param_lbl_portcom")
+        Me.param_lbl_portcom.Name = "param_lbl_portcom"
         '
         'btd_cancelar
         '
@@ -791,6 +787,11 @@ Partial Class MainForm
         Me.param_radbtn_laser.TabStop = True
         Me.param_radbtn_laser.UseVisualStyleBackColor = True
         '
+        'param_txt_end_ip
+        '
+        resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
+        Me.param_txt_end_ip.Name = "param_txt_end_ip"
+        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -895,16 +896,15 @@ Partial Class MainForm
     Friend WithEvents param_tab_geral As TabPage
     Friend WithEvents param_tab_eixos As TabPage
     Friend WithEvents param_tab_ferramentas As TabPage
-    Friend WithEvents cb_baudrate As ComboBox
-    Friend WithEvents lb_baudrate As Label
-    Friend WithEvents cb_portcom As ComboBox
-    Friend WithEvents lb_portcom As Label
+    Friend WithEvents param_cb_baudrate As ComboBox
+    Friend WithEvents param_lbl_baudrate As Label
+    Friend WithEvents param_cb_portcom As ComboBox
+    Friend WithEvents param_lbl_portcom As Label
     Friend WithEvents btd_cancelar As Button
     Friend WithEvents btd_guardar As Button
-    Friend WithEvents cb_endereçoIP As ComboBox
-    Friend WithEvents cb_protocolo As ComboBox
-    Friend WithEvents lb_endereçoIP As Label
-    Friend WithEvents lb_protocolo As Label
+    Friend WithEvents param_cb_protocolo As ComboBox
+    Friend WithEvents param_lbl_endereçoIP As Label
+    Friend WithEvents param_lbl_protocolo As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents param_dataGrid As DataGridView
     Friend WithEvents param_btn_Guardar As Button
@@ -929,4 +929,5 @@ Partial Class MainForm
     Friend WithEvents lim_sup As DataGridViewTextBoxColumn
     Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
     Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
+    Friend WithEvents param_txt_end_ip As TextBox
 End Class

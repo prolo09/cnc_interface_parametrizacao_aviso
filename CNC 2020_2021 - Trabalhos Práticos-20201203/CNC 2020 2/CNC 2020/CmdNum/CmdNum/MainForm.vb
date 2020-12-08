@@ -184,6 +184,11 @@ Public Class MainForm
     ' *******************************************
     ' ROTINAS TABELAS
     ' *******************************************
+
+
+    ' *******************************************
+    ' ROTINAS PARAMETROS
+
     'Formatar Index's da tabela com auto_incremento
     'Private Sub param_dataGrid_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles param_dataGrid.CellFormatting
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
@@ -252,12 +257,15 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub retrieveGeneralParameters()
+        Dim protocoloIp As String = param_cb_protocolo.Text
+        Dim baudrate As String = param_cb_baudrate.Text
+        Dim portaCom As String = param_cb_portcom.Text
+        Dim enderecoIp As String = param_txt_end_ip.Text
 
+    End Sub
 
     ' *******************************************
-    ' ROTINAS PARAMETROS
-    ' *******************************************
-
 
 
     ' *******************************************
@@ -289,7 +297,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub cb_portcom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_portcom.SelectedIndexChanged
+    Private Sub cb_portcom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles param_cb_portcom.SelectedIndexChanged
         'para acrecetar algo a que como as portas ativas por 
         '
         'cb_portcom.Items.Add(__onde_vai_buscar___)'
