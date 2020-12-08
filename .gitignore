@@ -17,7 +17,7 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
+# [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -26,7 +26,7 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
+# [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
@@ -92,6 +92,11 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+CmdNum.exe
+CmdNum.exe.config
+CmdNum.Ini
+CmdNum.pdb
+CmdNum.xml
 
 # Chutzpah Test files
 _Chutzpah*
