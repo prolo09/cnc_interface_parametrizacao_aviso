@@ -214,6 +214,43 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub retriveAxisParameters()
+
+        ' ler tabela de propriedades de eixos e colocar num dicionario
+        Dim infoEixos As New Dictionary(Of String, Dictionary(Of String, String))
+        For Each r As DataGridViewRow In Me.param_tabela_eixos.Rows
+
+            Dim infoEixo As New Dictionary(Of String, String)
+            infoEixo.Add("tipo", CStr(r.Cells(1).FormattedValue))
+            infoEixo.Add("passo", CStr(r.Cells(2).FormattedValue))
+            infoEixo.Add("maxrpm", CStr(r.Cells(3).FormattedValue))
+            infoEixo.Add("lim_inf", CStr(r.Cells(4).FormattedValue))
+            infoEixo.Add("lim_sup", CStr(r.Cells(5).FormattedValue))
+            infoEixo.Add("enc_pitch", CStr(r.Cells(6).FormattedValue))
+            infoEixo.Add("enc_n_pulse", CStr(r.Cells(7).FormattedValue))
+
+            infoEixos.Add(CStr(r.Cells(0).FormattedValue), infoEixo)
+        Next
+
+        ' propriedades do spindle / laser
+
+        Dim info_laser_spindle As String
+
+        If Me.param_radbtn_spindle.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = True
+            Me.param_txt_laser_power.Enabled = False
+            Me.param_radbtn_laser.Checked = False
+            info_laser_spindle = Me.param_txt_spindle_maxrpm.Text
+
+        ElseIf Me.param_radbtn_laser.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = False
+            Me.param_txt_laser_power.Enabled = True
+            Me.param_radbtn_spindle.Checked = False
+            info_laser_spindle = Me.param_txt_laser_power.Text
+
+        End If
+
+    End Sub
 
 
 
