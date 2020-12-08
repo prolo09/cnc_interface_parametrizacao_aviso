@@ -87,6 +87,12 @@ Partial Class MainForm
         Me.param_tab_ferramentas = New System.Windows.Forms.TabPage()
         Me.param_btn_Guardar = New System.Windows.Forms.Button()
         Me.param_dataGrid = New System.Windows.Forms.DataGridView()
+        Me.param_dataGrid_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -101,12 +107,21 @@ Partial Class MainForm
         Me.ParâmetrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
-        Me.param_dataGrid_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
+        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
+        Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
+        Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
+        Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
+        Me.param_laser_power = New System.Windows.Forms.Label()
+        Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -119,10 +134,12 @@ Partial Class MainForm
         Me.TabPage5.SuspendLayout()
         Me.param_tab_control.SuspendLayout()
         Me.param_tab_geral.SuspendLayout()
+        Me.param_tab_eixos.SuspendLayout()
         Me.param_tab_ferramentas.SuspendLayout()
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabCtrl_Option
@@ -543,6 +560,13 @@ Partial Class MainForm
         '
         'param_tab_eixos
         '
+        Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
+        Me.param_tab_eixos.Controls.Add(Me.param_laser_power)
+        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_laser)
+        Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
+        Me.param_tab_eixos.Controls.Add(Me.param_lbl_spindle_maxrpm)
+        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_spindle)
+        Me.param_tab_eixos.Controls.Add(Me.param_tabela_eixos)
         resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
@@ -568,6 +592,36 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_dataGrid, "param_dataGrid")
         Me.param_dataGrid.Name = "param_dataGrid"
         Me.param_dataGrid.RowTemplate.Height = 24
+        '
+        'param_dataGrid_ID
+        '
+        resources.ApplyResources(Me.param_dataGrid_ID, "param_dataGrid_ID")
+        Me.param_dataGrid_ID.Name = "param_dataGrid_ID"
+        '
+        'param_dataGrid_nomeFerramentas
+        '
+        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
+        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
+        '
+        'param_dataGrid_pocket
+        '
+        resources.ApplyResources(Me.param_dataGrid_pocket, "param_dataGrid_pocket")
+        Me.param_dataGrid_pocket.Name = "param_dataGrid_pocket"
+        '
+        'param_dataGrid_altura
+        '
+        resources.ApplyResources(Me.param_dataGrid_altura, "param_dataGrid_altura")
+        Me.param_dataGrid_altura.Name = "param_dataGrid_altura"
+        '
+        'param_dataGrid_diametro
+        '
+        resources.ApplyResources(Me.param_dataGrid_diametro, "param_dataGrid_diametro")
+        Me.param_dataGrid_diametro.Name = "param_dataGrid_diametro"
+        '
+        'param_dataGrid_obsercacoes
+        '
+        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
+        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
         '
         'TabPage6
         '
@@ -651,35 +705,91 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'param_dataGrid_ID
+        'param_tabela_eixos
         '
-        resources.ApplyResources(Me.param_dataGrid_ID, "param_dataGrid_ID")
-        Me.param_dataGrid_ID.Name = "param_dataGrid_ID"
+        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
+        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
+        Me.param_tabela_eixos.Name = "param_tabela_eixos"
         '
-        'param_dataGrid_nomeFerramentas
+        'eixo
         '
-        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
-        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
+        resources.ApplyResources(Me.eixo, "eixo")
+        Me.eixo.Name = "eixo"
         '
-        'param_dataGrid_pocket
+        'tipo_eixo
         '
-        resources.ApplyResources(Me.param_dataGrid_pocket, "param_dataGrid_pocket")
-        Me.param_dataGrid_pocket.Name = "param_dataGrid_pocket"
+        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
+        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
+        Me.tipo_eixo.Name = "tipo_eixo"
         '
-        'param_dataGrid_altura
+        'passo
         '
-        resources.ApplyResources(Me.param_dataGrid_altura, "param_dataGrid_altura")
-        Me.param_dataGrid_altura.Name = "param_dataGrid_altura"
+        resources.ApplyResources(Me.passo, "passo")
+        Me.passo.Name = "passo"
+        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'param_dataGrid_diametro
+        'max_rpm
         '
-        resources.ApplyResources(Me.param_dataGrid_diametro, "param_dataGrid_diametro")
-        Me.param_dataGrid_diametro.Name = "param_dataGrid_diametro"
+        resources.ApplyResources(Me.max_rpm, "max_rpm")
+        Me.max_rpm.Name = "max_rpm"
         '
-        'param_dataGrid_obsercacoes
+        'lim_inf
         '
-        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
-        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
+        resources.ApplyResources(Me.lim_inf, "lim_inf")
+        Me.lim_inf.Name = "lim_inf"
+        '
+        'lim_sup
+        '
+        resources.ApplyResources(Me.lim_sup, "lim_sup")
+        Me.lim_sup.Name = "lim_sup"
+        '
+        'enc_pitch
+        '
+        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
+        Me.enc_pitch.Name = "enc_pitch"
+        '
+        'encoder_pulse
+        '
+        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
+        Me.encoder_pulse.Name = "encoder_pulse"
+        '
+        'param_radbtn_spindle
+        '
+        resources.ApplyResources(Me.param_radbtn_spindle, "param_radbtn_spindle")
+        Me.param_radbtn_spindle.Name = "param_radbtn_spindle"
+        Me.param_radbtn_spindle.TabStop = True
+        Me.param_radbtn_spindle.UseVisualStyleBackColor = True
+        '
+        'param_lbl_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_lbl_spindle_maxrpm, "param_lbl_spindle_maxrpm")
+        Me.param_lbl_spindle_maxrpm.Name = "param_lbl_spindle_maxrpm"
+        Me.param_lbl_spindle_maxrpm.UseMnemonic = False
+        '
+        'param_txt_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_txt_spindle_maxrpm, "param_txt_spindle_maxrpm")
+        Me.param_txt_spindle_maxrpm.Name = "param_txt_spindle_maxrpm"
+        '
+        'param_txt_laser_power
+        '
+        resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
+        Me.param_txt_laser_power.Name = "param_txt_laser_power"
+        '
+        'param_laser_power
+        '
+        resources.ApplyResources(Me.param_laser_power, "param_laser_power")
+        Me.param_laser_power.Name = "param_laser_power"
+        Me.param_laser_power.UseMnemonic = False
+        '
+        'param_radbtn_laser
+        '
+        resources.ApplyResources(Me.param_radbtn_laser, "param_radbtn_laser")
+        Me.param_radbtn_laser.Name = "param_radbtn_laser"
+        Me.param_radbtn_laser.TabStop = True
+        Me.param_radbtn_laser.UseVisualStyleBackColor = True
         '
         'MainForm
         '
@@ -708,12 +818,15 @@ Partial Class MainForm
         Me.param_tab_control.ResumeLayout(False)
         Me.param_tab_geral.ResumeLayout(False)
         Me.param_tab_geral.PerformLayout()
+        Me.param_tab_eixos.ResumeLayout(False)
+        Me.param_tab_eixos.PerformLayout()
         Me.param_tab_ferramentas.ResumeLayout(False)
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -801,4 +914,19 @@ Partial Class MainForm
     Friend WithEvents param_dataGrid_altura As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_diametro As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_obsercacoes As DataGridViewTextBoxColumn
+    Friend WithEvents param_txt_laser_power As TextBox
+    Friend WithEvents param_laser_power As Label
+    Friend WithEvents param_radbtn_laser As RadioButton
+    Friend WithEvents param_txt_spindle_maxrpm As TextBox
+    Friend WithEvents param_lbl_spindle_maxrpm As Label
+    Friend WithEvents param_radbtn_spindle As RadioButton
+    Friend WithEvents param_tabela_eixos As DataGridView
+    Friend WithEvents eixo As DataGridViewTextBoxColumn
+    Friend WithEvents tipo_eixo As DataGridViewComboBoxColumn
+    Friend WithEvents passo As DataGridViewTextBoxColumn
+    Friend WithEvents max_rpm As DataGridViewTextBoxColumn
+    Friend WithEvents lim_inf As DataGridViewTextBoxColumn
+    Friend WithEvents lim_sup As DataGridViewTextBoxColumn
+    Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
+    Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
 End Class
