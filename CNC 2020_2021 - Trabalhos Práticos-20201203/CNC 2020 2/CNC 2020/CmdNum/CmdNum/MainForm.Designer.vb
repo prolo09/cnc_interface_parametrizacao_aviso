@@ -72,6 +72,7 @@ Partial Class MainForm
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
+        Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.param_cb_protocolo = New System.Windows.Forms.ComboBox()
         Me.param_lbl_endereçoIP = New System.Windows.Forms.Label()
@@ -83,6 +84,21 @@ Partial Class MainForm
         Me.btd_cancelar = New System.Windows.Forms.Button()
         Me.btd_guardar = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
+        Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
+        Me.param_laser_power = New System.Windows.Forms.Label()
+        Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
+        Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
+        Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
+        Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
+        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
+        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_tab_ferramentas = New System.Windows.Forms.TabPage()
         Me.param_btn_Guardar = New System.Windows.Forms.Button()
         Me.param_dataGrid = New System.Windows.Forms.DataGridView()
@@ -106,22 +122,7 @@ Partial Class MainForm
         Me.ParâmetrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
-        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
-        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
-        Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
-        Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
-        Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
-        Me.param_laser_power = New System.Windows.Forms.Label()
-        Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
-        Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -135,11 +136,11 @@ Partial Class MainForm
         Me.param_tab_control.SuspendLayout()
         Me.param_tab_geral.SuspendLayout()
         Me.param_tab_eixos.SuspendLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.param_tab_ferramentas.SuspendLayout()
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabCtrl_Option
@@ -497,6 +498,11 @@ Partial Class MainForm
         Me.param_tab_geral.Name = "param_tab_geral"
         Me.param_tab_geral.UseVisualStyleBackColor = True
         '
+        'param_txt_end_ip
+        '
+        resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
+        Me.param_txt_end_ip.Name = "param_txt_end_ip"
+        '
         'Label13
         '
         resources.ApplyResources(Me.Label13, "Label13")
@@ -566,6 +572,92 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
+        '
+        'param_txt_laser_power
+        '
+        resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
+        Me.param_txt_laser_power.Name = "param_txt_laser_power"
+        '
+        'param_laser_power
+        '
+        resources.ApplyResources(Me.param_laser_power, "param_laser_power")
+        Me.param_laser_power.Name = "param_laser_power"
+        Me.param_laser_power.UseMnemonic = False
+        '
+        'param_radbtn_laser
+        '
+        resources.ApplyResources(Me.param_radbtn_laser, "param_radbtn_laser")
+        Me.param_radbtn_laser.Name = "param_radbtn_laser"
+        Me.param_radbtn_laser.TabStop = True
+        Me.param_radbtn_laser.UseVisualStyleBackColor = True
+        '
+        'param_txt_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_txt_spindle_maxrpm, "param_txt_spindle_maxrpm")
+        Me.param_txt_spindle_maxrpm.Name = "param_txt_spindle_maxrpm"
+        '
+        'param_lbl_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_lbl_spindle_maxrpm, "param_lbl_spindle_maxrpm")
+        Me.param_lbl_spindle_maxrpm.Name = "param_lbl_spindle_maxrpm"
+        Me.param_lbl_spindle_maxrpm.UseMnemonic = False
+        '
+        'param_radbtn_spindle
+        '
+        resources.ApplyResources(Me.param_radbtn_spindle, "param_radbtn_spindle")
+        Me.param_radbtn_spindle.Name = "param_radbtn_spindle"
+        Me.param_radbtn_spindle.TabStop = True
+        Me.param_radbtn_spindle.UseVisualStyleBackColor = True
+        '
+        'param_tabela_eixos
+        '
+        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
+        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
+        Me.param_tabela_eixos.Name = "param_tabela_eixos"
+        '
+        'eixo
+        '
+        resources.ApplyResources(Me.eixo, "eixo")
+        Me.eixo.Name = "eixo"
+        '
+        'tipo_eixo
+        '
+        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
+        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
+        Me.tipo_eixo.Name = "tipo_eixo"
+        '
+        'passo
+        '
+        resources.ApplyResources(Me.passo, "passo")
+        Me.passo.Name = "passo"
+        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'max_rpm
+        '
+        resources.ApplyResources(Me.max_rpm, "max_rpm")
+        Me.max_rpm.Name = "max_rpm"
+        '
+        'lim_inf
+        '
+        resources.ApplyResources(Me.lim_inf, "lim_inf")
+        Me.lim_inf.Name = "lim_inf"
+        '
+        'lim_sup
+        '
+        resources.ApplyResources(Me.lim_sup, "lim_sup")
+        Me.lim_sup.Name = "lim_sup"
+        '
+        'enc_pitch
+        '
+        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
+        Me.enc_pitch.Name = "enc_pitch"
+        '
+        'encoder_pulse
+        '
+        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
+        Me.encoder_pulse.Name = "encoder_pulse"
         '
         'param_tab_ferramentas
         '
@@ -701,97 +793,6 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'param_tabela_eixos
-        '
-        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
-        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
-        Me.param_tabela_eixos.Name = "param_tabela_eixos"
-        '
-        'eixo
-        '
-        resources.ApplyResources(Me.eixo, "eixo")
-        Me.eixo.Name = "eixo"
-        '
-        'tipo_eixo
-        '
-        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
-        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
-        Me.tipo_eixo.Name = "tipo_eixo"
-        '
-        'passo
-        '
-        resources.ApplyResources(Me.passo, "passo")
-        Me.passo.Name = "passo"
-        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'max_rpm
-        '
-        resources.ApplyResources(Me.max_rpm, "max_rpm")
-        Me.max_rpm.Name = "max_rpm"
-        '
-        'lim_inf
-        '
-        resources.ApplyResources(Me.lim_inf, "lim_inf")
-        Me.lim_inf.Name = "lim_inf"
-        '
-        'lim_sup
-        '
-        resources.ApplyResources(Me.lim_sup, "lim_sup")
-        Me.lim_sup.Name = "lim_sup"
-        '
-        'enc_pitch
-        '
-        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
-        Me.enc_pitch.Name = "enc_pitch"
-        '
-        'encoder_pulse
-        '
-        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
-        Me.encoder_pulse.Name = "encoder_pulse"
-        '
-        'param_radbtn_spindle
-        '
-        resources.ApplyResources(Me.param_radbtn_spindle, "param_radbtn_spindle")
-        Me.param_radbtn_spindle.Name = "param_radbtn_spindle"
-        Me.param_radbtn_spindle.TabStop = True
-        Me.param_radbtn_spindle.UseVisualStyleBackColor = True
-        '
-        'param_lbl_spindle_maxrpm
-        '
-        resources.ApplyResources(Me.param_lbl_spindle_maxrpm, "param_lbl_spindle_maxrpm")
-        Me.param_lbl_spindle_maxrpm.Name = "param_lbl_spindle_maxrpm"
-        Me.param_lbl_spindle_maxrpm.UseMnemonic = False
-        '
-        'param_txt_spindle_maxrpm
-        '
-        resources.ApplyResources(Me.param_txt_spindle_maxrpm, "param_txt_spindle_maxrpm")
-        Me.param_txt_spindle_maxrpm.Name = "param_txt_spindle_maxrpm"
-        '
-        'param_txt_laser_power
-        '
-        resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
-        Me.param_txt_laser_power.Name = "param_txt_laser_power"
-        '
-        'param_laser_power
-        '
-        resources.ApplyResources(Me.param_laser_power, "param_laser_power")
-        Me.param_laser_power.Name = "param_laser_power"
-        Me.param_laser_power.UseMnemonic = False
-        '
-        'param_radbtn_laser
-        '
-        resources.ApplyResources(Me.param_radbtn_laser, "param_radbtn_laser")
-        Me.param_radbtn_laser.Name = "param_radbtn_laser"
-        Me.param_radbtn_laser.TabStop = True
-        Me.param_radbtn_laser.UseVisualStyleBackColor = True
-        '
-        'param_txt_end_ip
-        '
-        resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
-        Me.param_txt_end_ip.Name = "param_txt_end_ip"
-        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -821,13 +822,13 @@ Partial Class MainForm
         Me.param_tab_geral.PerformLayout()
         Me.param_tab_eixos.ResumeLayout(False)
         Me.param_tab_eixos.PerformLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.param_tab_ferramentas.ResumeLayout(False)
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -930,4 +931,5 @@ Partial Class MainForm
     Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
     Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
     Friend WithEvents param_txt_end_ip As TextBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
 End Class

@@ -1,5 +1,10 @@
 ﻿Imports Mach4
 Imports System.IO
+Imports System
+Imports System.Threading
+Imports System.IO.Ports
+Imports System.ComponentModel
+
 
 Public Class MainForm
 
@@ -31,11 +36,21 @@ Public Class MainForm
     ' Variável de demonstração do ficheiro de configuração
     Public Manual_ManualFeedRate As Integer
 
+    'variaveis parametros
+    'portCom
+    Dim myPort As Array
+    Delegate Sub SetTextCallback(ByVal [text] As String) 'Added to prevent threading errors during receiveing of data
+
 
 
 
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'parametros portcom
+        myPort = IO.Ports.SerialPort.GetPortNames()
+        param_cb_portcom.Items.AddRange(myPort)
+
         Dim aux As String
 
         ' Propriedades Iniciais
@@ -296,15 +311,5 @@ Public Class MainForm
         ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
-
-    Private Sub cb_portcom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles param_cb_portcom.SelectedIndexChanged
-        'para acrecetar algo a que como as portas ativas por 
-        '
-        'cb_portcom.Items.Add(__onde_vai_buscar___)'
-
-        'para usar algo que tinha esso usar o nome da combobox.o_que_for_usar'
-
-    End Sub
-
 
 End Class
