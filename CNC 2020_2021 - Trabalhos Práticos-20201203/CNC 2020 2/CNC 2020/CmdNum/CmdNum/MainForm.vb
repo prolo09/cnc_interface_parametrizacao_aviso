@@ -234,22 +234,39 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub retriveAxisParameters()
+    Private Sub retriveParameters()
+
+        'Dim parametros As New Dictionary(Of String, String)
+
+        ' adicionar parametros gerais
+
+        GlobalVars.parametros.Add("Comunicacao_Protocolo", param_cb_protocolo.Text)
+        GlobalVars.parametros.Add("Comunicacao_Baudrate", param_cb_baudrate.Text)
+        GlobalVars.parametros.Add("Comunicacao_Porta_COM", param_cb_portcom.Text)
+        GlobalVars.parametros.Add("Comunicacao_Endereco_IP", param_txt_end_ip.Text)
+
+        ' ler tabela de propriedades de ferramentas e colocar num dicionario
+        For Each r As DataGridViewRow In Me.param_dataGrid.Rows
+            Dim idTool As String = r.Cells(0).FormattedValue
+            GlobalVars.parametros.Add(idTool + "_Nome", CStr(r.Cells(1).FormattedValue))
+            GlobalVars.parametros.Add(idTool + "_Pocket", CStr(r.Cells(2).FormattedValue))
+            GlobalVars.parametros.Add(idTool + "_Altura", CStr(r.Cells(3).FormattedValue))
+            GlobalVars.parametros.Add(idTool + "_Diametro", CStr(r.Cells(4).FormattedValue))
+            GlobalVars.parametros.Add(idTool + "_Observacoes", CStr(r.Cells(5).FormattedValue))
+
+        Next
 
         ' ler tabela de propriedades de eixos e colocar num dicionario
-        Dim infoEixos As New Dictionary(Of String, Dictionary(Of String, String))
         For Each r As DataGridViewRow In Me.param_tabela_eixos.Rows
+            Dim axis_name As String = r.Cells(0).FormattedValue
+            GlobalVars.parametros.Add(axis_name + "_tipo", CStr(r.Cells(1).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_passo", CStr(r.Cells(2).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_maxrpm", CStr(r.Cells(3).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_lim_inf", CStr(r.Cells(4).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_lim_sup", CStr(r.Cells(5).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_enc_pitch", CStr(r.Cells(6).FormattedValue))
+            GlobalVars.parametros.Add(axis_name + "_enc_n_pulse", CStr(r.Cells(7).FormattedValue))
 
-            Dim infoEixo As New Dictionary(Of String, String)
-            infoEixo.Add("tipo", CStr(r.Cells(1).FormattedValue))
-            infoEixo.Add("passo", CStr(r.Cells(2).FormattedValue))
-            infoEixo.Add("maxrpm", CStr(r.Cells(3).FormattedValue))
-            infoEixo.Add("lim_inf", CStr(r.Cells(4).FormattedValue))
-            infoEixo.Add("lim_sup", CStr(r.Cells(5).FormattedValue))
-            infoEixo.Add("enc_pitch", CStr(r.Cells(6).FormattedValue))
-            infoEixo.Add("enc_n_pulse", CStr(r.Cells(7).FormattedValue))
-
-            infoEixos.Add(CStr(r.Cells(0).FormattedValue), infoEixo)
         Next
 
         ' propriedades do spindle / laser
@@ -270,13 +287,16 @@ Public Class MainForm
 
         End If
 
-    End Sub
+        GlobalVars.parametros.Add("info_laser_spindle", info_laser_spindle)
 
-    Private Sub retrieveGeneralParameters()
-        Dim protocoloIp As String = param_cb_protocolo.Text
-        Dim baudrate As String = param_cb_baudrate.Text
-        Dim portaCom As String = param_cb_portcom.Text
-        Dim enderecoIp As String = param_txt_end_ip.Text
+        ' criar string tipo json
+
+        Dim s As String = "{"
+        For Each kvp As KeyValuePair(Of String, String) In parametros
+            s = s + vbNewLine + kvp.Key + ":" + kvp.Value + ","
+        Next
+        s = s + vbNewLine + "}"
+        TextBox1.Text = s
 
     End Sub
 

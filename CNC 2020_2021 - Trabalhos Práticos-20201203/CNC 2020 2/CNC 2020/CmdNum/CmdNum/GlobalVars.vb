@@ -35,6 +35,8 @@
     ' *******************************************
     ' PARAMETROS
     ' *******************************************
+    Public parametros As New Dictionary(Of String, String)
+
     Public PosAtualEixoX As Double           ' Posição Atual Eixo X
     Public PosAtualEixoY As Double           ' Posição Atual Eixo Y
     Public PosAtualEixoZ As Double           ' Posição Atual Eixo Z
