@@ -47,9 +47,13 @@ Public Class MainForm
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ' LEITURA FICHEIRO DE CONFIGURACOES PARAMETROS-----------------------------------
+
         'parametros portcom
         myPort = IO.Ports.SerialPort.GetPortNames()
         param_cb_portcom.Items.AddRange(myPort)
+
+        '--------------------------------------------------------------------------------
 
         Dim aux As String
 
@@ -209,94 +213,130 @@ Public Class MainForm
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
     'End Sub
 
-    'Guardar informação da tabela na var writer.
+    Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
+        Dim s As String = "{"
+        For Each kvp As KeyValuePair(Of String, String) In dictionary
+            s = s + vbNewLine + kvp.Key + ":" + kvp.Value + ","
+        Next
+        s = s + vbNewLine + "}"
+
+        ' write dictionary to file
+        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
+        param_txt_tabelaFerramentas.WriteLine(s)
+        param_txt_tabelaFerramentas.Close()
+
+        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
+    End Sub
+
+
     Private Sub param_btn_Guardar_Click(sender As Object, e As EventArgs) Handles param_btn_Guardar.Click
+        ' ler tabela de propriedades de ferramentas e colocar num dicionario
 
-        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter("E:\Text.txt")
-
-        param_txt_tabelaFerramentas.Write("Nome Ferramenta" & vbTab & "|" & "Pocket")
-        param_txt_tabelaFerramentas.WriteLine("")
-
-
-        For i As Integer = 0 To param_dataGrid.Rows.Count - 2 Step +1
-
-            For j As Integer = 0 To param_dataGrid.Columns.Count - 1 Step +1
-
-                param_txt_tabelaFerramentas.Write(vbTab & param_dataGrid.Rows(i).Cells(j).Value.ToString() & vbTab & "|")
-
+        ' confirmar os dados numericos
+        For Each r As DataGridViewRow In Me.param_dataGrid.Rows
+            For i = 2 To r.Cells.Count - 2
+                If Not IsNumeric(r.Cells(i).FormattedValue) Then
+                    MessageBox.Show("Valor da coluna " + CStr(i) + " da ferramenta " + CStr(r.Cells(0).FormattedValue) + " deve ser um número.", "Parametros não guardados",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
             Next
 
-            param_txt_tabelaFerramentas.WriteLine("")
+            ' atualizar o dicionario
+            Dim idTool As String = r.Cells(0).FormattedValue
 
+            GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
+            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(r.Cells(1).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(r.Cells(2).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(r.Cells(3).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(r.Cells(4).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(r.Cells(5).FormattedValue))
         Next
-        param_txt_tabelaFerramentas.Close()
-        MessageBox.Show("Tabela Guardada")
+
+        ' exportar dicionario
+        writeDictionary(GlobalVars.param_ferramentas, "Config\Parametros_Ferramentas.json")
 
     End Sub
 
-    Private Sub retriveParameters()
-
-        'Dim parametros As New Dictionary(Of String, String)
-
+    Private Sub btd_guardar_Click(sender As Object, e As EventArgs) Handles btd_guardar.Click
         ' adicionar parametros gerais
 
-        GlobalVars.parametros.Add("Comunicacao_Protocolo", param_cb_protocolo.Text)
-        GlobalVars.parametros.Add("Comunicacao_Baudrate", param_cb_baudrate.Text)
-        GlobalVars.parametros.Add("Comunicacao_Porta_COM", param_cb_portcom.Text)
-        GlobalVars.parametros.Add("Comunicacao_Endereco_IP", param_txt_end_ip.Text)
+        'atualizar o dicionario
+        GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
+        GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
+        GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
+        GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
+        GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
 
-        ' ler tabela de propriedades de ferramentas e colocar num dicionario
-        For Each r As DataGridViewRow In Me.param_dataGrid.Rows
-            Dim idTool As String = r.Cells(0).FormattedValue
-            GlobalVars.parametros.Add(idTool + "_Nome", CStr(r.Cells(1).FormattedValue))
-            GlobalVars.parametros.Add(idTool + "_Pocket", CStr(r.Cells(2).FormattedValue))
-            GlobalVars.parametros.Add(idTool + "_Altura", CStr(r.Cells(3).FormattedValue))
-            GlobalVars.parametros.Add(idTool + "_Diametro", CStr(r.Cells(4).FormattedValue))
-            GlobalVars.parametros.Add(idTool + "_Observacoes", CStr(r.Cells(5).FormattedValue))
+        ' export dictionary to file
+        writeDictionary(GlobalVars.param_gerais, "Config\Parametros_Gerais.json")
 
-        Next
+    End Sub
 
+    Private Sub param_btn_eixos_guardar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_guardar.Click
         ' ler tabela de propriedades de eixos e colocar num dicionario
+
+        ' confirmar os dados numericos
         For Each r As DataGridViewRow In Me.param_tabela_eixos.Rows
+
+            For i = 2 To r.Cells.Count - 1
+                If Not IsNumeric(r.Cells(i).FormattedValue) Then
+                    MessageBox.Show("Valor da coluna " + CStr(i) + " do eixo " + CStr(r.Cells(0).FormattedValue) + " deve ser um número.", "Parametros não guardados",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+            Next
+
+            ' atualizar o dicionario
+            Dim passo As Decimal = CDec(r.Cells(2).FormattedValue)
+            Dim maxrpm As Decimal = CDec(r.Cells(3).FormattedValue)
+
             Dim axis_name As String = r.Cells(0).FormattedValue
-            GlobalVars.parametros.Add(axis_name + "_tipo", CStr(r.Cells(1).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_passo", CStr(r.Cells(2).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_maxrpm", CStr(r.Cells(3).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_lim_inf", CStr(r.Cells(4).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_lim_sup", CStr(r.Cells(5).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_enc_pitch", CStr(r.Cells(6).FormattedValue))
-            GlobalVars.parametros.Add(axis_name + "_enc_n_pulse", CStr(r.Cells(7).FormattedValue))
+
+            GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
+            GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(r.Cells(1).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
+            GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+            GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(r.Cells(4).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(r.Cells(5).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(r.Cells(6).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(r.Cells(7).FormattedValue))
 
         Next
 
         ' propriedades do spindle / laser
-
         Dim info_laser_spindle As String
+        Dim laser_ou_spindle As String
 
         If Me.param_radbtn_spindle.Checked = True Then
+            If Not IsNumeric(param_txt_laser_power.Text) Then
+                MessageBox.Show("Valor de RPM maximas deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
             Me.param_txt_spindle_maxrpm.Enabled = True
             Me.param_txt_laser_power.Enabled = False
             Me.param_radbtn_laser.Checked = False
             info_laser_spindle = Me.param_txt_spindle_maxrpm.Text
-
-        ElseIf Me.param_radbtn_laser.Checked = True Then
+            laser_ou_spindle = "SPINDLE_RPM_MAX"
+        Else
+            If Not IsNumeric(param_txt_laser_power.Text) Then
+                MessageBox.Show("Valor de Potência deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
             Me.param_txt_spindle_maxrpm.Enabled = False
             Me.param_txt_laser_power.Enabled = True
             Me.param_radbtn_spindle.Checked = False
             info_laser_spindle = Me.param_txt_laser_power.Text
-
+            laser_ou_spindle = "LASER_POTENCIA"
         End If
 
-        GlobalVars.parametros.Add("info_laser_spindle", info_laser_spindle)
+        GlobalVars.param_eixos.Add(laser_ou_spindle, info_laser_spindle)
 
-        ' criar string tipo json
-
-        Dim s As String = "{"
-        For Each kvp As KeyValuePair(Of String, String) In parametros
-            s = s + vbNewLine + kvp.Key + ":" + kvp.Value + ","
-        Next
-        s = s + vbNewLine + "}"
-        TextBox1.Text = s
+        ' export dictionary to file
+        writeDictionary(GlobalVars.param_eixos, "Config\Parametros_Eixos.json")
 
     End Sub
 
@@ -306,11 +346,6 @@ Public Class MainForm
     ' *******************************************
     ' ROTINAS AVISOS
     ' *******************************************
-
-
-
-
-
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_teste.Click
         ' Teste ... Teste ... TESTE
@@ -331,5 +366,6 @@ Public Class MainForm
         ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
+
 
 End Class

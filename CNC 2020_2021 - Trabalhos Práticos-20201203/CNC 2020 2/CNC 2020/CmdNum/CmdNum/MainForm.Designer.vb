@@ -123,6 +123,7 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -562,6 +563,7 @@ Partial Class MainForm
         '
         'param_tab_eixos
         '
+        Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
         Me.param_tab_eixos.Controls.Add(Me.param_laser_power)
         Me.param_tab_eixos.Controls.Add(Me.param_radbtn_laser)
@@ -793,6 +795,12 @@ Partial Class MainForm
         'tmr_match3
         '
         '
+        'param_btn_eixos_guardar
+        '
+        resources.ApplyResources(Me.param_btn_eixos_guardar, "param_btn_eixos_guardar")
+        Me.param_btn_eixos_guardar.Name = "param_btn_eixos_guardar"
+        Me.param_btn_eixos_guardar.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -932,4 +940,5 @@ Partial Class MainForm
     Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
     Friend WithEvents param_txt_end_ip As TextBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents param_btn_eixos_guardar As Button
 End Class
