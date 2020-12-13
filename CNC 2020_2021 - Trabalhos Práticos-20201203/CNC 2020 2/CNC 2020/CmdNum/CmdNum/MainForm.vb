@@ -68,8 +68,6 @@ Public Class MainForm
 
         '--------------------------------------------------------------------------------
 
-        Dim aux As String
-
         ' Propriedades Iniciais
         ' Modo Manual
         StatusStripLbl_Modo.Text = "Modo Manual"
@@ -84,31 +82,6 @@ Public Class MainForm
         tmr_match3.Interval = 250
         tmr_match3.Enabled = True
 
-        ' Ficheiro de configurações - Modo Manual
-        ''FileOpen(1, "Config\CmdNum_Manual.Ini", OpenMode.Input)
-
-        ''For i = 1 To 8
-        ''aux = LineInput(1)
-        ''Next
-
-        'para acresentar um modo de por comentario'
-
-        ' Leitura da velocidade de deslocamento
-        '' aux = LineInput(1)
-        ''Dim words As String() = aux.Split(New Char() {" "c})
-
-
-
-        ''Manual_ManualFeedRate = Integer.Parse(words(2))
-
-        ' Visualizaçºao da Velocidade de Deslocamento
-        ''txt_ManFeedRate.Text = Manual_ManualFeedRate.ToString
-
-
-        ' PrintLine  para escerever em ficheiro...
-        'PrintLine (1, "teste teste")
-
-        ''FileClose(1)
 
     End Sub
 
