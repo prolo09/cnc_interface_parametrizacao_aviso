@@ -38,6 +38,10 @@
     Public param_eixos As New Dictionary(Of String, String)
     Public param_gerais As New Dictionary(Of String, String)
     Public param_ferramentas As New Dictionary(Of String, String)
+    Public param_eixos_path As String = "Config\Parametros_Eixos.json"
+    Public param_gerais_path As String = "Config\Parametros_Gerais.json"
+    Public param_ferramentas_path As String = "Config\Parametros_Ferramentas.json"
+
 
     Public PosAtualEixoX As Double           ' Posição Atual Eixo X
     Public PosAtualEixoY As Double           ' Posição Atual Eixo Y
