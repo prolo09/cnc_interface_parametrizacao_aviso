@@ -222,6 +222,9 @@ Public Class MainForm
     'Private Sub param_dataGrid_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles param_dataGrid.CellFormatting
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
     'End Sub
+    Private Sub readParamGerais(path As String)
+
+    End Sub
 
     Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
         Dim s As String = "{"
@@ -249,24 +252,28 @@ Public Class MainForm
         ' ler tabela de propriedades de ferramentas e colocar num dicionario
 
         ' confirmar os dados numericos
-        For Each r As DataGridViewRow In Me.param_dataGrid.Rows
-            For i = 2 To r.Cells.Count - 2
-                If Not IsNumeric(r.Cells(i).FormattedValue) Then
-                    MessageBox.Show("Valor da coluna " + CStr(i) + " da ferramenta " + CStr(r.Cells(0).FormattedValue) + " deve ser um número.", "Parametros não guardados",
+        For i As Integer = 0 To param_dataGrid.Rows.Count - 2
+            For j As Integer = 0 To param_dataGrid.Rows(i).Cells.Count - 1
+                If Not IsNumeric(param_dataGrid.Rows(i).Cells(j).Value) Then
+                    MessageBox.Show("Valor da coluna """ + param_dataGrid.Columns(j).Name + """ da ferramenta " + CStr(param_dataGrid.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
             Next
 
+            If i = 0 Then
+                param_ferramentas.Clear()
+            End If
+
             ' atualizar o dicionario
-            Dim idTool As String = r.Cells(0).FormattedValue
+            Dim idTool As String = param_dataGrid.Rows(i).Cells(0).FormattedValue
 
             GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
-            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(r.Cells(1).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(r.Cells(2).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(r.Cells(3).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(r.Cells(4).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(r.Cells(5).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
         Next
 
         ' exportar dicionario
@@ -293,31 +300,34 @@ Public Class MainForm
         ' ler tabela de propriedades de eixos e colocar num dicionario
 
         ' confirmar os dados numericos
-        For Each r As DataGridViewRow In Me.param_tabela_eixos.Rows
-
-            For i = 2 To r.Cells.Count - 1
-                If Not IsNumeric(r.Cells(i).FormattedValue) Then
-                    MessageBox.Show("Valor da coluna " + CStr(i) + " do eixo " + CStr(r.Cells(0).FormattedValue) + " deve ser um número.", "Parametros não guardados",
+        For i As Integer = 0 To param_tabela_eixos.Rows.Count - 2
+            For j As Integer = 0 To param_tabela_eixos.Rows(i).Cells.Count - 1
+                If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) Then
+                    MessageBox.Show("Valor da coluna """ + param_tabela_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_tabela_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
             Next
 
-            ' atualizar o dicionario
-            Dim passo As Decimal = CDec(r.Cells(2).FormattedValue)
-            Dim maxrpm As Decimal = CDec(r.Cells(3).FormattedValue)
+            If i = 0 Then
+                param_ferramentas.Clear()
+            End If
 
-            Dim axis_name As String = r.Cells(0).FormattedValue
+            ' atualizar o dicionario
+            Dim passo As Decimal = CDec(param_tabela_eixos.Rows(i).Cells(2).FormattedValue)
+            Dim maxrpm As Decimal = CDec(param_tabela_eixos.Rows(i).Cells(3).FormattedValue)
+
+            Dim axis_name As String = param_tabela_eixos.Rows(i).Cells(0).FormattedValue
 
             GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
-            GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(r.Cells(1).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
             GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(r.Cells(4).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(r.Cells(5).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(r.Cells(6).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(r.Cells(7).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(7).FormattedValue))
 
         Next
 
