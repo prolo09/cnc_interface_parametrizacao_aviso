@@ -4,6 +4,7 @@ Imports System
 Imports System.Threading
 Imports System.IO.Ports
 Imports System.ComponentModel
+Imports System.Web.Script.Serialization
 
 
 Public Class MainForm
@@ -52,6 +53,18 @@ Public Class MainForm
         'parametros portcom
         myPort = IO.Ports.SerialPort.GetPortNames()
         param_cb_portcom.Items.AddRange(myPort)
+
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros gerais
+        json = File.ReadAllText("Config\Parametros_Gerais.json")
+        GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        'parametros ferramentas
+        json = File.ReadAllText("Config\Parametros_Ferramentas.json")
+        GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        'parametros eixos
+        json = File.ReadAllText("Config\Parametros_Eixos.json")
+        GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
 
         '--------------------------------------------------------------------------------
 
