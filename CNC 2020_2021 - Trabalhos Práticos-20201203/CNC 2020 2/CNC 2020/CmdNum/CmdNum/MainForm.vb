@@ -57,14 +57,38 @@ Public Class MainForm
         Dim json As String
         Dim jss = New JavaScriptSerializer()
         'parametros gerais
-        json = File.ReadAllText("Config\Parametros_Gerais.json")
-        GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Try
+            json = File.ReadAllText(GlobalVars.param_gerais_path)
+            GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_gerais_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_gerais_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         'parametros ferramentas
-        json = File.ReadAllText("Config\Parametros_Ferramentas.json")
-        GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Try
+            json = File.ReadAllText(GlobalVars.param_ferramentas_path)
+            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_ferramentas_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_ferramentas_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         'parametros eixos
-        json = File.ReadAllText("Config\Parametros_Eixos.json")
-        GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Try
+            json = File.ReadAllText(GlobalVars.param_eixos_path)
+            GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_eixos_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + GlobalVars.param_eixos_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
         '--------------------------------------------------------------------------------
 
@@ -246,7 +270,7 @@ Public Class MainForm
         Next
 
         ' exportar dicionario
-        writeDictionary(GlobalVars.param_ferramentas, "Config\Parametros_Ferramentas.json")
+        writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
 
     End Sub
 
@@ -261,7 +285,7 @@ Public Class MainForm
         GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
 
         ' export dictionary to file
-        writeDictionary(GlobalVars.param_gerais, "Config\Parametros_Gerais.json")
+        writeDictionary(GlobalVars.param_gerais, GlobalVars.param_gerais_path)
 
     End Sub
 
@@ -328,7 +352,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add(laser_ou_spindle, info_laser_spindle)
 
         ' export dictionary to file
-        writeDictionary(GlobalVars.param_eixos, "Config\Parametros_Eixos.json")
+        writeDictionary(GlobalVars.param_eixos, GlobalVars.param_eixos_path)
 
     End Sub
 
