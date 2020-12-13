@@ -215,8 +215,14 @@ Public Class MainForm
 
     Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
         Dim s As String = "{"
+        Dim i As Integer = 1
         For Each kvp As KeyValuePair(Of String, String) In dictionary
-            s = s + vbNewLine + kvp.Key + ":" + kvp.Value + ","
+            s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
+            If i < dictionary.Count Then
+                s = s + ","
+            End If
+            i = i + 1
+
         Next
         s = s + vbNewLine + "}"
 
