@@ -54,9 +54,7 @@ Public Class MainForm
         myPort = IO.Ports.SerialPort.GetPortNames()
         param_cb_portcom.Items.AddRange(myPort)
 
-        Dim json As String
-        Dim jss = New JavaScriptSerializer()
-        'parametros gerais
+        'ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
         readParamEixos(GlobalVars.param_eixos_path)
         readParamFerramentas(GlobalVars.param_ferramentas_path)
@@ -274,23 +272,39 @@ Public Class MainForm
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_eixos
             If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Or kvp.Key.Split("_")(1) = "G00" Or kvp.Key.Split("_")(1) = "G01" Or kvp.Key.Split("_")(1) = "JOG" Then
-                Continue For
-            End If
-            If j = 0 Then
-                i = param_tabela_eixos.Rows.Add()
-                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
-                j = j + 1
-                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
+                If kvp.Key = "SPINDLE_RPM_MAX" Then
+                    param_radbtn_spindle.Checked = True
+                    param_txt_spindle_maxrpm.Enabled = True
+                    param_txt_laser_power.Enabled = False
+                    param_radbtn_laser.Checked = False
+                    param_txt_spindle_maxrpm.Text = kvp.Value
+                ElseIf kvp.Key = "LASER_POTENCIA" Then
+                    param_txt_spindle_maxrpm.Enabled = False
+                    param_txt_laser_power.Enabled = True
+                    param_radbtn_spindle.Checked = False
+                    param_radbtn_laser.Checked = True
+                    param_txt_laser_power.Text = kvp.Value
+                End If
             Else
-                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
+                If j = 0 Then
+                    i = param_tabela_eixos.Rows.Add()
+                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                    j = j + 1
+                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                Else
+                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                End If
+
+                If j = param_tabela_eixos.Columns.Count Then
+                    j = 0
+                End If
             End If
 
-            If j = param_tabela_eixos.Columns.Count Then
-                j = 0
-            End If
         Next
+
+
 
     End Sub
 
