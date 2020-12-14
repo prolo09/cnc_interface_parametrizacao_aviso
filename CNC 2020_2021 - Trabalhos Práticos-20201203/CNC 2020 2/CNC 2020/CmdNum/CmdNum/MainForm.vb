@@ -223,6 +223,103 @@ Public Class MainForm
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
     'End Sub
     Private Sub readParamGerais(path As String)
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros gerais
+        Try
+            json = File.ReadAllText(path)
+            GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+            ' display on GUI
+            param_cb_protocolo.Text = GlobalVars.param_ferramentas("COMUNICACAO_PROTOCOLO")
+            param_cb_baudrate.Text = GlobalVars.param_ferramentas("COMUNICACAO_BAUDRATE")
+            param_cb_portcom.Text = GlobalVars.param_ferramentas("COMUNICACAO_PORTA_COM")
+            param_txt_end_ip.Text = GlobalVars.param_ferramentas("COMUNICACAO_ENDERECO_IP")
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub readParamFerramentas(path As String)
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros ferramentas
+        Try
+            json = File.ReadAllText(path)
+            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' display on GUI
+        Dim i As Integer
+        Dim j As Integer = 0
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+            If j = 0 Then
+                i = param_dataGrid.Rows.Add()
+                param_dataGrid.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                j = j + 1
+                param_dataGrid.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            Else
+                param_dataGrid.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            End If
+
+            If j = param_dataGrid.Columns.Count Then
+                j = 0
+            End If
+        Next
+
+    End Sub
+
+    Private Sub readParamEixos(path As String)
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros eixos
+        Try
+            json = File.ReadAllText(path)
+            GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex3 As System.Collections.Generic.KeyNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não contém todos os parametros necessários." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' display on GUI
+        Dim i As Integer
+        Dim j As Integer = 0
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_eixos
+            If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Then
+                Exit For
+            End If
+            If j = 0 Then
+                i = param_tabela_eixos.Rows.Add()
+                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                j = j + 1
+                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            Else
+                param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            End If
+
+            If j = param_tabela_eixos.Columns.Count Then
+                j = 0
+            End If
+        Next
 
     End Sub
 
