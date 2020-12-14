@@ -57,38 +57,9 @@ Public Class MainForm
         Dim json As String
         Dim jss = New JavaScriptSerializer()
         'parametros gerais
-        Try
-            json = File.ReadAllText(GlobalVars.param_gerais_path)
-            GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
-        Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_gerais_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_gerais_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-        'parametros ferramentas
-        Try
-            json = File.ReadAllText(GlobalVars.param_ferramentas_path)
-            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
-        Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_ferramentas_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_ferramentas_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-        'parametros eixos
-        Try
-            json = File.ReadAllText(GlobalVars.param_eixos_path)
-            GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
-        Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_eixos_path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + GlobalVars.param_eixos_path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        readParamGerais(GlobalVars.param_gerais_path)
+        readParamEixos(GlobalVars.param_eixos_path)
+        readParamFerramentas(GlobalVars.param_ferramentas_path)
 
         '--------------------------------------------------------------------------------
 
@@ -302,8 +273,8 @@ Public Class MainForm
         Dim i As Integer
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_eixos
-            If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Then
-                Exit For
+            If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Or kvp.Key.Split("_")(1) = "G00" Or kvp.Key.Split("_")(1) = "G01" Or kvp.Key.Split("_")(1) = "JOG" Then
+                Continue For
             End If
             If j = 0 Then
                 i = param_tabela_eixos.Rows.Add()
@@ -359,13 +330,12 @@ Public Class MainForm
             Next
 
             If i = 0 Then
-                param_ferramentas.Clear()
+                GlobalVars.param_ferramentas.Clear()
             End If
 
             ' atualizar o dicionario
             Dim idTool As String = param_dataGrid.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
             GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
             GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
             GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
@@ -407,7 +377,7 @@ Public Class MainForm
             Next
 
             If i = 0 Then
-                param_ferramentas.Clear()
+                GlobalVars.param_eixos.Clear()
             End If
 
             ' atualizar o dicionario
@@ -416,8 +386,9 @@ Public Class MainForm
 
             Dim axis_name As String = param_tabela_eixos.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
             GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
             GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
