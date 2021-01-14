@@ -1,0 +1,13 @@
+{
+"f_TIPO": "Rotativo",
+"f_PASSO": "3",
+"f_RPM_MAX": "3",
+"f_G00_FEED_MAX": "9",
+"f_G01_FEED_MAX": "5,4",
+"f_JOG_FEED_MAX": "1,8",
+"f_LIM_INF": "3",
+"f_LIM_SUP": "3",
+"f_ENC_PITCH": "33",
+"f_ENC_N_PULSE": "33",
+"SPINDLE_RPM_MAX": "33"
+}

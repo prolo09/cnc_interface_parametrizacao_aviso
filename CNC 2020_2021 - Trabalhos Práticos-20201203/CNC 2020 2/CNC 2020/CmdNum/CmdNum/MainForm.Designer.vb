@@ -84,6 +84,7 @@ Partial Class MainForm
         Me.btd_cancelar = New System.Windows.Forms.Button()
         Me.btd_guardar = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
+        Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
         Me.param_laser_power = New System.Windows.Forms.Label()
         Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
@@ -123,7 +124,6 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -575,6 +575,12 @@ Partial Class MainForm
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
         '
+        'param_btn_eixos_guardar
+        '
+        resources.ApplyResources(Me.param_btn_eixos_guardar, "param_btn_eixos_guardar")
+        Me.param_btn_eixos_guardar.Name = "param_btn_eixos_guardar"
+        Me.param_btn_eixos_guardar.UseVisualStyleBackColor = True
+        '
         'param_txt_laser_power
         '
         resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
@@ -794,12 +800,6 @@ Partial Class MainForm
         '
         'tmr_match3
         '
-        '
-        'param_btn_eixos_guardar
-        '
-        resources.ApplyResources(Me.param_btn_eixos_guardar, "param_btn_eixos_guardar")
-        Me.param_btn_eixos_guardar.Name = "param_btn_eixos_guardar"
-        Me.param_btn_eixos_guardar.UseVisualStyleBackColor = True
         '
         'MainForm
         '

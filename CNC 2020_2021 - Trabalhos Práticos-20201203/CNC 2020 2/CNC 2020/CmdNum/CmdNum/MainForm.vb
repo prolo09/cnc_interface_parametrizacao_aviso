@@ -199,10 +199,11 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
             ' display on GUI
-            param_cb_protocolo.Text = GlobalVars.param_ferramentas("COMUNICACAO_PROTOCOLO")
-            param_cb_baudrate.Text = GlobalVars.param_ferramentas("COMUNICACAO_BAUDRATE")
-            param_cb_portcom.Text = GlobalVars.param_ferramentas("COMUNICACAO_PORTA_COM")
-            param_txt_end_ip.Text = GlobalVars.param_ferramentas("COMUNICACAO_ENDERECO_IP")
+
+            param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
+            param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
+            param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
+            param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -335,7 +336,7 @@ Public Class MainForm
 
         ' confirmar os dados numericos
         For i As Integer = 0 To param_dataGrid.Rows.Count - 2
-            For j As Integer = 0 To param_dataGrid.Rows(i).Cells.Count - 1
+            For j As Integer = 2 To param_dataGrid.Rows(i).Cells.Count - 2
                 If Not IsNumeric(param_dataGrid.Rows(i).Cells(j).Value) Then
                     MessageBox.Show("Valor da coluna """ + param_dataGrid.Columns(j).Name + """ da ferramenta " + CStr(param_dataGrid.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -366,7 +367,7 @@ Public Class MainForm
         ' adicionar parametros gerais
 
         'atualizar o dicionario
-        GlobalVars.param_ferramentas.Clear() ' clear dictionary to fill with new info
+        GlobalVars.param_gerais.Clear() ' clear dictionary to fill with new info
         GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
         GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
         GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
@@ -382,7 +383,7 @@ Public Class MainForm
 
         ' confirmar os dados numericos
         For i As Integer = 0 To param_tabela_eixos.Rows.Count - 2
-            For j As Integer = 0 To param_tabela_eixos.Rows(i).Cells.Count - 1
+            For j As Integer = 2 To param_tabela_eixos.Rows(i).Cells.Count - 1
                 If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) Then
                     MessageBox.Show("Valor da coluna """ + param_tabela_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_tabela_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -418,7 +419,7 @@ Public Class MainForm
         Dim laser_ou_spindle As String
 
         If Me.param_radbtn_spindle.Checked = True Then
-            If Not IsNumeric(param_txt_laser_power.Text) Then
+            If Not IsNumeric(param_txt_spindle_maxrpm.Text) Then
                 MessageBox.Show("Valor de RPM maximas deve ser um número.", "Parametros não guardados",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
@@ -428,7 +429,7 @@ Public Class MainForm
             Me.param_radbtn_laser.Checked = False
             info_laser_spindle = Me.param_txt_spindle_maxrpm.Text
             laser_ou_spindle = "SPINDLE_RPM_MAX"
-        Else
+        ElseIf Me.param_radbtn_laser.Checked = True Then
             If Not IsNumeric(param_txt_laser_power.Text) Then
                 MessageBox.Show("Valor de Potência deve ser um número.", "Parametros não guardados",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -446,6 +447,30 @@ Public Class MainForm
         ' export dictionary to file
         writeDictionary(GlobalVars.param_eixos, GlobalVars.param_eixos_path)
 
+    End Sub
+
+    Private Sub param_radbtn_spindle_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_spindle.CheckedChanged
+        If Me.param_radbtn_spindle.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = True
+            Me.param_txt_laser_power.Enabled = False
+            Me.param_radbtn_laser.Checked = False
+        Else
+            Me.param_txt_spindle_maxrpm.Enabled = False
+            Me.param_txt_laser_power.Enabled = True
+            'Me.param_radbtn_spindle.Checked = False
+        End If
+    End Sub
+
+    Private Sub param_radbtn_laser_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_laser.CheckedChanged
+        If Me.param_radbtn_spindle.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = True
+            Me.param_txt_laser_power.Enabled = False
+            Me.param_radbtn_laser.Checked = False
+        ElseIf Me.param_radbtn_laser.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = False
+            Me.param_txt_laser_power.Enabled = True
+            'Me.param_radbtn_spindle.Checked = False
+        End If
     End Sub
 
     ' *******************************************
