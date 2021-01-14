@@ -69,39 +69,19 @@ Partial Class MainForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.param_tab_control = New System.Windows.Forms.TabControl()
-        Me.param_tab_geral = New System.Windows.Forms.TabPage()
-        Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.param_cb_protocolo = New System.Windows.Forms.ComboBox()
-        Me.param_lbl_endereçoIP = New System.Windows.Forms.Label()
-        Me.param_lbl_protocolo = New System.Windows.Forms.Label()
-        Me.param_cb_baudrate = New System.Windows.Forms.ComboBox()
-        Me.param_lbl_baudrate = New System.Windows.Forms.Label()
-        Me.param_cb_portcom = New System.Windows.Forms.ComboBox()
-        Me.param_lbl_portcom = New System.Windows.Forms.Label()
-        Me.btd_cancelar = New System.Windows.Forms.Button()
-        Me.btd_guardar = New System.Windows.Forms.Button()
-        Me.param_tab_eixos = New System.Windows.Forms.TabPage()
-        Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
-        Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
-        Me.param_laser_power = New System.Windows.Forms.Label()
-        Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
-        Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
-        Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
-        Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
-        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
-        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_tab_ferramentas = New System.Windows.Forms.TabPage()
-        Me.param_btn_Guardar = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.btn_tabelas_referenciais = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewComboBoxColumn1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.param_dataGrid = New System.Windows.Forms.DataGridView()
         Me.param_dataGrid_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -109,6 +89,8 @@ Partial Class MainForm
         Me.param_dataGrid_altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_tabelas_ferramentas = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -124,6 +106,36 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.param_tab_eixos = New System.Windows.Forms.TabPage()
+        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
+        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
+        Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
+        Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
+        Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
+        Me.param_laser_power = New System.Windows.Forms.Label()
+        Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
+        Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
+        Me.param_tab_geral = New System.Windows.Forms.TabPage()
+        Me.btd_guardar = New System.Windows.Forms.Button()
+        Me.btd_cancelar = New System.Windows.Forms.Button()
+        Me.param_lbl_portcom = New System.Windows.Forms.Label()
+        Me.param_cb_portcom = New System.Windows.Forms.ComboBox()
+        Me.param_lbl_baudrate = New System.Windows.Forms.Label()
+        Me.param_cb_baudrate = New System.Windows.Forms.ComboBox()
+        Me.param_lbl_protocolo = New System.Windows.Forms.Label()
+        Me.param_lbl_endereçoIP = New System.Windows.Forms.Label()
+        Me.param_cb_protocolo = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
+        Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -133,15 +145,19 @@ Partial Class MainForm
         Me.Panel_PosActual_Man.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
-        Me.param_tab_control.SuspendLayout()
-        Me.param_tab_geral.SuspendLayout()
-        Me.param_tab_eixos.SuspendLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.param_tab_ferramentas.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage9.SuspendLayout()
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.param_tab_eixos.SuspendLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.param_tab_geral.SuspendLayout()
+        Me.param_tab_control.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabCtrl_Option
@@ -462,224 +478,90 @@ Partial Class MainForm
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.LightGray
+        Me.TabPage4.Controls.Add(Me.TabControl1)
         resources.ApplyResources(Me.TabPage4, "TabPage4")
         Me.TabPage4.Name = "TabPage4"
         '
-        'TabPage5
+        'TabControl1
         '
-        Me.TabPage5.BackColor = System.Drawing.Color.LightGray
-        Me.TabPage5.Controls.Add(Me.param_tab_control)
-        resources.ApplyResources(Me.TabPage5, "TabPage5")
-        Me.TabPage5.Name = "TabPage5"
+        Me.TabControl1.Controls.Add(Me.TabPage8)
+        Me.TabControl1.Controls.Add(Me.TabPage9)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         '
-        'param_tab_control
+        'TabPage8
         '
-        Me.param_tab_control.Controls.Add(Me.param_tab_geral)
-        Me.param_tab_control.Controls.Add(Me.param_tab_eixos)
-        Me.param_tab_control.Controls.Add(Me.param_tab_ferramentas)
-        resources.ApplyResources(Me.param_tab_control, "param_tab_control")
-        Me.param_tab_control.Name = "param_tab_control"
-        Me.param_tab_control.SelectedIndex = 0
-        Me.param_tab_control.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
+        Me.TabPage8.Controls.Add(Me.btn_tabelas_referenciais)
+        Me.TabPage8.Controls.Add(Me.DataGridView1)
+        resources.ApplyResources(Me.TabPage8, "TabPage8")
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.UseVisualStyleBackColor = True
         '
-        'param_tab_geral
+        'btn_tabelas_referenciais
         '
-        Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
-        Me.param_tab_geral.Controls.Add(Me.Label13)
-        Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
-        Me.param_tab_geral.Controls.Add(Me.param_lbl_endereçoIP)
-        Me.param_tab_geral.Controls.Add(Me.param_lbl_protocolo)
-        Me.param_tab_geral.Controls.Add(Me.param_cb_baudrate)
-        Me.param_tab_geral.Controls.Add(Me.param_lbl_baudrate)
-        Me.param_tab_geral.Controls.Add(Me.param_cb_portcom)
-        Me.param_tab_geral.Controls.Add(Me.param_lbl_portcom)
-        Me.param_tab_geral.Controls.Add(Me.btd_cancelar)
-        Me.param_tab_geral.Controls.Add(Me.btd_guardar)
-        resources.ApplyResources(Me.param_tab_geral, "param_tab_geral")
-        Me.param_tab_geral.Name = "param_tab_geral"
-        Me.param_tab_geral.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.btn_tabelas_referenciais, "btn_tabelas_referenciais")
+        Me.btn_tabelas_referenciais.Name = "btn_tabelas_referenciais"
+        Me.btn_tabelas_referenciais.UseVisualStyleBackColor = True
         '
-        'param_txt_end_ip
+        'DataGridView1
         '
-        resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
-        Me.param_txt_end_ip.Name = "param_txt_end_ip"
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewComboBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
+        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
+        Me.DataGridView1.Name = "DataGridView1"
         '
-        'Label13
+        'DataGridViewTextBoxColumn1
         '
-        resources.ApplyResources(Me.Label13, "Label13")
-        Me.Label13.Name = "Label13"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn1, "DataGridViewTextBoxColumn1")
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
-        'param_cb_protocolo
+        'DataGridViewComboBoxColumn1
         '
-        Me.param_cb_protocolo.FormattingEnabled = True
-        Me.param_cb_protocolo.Items.AddRange(New Object() {resources.GetString("param_cb_protocolo.Items"), resources.GetString("param_cb_protocolo.Items1"), resources.GetString("param_cb_protocolo.Items2")})
-        resources.ApplyResources(Me.param_cb_protocolo, "param_cb_protocolo")
-        Me.param_cb_protocolo.Name = "param_cb_protocolo"
+        resources.ApplyResources(Me.DataGridViewComboBoxColumn1, "DataGridViewComboBoxColumn1")
+        Me.DataGridViewComboBoxColumn1.Items.AddRange(New Object() {"Linear", "Rotativo"})
+        Me.DataGridViewComboBoxColumn1.Name = "DataGridViewComboBoxColumn1"
         '
-        'param_lbl_endereçoIP
+        'DataGridViewTextBoxColumn2
         '
-        resources.ApplyResources(Me.param_lbl_endereçoIP, "param_lbl_endereçoIP")
-        Me.param_lbl_endereçoIP.Name = "param_lbl_endereçoIP"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn2, "DataGridViewTextBoxColumn2")
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'param_lbl_protocolo
+        'DataGridViewTextBoxColumn3
         '
-        resources.ApplyResources(Me.param_lbl_protocolo, "param_lbl_protocolo")
-        Me.param_lbl_protocolo.Name = "param_lbl_protocolo"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn3, "DataGridViewTextBoxColumn3")
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
-        'param_cb_baudrate
+        'DataGridViewTextBoxColumn4
         '
-        Me.param_cb_baudrate.FormattingEnabled = True
-        Me.param_cb_baudrate.Items.AddRange(New Object() {resources.GetString("param_cb_baudrate.Items"), resources.GetString("param_cb_baudrate.Items1"), resources.GetString("param_cb_baudrate.Items2"), resources.GetString("param_cb_baudrate.Items3"), resources.GetString("param_cb_baudrate.Items4"), resources.GetString("param_cb_baudrate.Items5"), resources.GetString("param_cb_baudrate.Items6")})
-        resources.ApplyResources(Me.param_cb_baudrate, "param_cb_baudrate")
-        Me.param_cb_baudrate.Name = "param_cb_baudrate"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn4, "DataGridViewTextBoxColumn4")
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
-        'param_lbl_baudrate
+        'DataGridViewTextBoxColumn5
         '
-        resources.ApplyResources(Me.param_lbl_baudrate, "param_lbl_baudrate")
-        Me.param_lbl_baudrate.Name = "param_lbl_baudrate"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn5, "DataGridViewTextBoxColumn5")
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
-        'param_cb_portcom
+        'DataGridViewTextBoxColumn6
         '
-        Me.param_cb_portcom.FormattingEnabled = True
-        resources.ApplyResources(Me.param_cb_portcom, "param_cb_portcom")
-        Me.param_cb_portcom.Name = "param_cb_portcom"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn6, "DataGridViewTextBoxColumn6")
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
-        'param_lbl_portcom
+        'DataGridViewTextBoxColumn7
         '
-        resources.ApplyResources(Me.param_lbl_portcom, "param_lbl_portcom")
-        Me.param_lbl_portcom.Name = "param_lbl_portcom"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn7, "DataGridViewTextBoxColumn7")
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
-        'btd_cancelar
+        'TabPage9
         '
-        resources.ApplyResources(Me.btd_cancelar, "btd_cancelar")
-        Me.btd_cancelar.Name = "btd_cancelar"
-        Me.btd_cancelar.UseVisualStyleBackColor = True
-        '
-        'btd_guardar
-        '
-        resources.ApplyResources(Me.btd_guardar, "btd_guardar")
-        Me.btd_guardar.Name = "btd_guardar"
-        Me.btd_guardar.UseVisualStyleBackColor = True
-        '
-        'param_tab_eixos
-        '
-        Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
-        Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
-        Me.param_tab_eixos.Controls.Add(Me.param_laser_power)
-        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_laser)
-        Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
-        Me.param_tab_eixos.Controls.Add(Me.param_lbl_spindle_maxrpm)
-        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_spindle)
-        Me.param_tab_eixos.Controls.Add(Me.param_tabela_eixos)
-        resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
-        Me.param_tab_eixos.Name = "param_tab_eixos"
-        Me.param_tab_eixos.UseVisualStyleBackColor = True
-        '
-        'param_btn_eixos_guardar
-        '
-        resources.ApplyResources(Me.param_btn_eixos_guardar, "param_btn_eixos_guardar")
-        Me.param_btn_eixos_guardar.Name = "param_btn_eixos_guardar"
-        Me.param_btn_eixos_guardar.UseVisualStyleBackColor = True
-        '
-        'param_txt_laser_power
-        '
-        resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
-        Me.param_txt_laser_power.Name = "param_txt_laser_power"
-        '
-        'param_laser_power
-        '
-        resources.ApplyResources(Me.param_laser_power, "param_laser_power")
-        Me.param_laser_power.Name = "param_laser_power"
-        Me.param_laser_power.UseMnemonic = False
-        '
-        'param_radbtn_laser
-        '
-        resources.ApplyResources(Me.param_radbtn_laser, "param_radbtn_laser")
-        Me.param_radbtn_laser.Name = "param_radbtn_laser"
-        Me.param_radbtn_laser.TabStop = True
-        Me.param_radbtn_laser.UseVisualStyleBackColor = True
-        '
-        'param_txt_spindle_maxrpm
-        '
-        resources.ApplyResources(Me.param_txt_spindle_maxrpm, "param_txt_spindle_maxrpm")
-        Me.param_txt_spindle_maxrpm.Name = "param_txt_spindle_maxrpm"
-        '
-        'param_lbl_spindle_maxrpm
-        '
-        resources.ApplyResources(Me.param_lbl_spindle_maxrpm, "param_lbl_spindle_maxrpm")
-        Me.param_lbl_spindle_maxrpm.Name = "param_lbl_spindle_maxrpm"
-        Me.param_lbl_spindle_maxrpm.UseMnemonic = False
-        '
-        'param_radbtn_spindle
-        '
-        resources.ApplyResources(Me.param_radbtn_spindle, "param_radbtn_spindle")
-        Me.param_radbtn_spindle.Name = "param_radbtn_spindle"
-        Me.param_radbtn_spindle.TabStop = True
-        Me.param_radbtn_spindle.UseVisualStyleBackColor = True
-        '
-        'param_tabela_eixos
-        '
-        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
-        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
-        Me.param_tabela_eixos.Name = "param_tabela_eixos"
-        '
-        'eixo
-        '
-        resources.ApplyResources(Me.eixo, "eixo")
-        Me.eixo.Name = "eixo"
-        '
-        'tipo_eixo
-        '
-        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
-        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
-        Me.tipo_eixo.Name = "tipo_eixo"
-        '
-        'passo
-        '
-        resources.ApplyResources(Me.passo, "passo")
-        Me.passo.Name = "passo"
-        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'max_rpm
-        '
-        resources.ApplyResources(Me.max_rpm, "max_rpm")
-        Me.max_rpm.Name = "max_rpm"
-        '
-        'lim_inf
-        '
-        resources.ApplyResources(Me.lim_inf, "lim_inf")
-        Me.lim_inf.Name = "lim_inf"
-        '
-        'lim_sup
-        '
-        resources.ApplyResources(Me.lim_sup, "lim_sup")
-        Me.lim_sup.Name = "lim_sup"
-        '
-        'enc_pitch
-        '
-        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
-        Me.enc_pitch.Name = "enc_pitch"
-        '
-        'encoder_pulse
-        '
-        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
-        Me.encoder_pulse.Name = "encoder_pulse"
-        '
-        'param_tab_ferramentas
-        '
-        Me.param_tab_ferramentas.Controls.Add(Me.param_btn_Guardar)
-        Me.param_tab_ferramentas.Controls.Add(Me.param_dataGrid)
-        resources.ApplyResources(Me.param_tab_ferramentas, "param_tab_ferramentas")
-        Me.param_tab_ferramentas.Name = "param_tab_ferramentas"
-        Me.param_tab_ferramentas.UseVisualStyleBackColor = True
-        '
-        'param_btn_Guardar
-        '
-        resources.ApplyResources(Me.param_btn_Guardar, "param_btn_Guardar")
-        Me.param_btn_Guardar.Name = "param_btn_Guardar"
-        Me.param_btn_Guardar.UseVisualStyleBackColor = True
+        Me.TabPage9.Controls.Add(Me.param_dataGrid)
+        Me.TabPage9.Controls.Add(Me.btn_tabelas_ferramentas)
+        resources.ApplyResources(Me.TabPage9, "TabPage9")
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.UseVisualStyleBackColor = True
         '
         'param_dataGrid
         '
@@ -718,6 +600,19 @@ Partial Class MainForm
         '
         resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
         Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
+        '
+        'btn_tabelas_ferramentas
+        '
+        resources.ApplyResources(Me.btn_tabelas_ferramentas, "btn_tabelas_ferramentas")
+        Me.btn_tabelas_ferramentas.Name = "btn_tabelas_ferramentas"
+        Me.btn_tabelas_ferramentas.UseVisualStyleBackColor = True
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.Color.LightGray
+        Me.TabPage5.Controls.Add(Me.param_tab_control)
+        resources.ApplyResources(Me.TabPage5, "TabPage5")
+        Me.TabPage5.Name = "TabPage5"
         '
         'TabPage6
         '
@@ -801,6 +696,200 @@ Partial Class MainForm
         'tmr_match3
         '
         '
+        'param_tab_eixos
+        '
+        Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
+        Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
+        Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
+        Me.param_tab_eixos.Controls.Add(Me.param_laser_power)
+        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_laser)
+        Me.param_tab_eixos.Controls.Add(Me.param_lbl_spindle_maxrpm)
+        Me.param_tab_eixos.Controls.Add(Me.param_radbtn_spindle)
+        Me.param_tab_eixos.Controls.Add(Me.param_tabela_eixos)
+        resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
+        Me.param_tab_eixos.Name = "param_tab_eixos"
+        Me.param_tab_eixos.UseVisualStyleBackColor = True
+        '
+        'param_tabela_eixos
+        '
+        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
+        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
+        Me.param_tabela_eixos.Name = "param_tabela_eixos"
+        '
+        'encoder_pulse
+        '
+        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
+        Me.encoder_pulse.Name = "encoder_pulse"
+        '
+        'enc_pitch
+        '
+        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
+        Me.enc_pitch.Name = "enc_pitch"
+        '
+        'lim_sup
+        '
+        resources.ApplyResources(Me.lim_sup, "lim_sup")
+        Me.lim_sup.Name = "lim_sup"
+        '
+        'lim_inf
+        '
+        resources.ApplyResources(Me.lim_inf, "lim_inf")
+        Me.lim_inf.Name = "lim_inf"
+        '
+        'max_rpm
+        '
+        resources.ApplyResources(Me.max_rpm, "max_rpm")
+        Me.max_rpm.Name = "max_rpm"
+        '
+        'passo
+        '
+        resources.ApplyResources(Me.passo, "passo")
+        Me.passo.Name = "passo"
+        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'tipo_eixo
+        '
+        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
+        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
+        Me.tipo_eixo.Name = "tipo_eixo"
+        '
+        'eixo
+        '
+        resources.ApplyResources(Me.eixo, "eixo")
+        Me.eixo.Name = "eixo"
+        '
+        'param_radbtn_spindle
+        '
+        resources.ApplyResources(Me.param_radbtn_spindle, "param_radbtn_spindle")
+        Me.param_radbtn_spindle.Name = "param_radbtn_spindle"
+        Me.param_radbtn_spindle.TabStop = True
+        Me.param_radbtn_spindle.UseVisualStyleBackColor = True
+        '
+        'param_lbl_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_lbl_spindle_maxrpm, "param_lbl_spindle_maxrpm")
+        Me.param_lbl_spindle_maxrpm.Name = "param_lbl_spindle_maxrpm"
+        Me.param_lbl_spindle_maxrpm.UseMnemonic = False
+        '
+        'param_txt_spindle_maxrpm
+        '
+        resources.ApplyResources(Me.param_txt_spindle_maxrpm, "param_txt_spindle_maxrpm")
+        Me.param_txt_spindle_maxrpm.Name = "param_txt_spindle_maxrpm"
+        '
+        'param_radbtn_laser
+        '
+        resources.ApplyResources(Me.param_radbtn_laser, "param_radbtn_laser")
+        Me.param_radbtn_laser.Name = "param_radbtn_laser"
+        Me.param_radbtn_laser.TabStop = True
+        Me.param_radbtn_laser.UseVisualStyleBackColor = True
+        '
+        'param_laser_power
+        '
+        resources.ApplyResources(Me.param_laser_power, "param_laser_power")
+        Me.param_laser_power.Name = "param_laser_power"
+        Me.param_laser_power.UseMnemonic = False
+        '
+        'param_txt_laser_power
+        '
+        resources.ApplyResources(Me.param_txt_laser_power, "param_txt_laser_power")
+        Me.param_txt_laser_power.Name = "param_txt_laser_power"
+        '
+        'param_btn_eixos_guardar
+        '
+        resources.ApplyResources(Me.param_btn_eixos_guardar, "param_btn_eixos_guardar")
+        Me.param_btn_eixos_guardar.Name = "param_btn_eixos_guardar"
+        Me.param_btn_eixos_guardar.UseVisualStyleBackColor = True
+        '
+        'param_tab_geral
+        '
+        Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
+        Me.param_tab_geral.Controls.Add(Me.Label13)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_endereçoIP)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_protocolo)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_baudrate)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_baudrate)
+        Me.param_tab_geral.Controls.Add(Me.param_cb_portcom)
+        Me.param_tab_geral.Controls.Add(Me.param_lbl_portcom)
+        Me.param_tab_geral.Controls.Add(Me.btd_cancelar)
+        Me.param_tab_geral.Controls.Add(Me.btd_guardar)
+        resources.ApplyResources(Me.param_tab_geral, "param_tab_geral")
+        Me.param_tab_geral.Name = "param_tab_geral"
+        Me.param_tab_geral.UseVisualStyleBackColor = True
+        '
+        'btd_guardar
+        '
+        resources.ApplyResources(Me.btd_guardar, "btd_guardar")
+        Me.btd_guardar.Name = "btd_guardar"
+        Me.btd_guardar.UseVisualStyleBackColor = True
+        '
+        'btd_cancelar
+        '
+        resources.ApplyResources(Me.btd_cancelar, "btd_cancelar")
+        Me.btd_cancelar.Name = "btd_cancelar"
+        Me.btd_cancelar.UseVisualStyleBackColor = True
+        '
+        'param_lbl_portcom
+        '
+        resources.ApplyResources(Me.param_lbl_portcom, "param_lbl_portcom")
+        Me.param_lbl_portcom.Name = "param_lbl_portcom"
+        '
+        'param_cb_portcom
+        '
+        Me.param_cb_portcom.FormattingEnabled = True
+        resources.ApplyResources(Me.param_cb_portcom, "param_cb_portcom")
+        Me.param_cb_portcom.Name = "param_cb_portcom"
+        '
+        'param_lbl_baudrate
+        '
+        resources.ApplyResources(Me.param_lbl_baudrate, "param_lbl_baudrate")
+        Me.param_lbl_baudrate.Name = "param_lbl_baudrate"
+        '
+        'param_cb_baudrate
+        '
+        Me.param_cb_baudrate.FormattingEnabled = True
+        Me.param_cb_baudrate.Items.AddRange(New Object() {resources.GetString("param_cb_baudrate.Items"), resources.GetString("param_cb_baudrate.Items1"), resources.GetString("param_cb_baudrate.Items2"), resources.GetString("param_cb_baudrate.Items3"), resources.GetString("param_cb_baudrate.Items4"), resources.GetString("param_cb_baudrate.Items5"), resources.GetString("param_cb_baudrate.Items6")})
+        resources.ApplyResources(Me.param_cb_baudrate, "param_cb_baudrate")
+        Me.param_cb_baudrate.Name = "param_cb_baudrate"
+        '
+        'param_lbl_protocolo
+        '
+        resources.ApplyResources(Me.param_lbl_protocolo, "param_lbl_protocolo")
+        Me.param_lbl_protocolo.Name = "param_lbl_protocolo"
+        '
+        'param_lbl_endereçoIP
+        '
+        resources.ApplyResources(Me.param_lbl_endereçoIP, "param_lbl_endereçoIP")
+        Me.param_lbl_endereçoIP.Name = "param_lbl_endereçoIP"
+        '
+        'param_cb_protocolo
+        '
+        Me.param_cb_protocolo.FormattingEnabled = True
+        Me.param_cb_protocolo.Items.AddRange(New Object() {resources.GetString("param_cb_protocolo.Items"), resources.GetString("param_cb_protocolo.Items1"), resources.GetString("param_cb_protocolo.Items2")})
+        resources.ApplyResources(Me.param_cb_protocolo, "param_cb_protocolo")
+        Me.param_cb_protocolo.Name = "param_cb_protocolo"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'param_txt_end_ip
+        '
+        resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
+        Me.param_txt_end_ip.Name = "param_txt_end_ip"
+        '
+        'param_tab_control
+        '
+        Me.param_tab_control.Controls.Add(Me.param_tab_geral)
+        Me.param_tab_control.Controls.Add(Me.param_tab_eixos)
+        resources.ApplyResources(Me.param_tab_control, "param_tab_control")
+        Me.param_tab_control.Name = "param_tab_control"
+        Me.param_tab_control.SelectedIndex = 0
+        Me.param_tab_control.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
+        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -824,19 +913,23 @@ Partial Class MainForm
         Me.TabPage2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.TabPage5.ResumeLayout(False)
-        Me.param_tab_control.ResumeLayout(False)
-        Me.param_tab_geral.ResumeLayout(False)
-        Me.param_tab_geral.PerformLayout()
-        Me.param_tab_eixos.ResumeLayout(False)
-        Me.param_tab_eixos.PerformLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.param_tab_ferramentas.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage8.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage9.ResumeLayout(False)
         CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.param_tab_eixos.ResumeLayout(False)
+        Me.param_tab_eixos.PerformLayout()
+        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.param_tab_geral.ResumeLayout(False)
+        Me.param_tab_geral.PerformLayout()
+        Me.param_tab_control.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -901,32 +994,48 @@ Partial Class MainForm
     Public WithEvents txt_ManFeedRate As TextBox
     Private WithEvents Label11 As Label
     Private WithEvents trackBar_ManFeedRate As TrackBar
-    Friend WithEvents param_tab_control As TabControl
-    Friend WithEvents param_tab_geral As TabPage
-    Friend WithEvents param_tab_eixos As TabPage
-    Friend WithEvents param_tab_ferramentas As TabPage
-    Friend WithEvents param_cb_baudrate As ComboBox
-    Friend WithEvents param_lbl_baudrate As Label
-    Friend WithEvents param_cb_portcom As ComboBox
-    Friend WithEvents param_lbl_portcom As Label
-    Friend WithEvents btd_cancelar As Button
-    Friend WithEvents btd_guardar As Button
-    Friend WithEvents param_cb_protocolo As ComboBox
-    Friend WithEvents param_lbl_endereçoIP As Label
-    Friend WithEvents param_lbl_protocolo As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents btn_tabelas_referenciais As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewComboBoxColumn1 As DataGridViewComboBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents btn_tabelas_ferramentas As Button
     Friend WithEvents param_dataGrid As DataGridView
-    Friend WithEvents param_btn_Guardar As Button
     Friend WithEvents param_dataGrid_ID As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_nomeFerramentas As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_pocket As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_altura As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_diametro As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_obsercacoes As DataGridViewTextBoxColumn
+    Friend WithEvents param_btn_Guardar As Button
+    Friend WithEvents param_tab_control As TabControl
+    Friend WithEvents param_tab_geral As TabPage
+    Friend WithEvents param_txt_end_ip As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents param_cb_protocolo As ComboBox
+    Friend WithEvents param_lbl_endereçoIP As Label
+    Friend WithEvents param_lbl_protocolo As Label
+    Friend WithEvents param_cb_baudrate As ComboBox
+    Friend WithEvents param_lbl_baudrate As Label
+    Friend WithEvents param_cb_portcom As ComboBox
+    Friend WithEvents param_lbl_portcom As Label
+    Friend WithEvents btd_cancelar As Button
+    Friend WithEvents btd_guardar As Button
+    Friend WithEvents param_tab_eixos As TabPage
+    Friend WithEvents param_btn_eixos_guardar As Button
     Friend WithEvents param_txt_laser_power As TextBox
+    Friend WithEvents param_txt_spindle_maxrpm As TextBox
     Friend WithEvents param_laser_power As Label
     Friend WithEvents param_radbtn_laser As RadioButton
-    Friend WithEvents param_txt_spindle_maxrpm As TextBox
     Friend WithEvents param_lbl_spindle_maxrpm As Label
     Friend WithEvents param_radbtn_spindle As RadioButton
     Friend WithEvents param_tabela_eixos As DataGridView
@@ -938,7 +1047,4 @@ Partial Class MainForm
     Friend WithEvents lim_sup As DataGridViewTextBoxColumn
     Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
     Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
-    Friend WithEvents param_txt_end_ip As TextBox
-    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
-    Friend WithEvents param_btn_eixos_guardar As Button
 End Class

@@ -54,6 +54,29 @@ Public Class MainForm
         myPort = IO.Ports.SerialPort.GetPortNames()
         param_cb_portcom.Items.AddRange(myPort)
 
+        'parametros default
+        'GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
+
+        'GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
+
+        'GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
+        'GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        'GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        'GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
+        'GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(7).FormattedValue))
+
         'ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
         readParamEixos(GlobalVars.param_eixos_path)
@@ -331,7 +354,7 @@ Public Class MainForm
     End Sub
 
 
-    Private Sub param_btn_Guardar_Click(sender As Object, e As EventArgs) Handles param_btn_Guardar.Click
+    Private Sub btn_tabelas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_tabelas_ferramentas.Click
         ' ler tabela de propriedades de ferramentas e colocar num dicionario
 
         ' confirmar os dados numericos
@@ -499,6 +522,5 @@ Public Class MainForm
         ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
-
 
 End Class
