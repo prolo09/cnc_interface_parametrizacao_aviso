@@ -1479,6 +1479,27 @@
   <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="MaskedTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 174</value>
+  </data>
+  <data name="MaskedTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="MaskedTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MaskedTextBox1.Name" xml:space="preserve">
+    <value>MaskedTextBox1</value>
+  </data>
+  <data name="&gt;&gt;MaskedTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MaskedTextBox1.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;MaskedTextBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="TabPage3.ImageKey" xml:space="preserve">
     <value>Programas.png</value>
   </data>
@@ -2756,7 +2777,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        mwAAAk1TRnQBSQFMAgEBCAEAAcABAAHAAQABZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
+        mwAAAk1TRnQBSQFMAgEBCAEAAcgBAAHIAQABZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
         AQECAAGWAwABAQEAARgFAAEgAb8BAv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -3676,6 +3697,54 @@
   <data name="&gt;&gt;param_dataGrid_obsercacoes.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;eixo.Name" xml:space="preserve">
+    <value>eixo</value>
+  </data>
+  <data name="&gt;&gt;eixo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tipo_eixo.Name" xml:space="preserve">
+    <value>tipo_eixo</value>
+  </data>
+  <data name="&gt;&gt;tipo_eixo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passo.Name" xml:space="preserve">
+    <value>passo</value>
+  </data>
+  <data name="&gt;&gt;passo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;max_rpm.Name" xml:space="preserve">
+    <value>max_rpm</value>
+  </data>
+  <data name="&gt;&gt;max_rpm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lim_inf.Name" xml:space="preserve">
+    <value>lim_inf</value>
+  </data>
+  <data name="&gt;&gt;lim_inf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lim_sup.Name" xml:space="preserve">
+    <value>lim_sup</value>
+  </data>
+  <data name="&gt;&gt;lim_sup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;enc_pitch.Name" xml:space="preserve">
+    <value>enc_pitch</value>
+  </data>
+  <data name="&gt;&gt;enc_pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;encoder_pulse.Name" xml:space="preserve">
+    <value>encoder_pulse</value>
+  </data>
+  <data name="&gt;&gt;encoder_pulse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ImageList1.Name" xml:space="preserve">
     <value>ImageList1</value>
   </data>
@@ -3747,54 +3816,6 @@
   </data>
   <data name="&gt;&gt;SerialPort1.Type" xml:space="preserve">
     <value>System.IO.Ports.SerialPort, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;encoder_pulse.Name" xml:space="preserve">
-    <value>encoder_pulse</value>
-  </data>
-  <data name="&gt;&gt;encoder_pulse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;enc_pitch.Name" xml:space="preserve">
-    <value>enc_pitch</value>
-  </data>
-  <data name="&gt;&gt;enc_pitch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lim_sup.Name" xml:space="preserve">
-    <value>lim_sup</value>
-  </data>
-  <data name="&gt;&gt;lim_sup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lim_inf.Name" xml:space="preserve">
-    <value>lim_inf</value>
-  </data>
-  <data name="&gt;&gt;lim_inf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;max_rpm.Name" xml:space="preserve">
-    <value>max_rpm</value>
-  </data>
-  <data name="&gt;&gt;max_rpm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;passo.Name" xml:space="preserve">
-    <value>passo</value>
-  </data>
-  <data name="&gt;&gt;passo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tipo_eixo.Name" xml:space="preserve">
-    <value>tipo_eixo</value>
-  </data>
-  <data name="&gt;&gt;tipo_eixo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eixo.Name" xml:space="preserve">
-    <value>eixo</value>
-  </data>
-  <data name="&gt;&gt;eixo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
