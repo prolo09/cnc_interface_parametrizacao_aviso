@@ -61,8 +61,12 @@ Public Class MainForm
         'GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
         'GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
 
+        'GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
+        'GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
+        'GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
+
         'GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)hjdv,sdhvl
+        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
         'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
         'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
 
@@ -81,6 +85,7 @@ Public Class MainForm
         readParamGerais(GlobalVars.param_gerais_path)
         readParamEixos(GlobalVars.param_eixos_path)
         readParamFerramentas(GlobalVars.param_ferramentas_path)
+        readParamReferenciais(GlobalVars.param_referenciais_path)
 
         '--------------------------------------------------------------------------------
 
@@ -206,6 +211,141 @@ Public Class MainForm
     ' ROTINAS TABELAS
     ' *******************************************
 
+    Private Sub readParamFerramentas(path As String)
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros ferramentas
+        Try
+            json = File.ReadAllText(path)
+            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' display on GUI
+        Dim i As Integer
+        Dim j As Integer = 0
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+            If j = 0 Then
+                i = tab_ferramentas.Rows.Add()
+                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                j = j + 1
+                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            Else
+                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            End If
+
+            If j = tab_ferramentas.Columns.Count Then
+                j = 0
+            End If
+        Next
+
+    End Sub
+
+    Private Sub readParamReferenciais(path As String)
+        Dim json As String
+        Dim jss = New JavaScriptSerializer()
+        'parametros ferramentas
+        Try
+            json = File.ReadAllText(path)
+            GlobalVars.param_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+        Catch ex As System.IO.FileNotFoundException
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex2 As System.ArgumentException
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' display on GUI
+        Dim i As Integer
+        Dim j As Integer = 0
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_referenciais
+            If j = 0 Then
+                i = tab_referenciais.Rows.Add()
+                tab_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                j = j + 1
+                tab_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            Else
+                tab_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                j = j + 1
+            End If
+
+            If j = tab_referenciais.Columns.Count Then
+                j = 0
+            End If
+        Next
+
+    End Sub
+
+    Private Sub btn_tabelas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_tabelas_ferramentas.Click
+        ' ler tabela de propriedades de ferramentas e colocar num dicionario
+
+        ' confirmar os dados numericos
+        For i As Integer = 0 To tab_ferramentas.Rows.Count - 2
+            For j As Integer = 2 To tab_ferramentas.Rows(i).Cells.Count - 2
+                If Not IsNumeric(tab_ferramentas.Rows(i).Cells(j).Value) Then
+                    MessageBox.Show("Valor da coluna """ + tab_ferramentas.Columns(j).Name + """ da ferramenta " + CStr(tab_ferramentas.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+            Next
+
+            If i = 0 Then
+                GlobalVars.param_ferramentas.Clear()
+            End If
+
+            ' atualizar o dicionario
+            Dim idTool As String = tab_ferramentas.Rows(i).Cells(0).FormattedValue
+
+            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(tab_ferramentas.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(tab_ferramentas.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(tab_ferramentas.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(tab_ferramentas.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(tab_ferramentas.Rows(i).Cells(5).FormattedValue))
+        Next
+
+        ' exportar dicionario
+        writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
+
+    End Sub
+
+    Private Sub btn_tabelas_referenciais_Click(sender As Object, e As EventArgs) Handles btn_tabelas_referenciais.Click
+        ' ler tabela de propriedades de ferramentas e colocar num dicionario
+
+        ' confirmar os dados numericos
+        For i As Integer = 0 To tab_referenciais.Rows.Count - 2
+            For j As Integer = 2 To tab_referenciais.Rows(i).Cells.Count - 2
+                If Not IsNumeric(tab_referenciais.Rows(i).Cells(j).Value) Then
+                    MessageBox.Show("Valor da coluna """ + tab_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tab_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+            Next
+
+            If i = 0 Then
+                GlobalVars.param_referenciais.Clear()
+            End If
+
+            ' atualizar o dicionario
+            Dim ref_name As String = tab_referenciais.Rows(i).Cells(0).FormattedValue
+
+            GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
+        Next
+
+        ' exportar dicionario
+        writeDictionary(GlobalVars.param_referenciais, GlobalVars.param_referenciais_path)
+
+    End Sub
 
     ' *******************************************
     ' ROTINAS PARAMETROS
@@ -236,42 +376,7 @@ Public Class MainForm
         End Try
     End Sub
 
-    Private Sub readParamFerramentas(path As String)
-        Dim json As String
-        Dim jss = New JavaScriptSerializer()
-        'parametros ferramentas
-        Try
-            json = File.ReadAllText(path)
-            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
-        Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
 
-        ' display on GUI
-        Dim i As Integer
-        Dim j As Integer = 0
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
-            If j = 0 Then
-                i = param_dataGrid.Rows.Add()
-                param_dataGrid.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
-                j = j + 1
-                param_dataGrid.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
-            Else
-                param_dataGrid.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
-            End If
-
-            If j = param_dataGrid.Columns.Count Then
-                j = 0
-            End If
-        Next
-
-    End Sub
 
     Private Sub readParamEixos(path As String)
         Dim json As String
@@ -327,64 +432,8 @@ Public Class MainForm
             End If
 
         Next
-
-
-
     End Sub
 
-    Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
-        Dim s As String = "{"
-        Dim i As Integer = 1
-        For Each kvp As KeyValuePair(Of String, String) In dictionary
-            s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
-            If i < dictionary.Count Then
-                s = s + ","
-            End If
-            i = i + 1
-
-        Next
-        s = s + vbNewLine + "}"
-
-        ' write dictionary to file
-        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
-        param_txt_tabelaFerramentas.WriteLine(s)
-        param_txt_tabelaFerramentas.Close()
-
-        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
-    End Sub
-
-
-    Private Sub btn_tabelas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_tabelas_ferramentas.Click
-        ' ler tabela de propriedades de ferramentas e colocar num dicionario
-
-        ' confirmar os dados numericos
-        For i As Integer = 0 To param_dataGrid.Rows.Count - 2
-            For j As Integer = 2 To param_dataGrid.Rows(i).Cells.Count - 2
-                If Not IsNumeric(param_dataGrid.Rows(i).Cells(j).Value) Then
-                    MessageBox.Show("Valor da coluna """ + param_dataGrid.Columns(j).Name + """ da ferramenta " + CStr(param_dataGrid.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Return
-                End If
-            Next
-
-            If i = 0 Then
-                GlobalVars.param_ferramentas.Clear()
-            End If
-
-            ' atualizar o dicionario
-            Dim idTool As String = param_dataGrid.Rows(i).Cells(0).FormattedValue
-
-            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
-        Next
-
-        ' exportar dicionario
-        writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
-
-    End Sub
 
     Private Sub btd_guardar_Click(sender As Object, e As EventArgs) Handles btd_guardar.Click
         ' adicionar parametros gerais
@@ -497,7 +546,26 @@ Public Class MainForm
     End Sub
 
     ' *******************************************
+    Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
+        Dim s As String = "{"
+        Dim i As Integer = 1
+        For Each kvp As KeyValuePair(Of String, String) In dictionary
+            s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
+            If i < dictionary.Count Then
+                s = s + ","
+            End If
+            i = i + 1
 
+        Next
+        s = s + vbNewLine + "}"
+
+        ' write dictionary to file
+        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
+        param_txt_tabelaFerramentas.WriteLine(s)
+        param_txt_tabelaFerramentas.Close()
+
+        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
+    End Sub
 
     ' *******************************************
     ' ROTINAS AVISOS
@@ -522,5 +590,6 @@ Public Class MainForm
         ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
+
 
 End Class

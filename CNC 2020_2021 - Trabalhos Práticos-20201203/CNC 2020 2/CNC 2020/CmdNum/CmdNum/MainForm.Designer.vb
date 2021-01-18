@@ -68,21 +68,18 @@ Partial Class MainForm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.btn_tabelas_referenciais = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.tab_referenciais = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewComboBoxColumn1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
-        Me.param_dataGrid = New System.Windows.Forms.DataGridView()
+        Me.tab_ferramentas = New System.Windows.Forms.DataGridView()
         Me.param_dataGrid_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -136,7 +133,6 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -150,9 +146,9 @@ Partial Class MainForm
         Me.TabPage4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage8.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tab_referenciais, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage9.SuspendLayout()
-        CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tab_ferramentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         Me.param_tab_control.SuspendLayout()
         Me.param_tab_geral.SuspendLayout()
@@ -478,6 +474,11 @@ Partial Class MainForm
         resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
         '
+        'MaskedTextBox1
+        '
+        resources.ApplyResources(Me.MaskedTextBox1, "MaskedTextBox1")
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        '
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.LightGray
@@ -497,7 +498,7 @@ Partial Class MainForm
         'TabPage8
         '
         Me.TabPage8.Controls.Add(Me.btn_tabelas_referenciais)
-        Me.TabPage8.Controls.Add(Me.DataGridView1)
+        Me.TabPage8.Controls.Add(Me.tab_referenciais)
         resources.ApplyResources(Me.TabPage8, "TabPage8")
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -508,40 +509,17 @@ Partial Class MainForm
         Me.btn_tabelas_referenciais.Name = "btn_tabelas_referenciais"
         Me.btn_tabelas_referenciais.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'tab_referenciais
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewComboBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
-        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
-        Me.DataGridView1.Name = "DataGridView1"
+        Me.tab_referenciais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tab_referenciais.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
+        resources.ApplyResources(Me.tab_referenciais, "tab_referenciais")
+        Me.tab_referenciais.Name = "tab_referenciais"
         '
         'DataGridViewTextBoxColumn1
         '
         resources.ApplyResources(Me.DataGridViewTextBoxColumn1, "DataGridViewTextBoxColumn1")
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewComboBoxColumn1
-        '
-        resources.ApplyResources(Me.DataGridViewComboBoxColumn1, "DataGridViewComboBoxColumn1")
-        Me.DataGridViewComboBoxColumn1.Items.AddRange(New Object() {"Linear", "Rotativo"})
-        Me.DataGridViewComboBoxColumn1.Name = "DataGridViewComboBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        resources.ApplyResources(Me.DataGridViewTextBoxColumn2, "DataGridViewTextBoxColumn2")
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        resources.ApplyResources(Me.DataGridViewTextBoxColumn3, "DataGridViewTextBoxColumn3")
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        resources.ApplyResources(Me.DataGridViewTextBoxColumn4, "DataGridViewTextBoxColumn4")
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
         'DataGridViewTextBoxColumn5
         '
@@ -560,19 +538,19 @@ Partial Class MainForm
         '
         'TabPage9
         '
-        Me.TabPage9.Controls.Add(Me.param_dataGrid)
+        Me.TabPage9.Controls.Add(Me.tab_ferramentas)
         Me.TabPage9.Controls.Add(Me.btn_tabelas_ferramentas)
         resources.ApplyResources(Me.TabPage9, "TabPage9")
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
         '
-        'param_dataGrid
+        'tab_ferramentas
         '
-        Me.param_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.param_dataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.param_dataGrid_ID, Me.param_dataGrid_nomeFerramentas, Me.param_dataGrid_pocket, Me.param_dataGrid_altura, Me.param_dataGrid_diametro, Me.param_dataGrid_obsercacoes})
-        resources.ApplyResources(Me.param_dataGrid, "param_dataGrid")
-        Me.param_dataGrid.Name = "param_dataGrid"
-        Me.param_dataGrid.RowTemplate.Height = 24
+        Me.tab_ferramentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tab_ferramentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.param_dataGrid_ID, Me.param_dataGrid_nomeFerramentas, Me.param_dataGrid_pocket, Me.param_dataGrid_altura, Me.param_dataGrid_diametro, Me.param_dataGrid_obsercacoes})
+        resources.ApplyResources(Me.tab_ferramentas, "tab_ferramentas")
+        Me.tab_ferramentas.Name = "tab_ferramentas"
+        Me.tab_ferramentas.RowTemplate.Height = 24
         '
         'param_dataGrid_ID
         '
@@ -893,11 +871,6 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'MaskedTextBox1
-        '
-        resources.ApplyResources(Me.MaskedTextBox1, "MaskedTextBox1")
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -926,9 +899,9 @@ Partial Class MainForm
         Me.TabPage4.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tab_referenciais, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
-        CType(Me.param_dataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tab_ferramentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.param_tab_control.ResumeLayout(False)
         Me.param_tab_geral.ResumeLayout(False)
@@ -1008,18 +981,10 @@ Partial Class MainForm
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage8 As TabPage
     Friend WithEvents btn_tabelas_referenciais As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewComboBoxColumn1 As DataGridViewComboBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents tab_referenciais As DataGridView
     Friend WithEvents TabPage9 As TabPage
     Friend WithEvents btn_tabelas_ferramentas As Button
-    Friend WithEvents param_dataGrid As DataGridView
+    Friend WithEvents tab_ferramentas As DataGridView
     Friend WithEvents param_dataGrid_ID As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_nomeFerramentas As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_pocket As DataGridViewTextBoxColumn
@@ -1058,4 +1023,8 @@ Partial Class MainForm
     Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
     Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
 End Class
