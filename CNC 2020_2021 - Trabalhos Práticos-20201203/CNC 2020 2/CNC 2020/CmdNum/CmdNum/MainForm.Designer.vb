@@ -133,6 +133,7 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -685,6 +686,7 @@ Partial Class MainForm
         '
         'param_tab_eixos
         '
+        Me.param_tab_eixos.Controls.Add(Me.Button1)
         Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
@@ -871,6 +873,12 @@ Partial Class MainForm
         'tmr_match3
         '
         '
+        'Button1
+        '
+        resources.ApplyResources(Me.Button1, "Button1")
+        Me.Button1.Name = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -1027,4 +1035,5 @@ Partial Class MainForm
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class

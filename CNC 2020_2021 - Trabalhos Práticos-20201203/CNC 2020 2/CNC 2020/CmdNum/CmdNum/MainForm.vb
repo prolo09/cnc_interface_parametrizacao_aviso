@@ -591,5 +591,10 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
+        scriptObject.SetOEMDRO(308, 22)
+        'modar os valores a enviar '
+
+    End Sub
 End Class
