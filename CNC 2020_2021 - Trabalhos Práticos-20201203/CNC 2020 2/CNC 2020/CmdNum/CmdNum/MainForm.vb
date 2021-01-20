@@ -28,7 +28,7 @@ Public Class MainForm
     ' QUANDO NECESSÁRIO COLOCAR O CÓDIGO NO MAIN FORM NA ZONA INDICADA.
     ' ver comentários no programa;
 
-    ' Private Mach4.IMach4 _Mach = null;
+    'Private Mach4.IMach4 _Mach = null;
     ' Private Mach4.IMyScriptObject Script = null;
 
     Public mach As Mach4.IMach4
@@ -94,8 +94,8 @@ Public Class MainForm
         StatusStripLbl_Modo.Text = "Modo Manual"
 
         ' Abertura das comunicações com o Match3
-        ''mach = GetObject(, "Mach4.Document")
-        ''scriptObject = mach.GetScriptDispatch()
+        mach = GetObject(, "Mach4.Document")
+        scriptObject = mach.GetScriptDispatch()
 
         ' Necessário confirmar se o Match3 está OK
 
@@ -573,7 +573,7 @@ Public Class MainForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_teste.Click
         ' Teste ... Teste ... TESTE
-        mach = GetObject(, "Mach4.Document")
+        mach = GetObject(, "Mach3.Document")
         scriptObject = mach.GetScriptDispatch()
 
         scriptObject.LoadFile("11 CUX56.TXT")
