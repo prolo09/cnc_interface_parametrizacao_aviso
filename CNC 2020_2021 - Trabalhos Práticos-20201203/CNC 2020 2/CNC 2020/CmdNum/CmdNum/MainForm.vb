@@ -70,16 +70,71 @@ Public Class MainForm
         'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
         'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
 
-        'GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
-        'GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        'GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        'GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
-        'GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(7).FormattedValue))
+        Dim maxrpm As Integer = 1000
+        Dim passo As Integer = 1
+
+        GlobalVars.param_eixos.Add("SPINDLE_RPM_MAX", "2000")
+        GlobalVars.param_eixos.Add("N_EIXOS", "3 (X,Y,Z)")
+
+        GlobalVars.param_eixos.Add("X" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("X" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("X" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("X" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("X" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("X" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("X" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("X" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("X" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("Y" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("Y" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("Y" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("Y" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Y" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Y" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("Y" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("Y" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Y" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("Z" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("Z" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("Z" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("Z" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Z" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Z" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("Z" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("Z" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Z" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("A" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("A" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("A" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("A" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("A" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("A" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("A" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("A" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("A" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("B" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("B" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("B" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("B" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("B" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("B" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("B" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("B" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("B" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("C" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("C" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("C" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("C" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("C" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("C" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("C" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("C" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("C" + "_ENC_N_PULSE", "200")
 
         'ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
@@ -314,7 +369,7 @@ Public Class MainForm
 
         ' exportar dicionario
         writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
-
+        btn_enviar_talebas_ferramentas.Enabled = True
     End Sub
 
     Private Sub btn_tabelas_referenciais_Click(sender As Object, e As EventArgs) Handles btn_tabelas_referenciais.Click
@@ -344,7 +399,7 @@ Public Class MainForm
 
         ' exportar dicionario
         writeDictionary(GlobalVars.param_referenciais, GlobalVars.param_referenciais_path)
-
+        btn_envio_tabela_referenciais.Enabled = True
     End Sub
 
     ' *******************************************
@@ -400,7 +455,7 @@ Public Class MainForm
         Dim i As Integer
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_eixos
-            If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Or kvp.Key.Split("_")(1) = "G00" Or kvp.Key.Split("_")(1) = "G01" Or kvp.Key.Split("_")(1) = "JOG" Then
+            If kvp.Key = "SPINDLE_RPM_MAX" Or kvp.Key = "LASER_POTENCIA" Or kvp.Key = "N_EIXOS" Or kvp.Key.Split("_")(1) = "G00" Or kvp.Key.Split("_")(1) = "G01" Or kvp.Key.Split("_")(1) = "JOG" Then
                 If kvp.Key = "SPINDLE_RPM_MAX" Then
                     param_radbtn_spindle.Checked = True
                     param_txt_spindle_maxrpm.Enabled = True
@@ -413,6 +468,8 @@ Public Class MainForm
                     param_radbtn_spindle.Checked = False
                     param_radbtn_laser.Checked = True
                     param_txt_laser_power.Text = kvp.Value
+                ElseIf kvp.Key = "N_EIXOS" Then
+                    param_cbox_n_eixos.Text = kvp.Value
                 End If
             Else
                 If j = 0 Then
@@ -473,22 +530,22 @@ Public Class MainForm
 
             Dim axis_name As String = param_tabela_eixos.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_eixos.Add(axis_name + "_TIPO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
             GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(7).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
 
         Next
 
         ' propriedades do spindle / laser
-        Dim info_laser_spindle As String
-        Dim laser_ou_spindle As String
+        Dim info_laser_spindle As String = "200"
+        Dim laser_ou_spindle As String = "SPINDLE_RPM_MAX"
+        Dim n_eixos As String = 3
 
         If Me.param_radbtn_spindle.Checked = True Then
             If Not IsNumeric(param_txt_spindle_maxrpm.Text) Then
@@ -501,6 +558,7 @@ Public Class MainForm
             Me.param_radbtn_laser.Checked = False
             info_laser_spindle = Me.param_txt_spindle_maxrpm.Text
             laser_ou_spindle = "SPINDLE_RPM_MAX"
+            n_eixos = param_cbox_n_eixos.Text
         ElseIf Me.param_radbtn_laser.Checked = True Then
             If Not IsNumeric(param_txt_laser_power.Text) Then
                 MessageBox.Show("Valor de Potência deve ser um número.", "Parametros não guardados",
@@ -512,12 +570,15 @@ Public Class MainForm
             Me.param_radbtn_spindle.Checked = False
             info_laser_spindle = Me.param_txt_laser_power.Text
             laser_ou_spindle = "LASER_POTENCIA"
+            n_eixos = "2 (X,V)"
         End If
 
         GlobalVars.param_eixos.Add(laser_ou_spindle, info_laser_spindle)
+        GlobalVars.param_eixos.Add("N_EIXOS", n_eixos)
 
         ' export dictionary to file
         writeDictionary(GlobalVars.param_eixos, GlobalVars.param_eixos_path)
+        btn_enviar_parametros_Eixos.Enabled = True
 
     End Sub
 
@@ -533,6 +594,7 @@ Public Class MainForm
             Me.param_cbox_n_eixos.Enabled = False
             'Me.param_radbtn_spindle.Checked = False
         End If
+        btn_enviar_parametros_Eixos.Enabled = False
     End Sub
 
     Private Sub param_radbtn_laser_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_laser.CheckedChanged
@@ -547,6 +609,7 @@ Public Class MainForm
             Me.param_cbox_n_eixos.Enabled = False
             'Me.param_radbtn_spindle.Checked = False
         End If
+        btn_enviar_parametros_Eixos.Enabled = False
     End Sub
 
     ' *******************************************
@@ -623,4 +686,27 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub param_tabela_eixos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles param_tabela_eixos.CellContentClick
+        btn_enviar_parametros_Eixos.Enabled = False
+    End Sub
+
+    Private Sub param_txt_spindle_maxrpm_TextChanged(sender As Object, e As EventArgs) Handles param_txt_spindle_maxrpm.TextChanged
+        btn_enviar_parametros_Eixos.Enabled = False
+    End Sub
+
+    Private Sub param_cbox_n_eixos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles param_cbox_n_eixos.SelectedIndexChanged
+        btn_enviar_parametros_Eixos.Enabled = False
+    End Sub
+
+    Private Sub param_txt_laser_power_TextChanged(sender As Object, e As EventArgs) Handles param_txt_laser_power.TextChanged
+        btn_enviar_parametros_Eixos.Enabled = False
+    End Sub
+
+    Private Sub tab_referenciais_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_referenciais.CellContentClick
+        btn_envio_tabela_referenciais.Enabled = False
+    End Sub
+
+    Private Sub tab_ferramentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_ferramentas.CellContentClick
+        btn_enviar_talebas_ferramentas.Enabled = False
+    End Sub
 End Class

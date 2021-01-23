@@ -113,14 +113,6 @@ Partial Class MainForm
         Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
         Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
         Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
-        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo_eixo = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -137,6 +129,13 @@ Partial Class MainForm
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.param_cbox_n_eixos = New System.Windows.Forms.ComboBox()
+        Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_inf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lim_sup = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enc_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.encoder_pulse = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -650,6 +649,7 @@ Partial Class MainForm
         '
         'param_cb_protocolo
         '
+        Me.param_cb_protocolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.param_cb_protocolo.FormattingEnabled = True
         Me.param_cb_protocolo.Items.AddRange(New Object() {resources.GetString("param_cb_protocolo.Items"), resources.GetString("param_cb_protocolo.Items1"), resources.GetString("param_cb_protocolo.Items2")})
         resources.ApplyResources(Me.param_cb_protocolo, "param_cb_protocolo")
@@ -768,52 +768,9 @@ Partial Class MainForm
         'param_tabela_eixos
         '
         Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.tipo_eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
+        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.passo, Me.max_rpm, Me.lim_inf, Me.lim_sup, Me.enc_pitch, Me.encoder_pulse})
         resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
         Me.param_tabela_eixos.Name = "param_tabela_eixos"
-        '
-        'eixo
-        '
-        resources.ApplyResources(Me.eixo, "eixo")
-        Me.eixo.Name = "eixo"
-        '
-        'tipo_eixo
-        '
-        resources.ApplyResources(Me.tipo_eixo, "tipo_eixo")
-        Me.tipo_eixo.Items.AddRange(New Object() {"Linear", "Rotativo"})
-        Me.tipo_eixo.Name = "tipo_eixo"
-        '
-        'passo
-        '
-        resources.ApplyResources(Me.passo, "passo")
-        Me.passo.Name = "passo"
-        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'max_rpm
-        '
-        resources.ApplyResources(Me.max_rpm, "max_rpm")
-        Me.max_rpm.Name = "max_rpm"
-        '
-        'lim_inf
-        '
-        resources.ApplyResources(Me.lim_inf, "lim_inf")
-        Me.lim_inf.Name = "lim_inf"
-        '
-        'lim_sup
-        '
-        resources.ApplyResources(Me.lim_sup, "lim_sup")
-        Me.lim_sup.Name = "lim_sup"
-        '
-        'enc_pitch
-        '
-        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
-        Me.enc_pitch.Name = "enc_pitch"
-        '
-        'encoder_pulse
-        '
-        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
-        Me.encoder_pulse.Name = "encoder_pulse"
         '
         'TabPage6
         '
@@ -899,10 +856,49 @@ Partial Class MainForm
         '
         'param_cbox_n_eixos
         '
+        Me.param_cbox_n_eixos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.param_cbox_n_eixos.FormattingEnabled = True
         Me.param_cbox_n_eixos.Items.AddRange(New Object() {resources.GetString("param_cbox_n_eixos.Items"), resources.GetString("param_cbox_n_eixos.Items1"), resources.GetString("param_cbox_n_eixos.Items2"), resources.GetString("param_cbox_n_eixos.Items3"), resources.GetString("param_cbox_n_eixos.Items4")})
         resources.ApplyResources(Me.param_cbox_n_eixos, "param_cbox_n_eixos")
         Me.param_cbox_n_eixos.Name = "param_cbox_n_eixos"
+        '
+        'eixo
+        '
+        resources.ApplyResources(Me.eixo, "eixo")
+        Me.eixo.Name = "eixo"
+        Me.eixo.ReadOnly = True
+        '
+        'passo
+        '
+        resources.ApplyResources(Me.passo, "passo")
+        Me.passo.Name = "passo"
+        Me.passo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.passo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'max_rpm
+        '
+        resources.ApplyResources(Me.max_rpm, "max_rpm")
+        Me.max_rpm.Name = "max_rpm"
+        '
+        'lim_inf
+        '
+        resources.ApplyResources(Me.lim_inf, "lim_inf")
+        Me.lim_inf.Name = "lim_inf"
+        '
+        'lim_sup
+        '
+        resources.ApplyResources(Me.lim_sup, "lim_sup")
+        Me.lim_sup.Name = "lim_sup"
+        '
+        'enc_pitch
+        '
+        resources.ApplyResources(Me.enc_pitch, "enc_pitch")
+        Me.enc_pitch.Name = "enc_pitch"
+        '
+        'encoder_pulse
+        '
+        resources.ApplyResources(Me.encoder_pulse, "encoder_pulse")
+        Me.encoder_pulse.Name = "encoder_pulse"
         '
         'MainForm
         '
@@ -1046,14 +1042,6 @@ Partial Class MainForm
     Friend WithEvents param_lbl_spindle_maxrpm As Label
     Friend WithEvents param_radbtn_spindle As RadioButton
     Friend WithEvents param_tabela_eixos As DataGridView
-    Friend WithEvents eixo As DataGridViewTextBoxColumn
-    Friend WithEvents tipo_eixo As DataGridViewComboBoxColumn
-    Friend WithEvents passo As DataGridViewTextBoxColumn
-    Friend WithEvents max_rpm As DataGridViewTextBoxColumn
-    Friend WithEvents lim_inf As DataGridViewTextBoxColumn
-    Friend WithEvents lim_sup As DataGridViewTextBoxColumn
-    Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
-    Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
@@ -1064,4 +1052,11 @@ Partial Class MainForm
     Friend WithEvents btn_enviar_talebas_ferramentas As Button
     Friend WithEvents param_lbl_n_eixos As Label
     Friend WithEvents param_cbox_n_eixos As ComboBox
+    Friend WithEvents eixo As DataGridViewTextBoxColumn
+    Friend WithEvents passo As DataGridViewTextBoxColumn
+    Friend WithEvents max_rpm As DataGridViewTextBoxColumn
+    Friend WithEvents lim_inf As DataGridViewTextBoxColumn
+    Friend WithEvents lim_sup As DataGridViewTextBoxColumn
+    Friend WithEvents enc_pitch As DataGridViewTextBoxColumn
+    Friend WithEvents encoder_pulse As DataGridViewTextBoxColumn
 End Class
