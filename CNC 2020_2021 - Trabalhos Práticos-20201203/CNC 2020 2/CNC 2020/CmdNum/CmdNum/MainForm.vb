@@ -284,8 +284,8 @@ Public Class MainForm
 
         ' confirmar os dados numericos
         For i As Integer = 0 To tab_ferramentas.Rows.Count - 2
-            For j As Integer = 2 To tab_ferramentas.Rows(i).Cells.Count - 2
-                If Not IsNumeric(tab_ferramentas.Rows(i).Cells(j).Value) Then
+            For j As Integer = 0 To tab_ferramentas.Rows(i).Cells.Count - 2
+                If Not IsNumeric(tab_ferramentas.Rows(i).Cells(j).Value) And Not j = 1 Then
                     MessageBox.Show("Valor da coluna """ + tab_ferramentas.Columns(j).Name + """ da ferramenta " + CStr(tab_ferramentas.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
@@ -316,7 +316,7 @@ Public Class MainForm
 
         ' confirmar os dados numericos
         For i As Integer = 0 To tab_referenciais.Rows.Count - 2
-            For j As Integer = 2 To tab_referenciais.Rows(i).Cells.Count - 2
+            For j As Integer = 1 To tab_referenciais.Rows(i).Cells.Count - 2
                 If Not IsNumeric(tab_referenciais.Rows(i).Cells(j).Value) Then
                     MessageBox.Show("Valor da coluna """ + tab_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tab_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -525,7 +525,7 @@ Public Class MainForm
 
         ' confirmar os dados numericos
         For i As Integer = 0 To param_tabela_eixos.Rows.Count - 2
-            For j As Integer = 2 To param_tabela_eixos.Rows(i).Cells.Count - 1
+            For j As Integer = 1 To param_tabela_eixos.Rows(i).Cells.Count - 1
                 If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) Then
                     MessageBox.Show("Valor da coluna """ + param_tabela_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_tabela_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
