@@ -192,17 +192,31 @@ Public Class MainForm
 
 
     Private Sub inicializarParamFerramentas()
-        'GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
+
+        GlobalVars.param_ferramentas.Add("1" + "_NOME", "Fresa")
+        GlobalVars.param_ferramentas.Add("1" + "_POCKET", "1")
+        GlobalVars.param_ferramentas.Add("1" + "_ALTURA", "15")
+        GlobalVars.param_ferramentas.Add("1" + "_DIAMETRO", "15")
+        GlobalVars.param_ferramentas.Add("1" + "_OBSERCACOES", "Fresa predefinida")
     End Sub
 
     Private Sub inicializarParamReferenciais()
-        'GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
-        'GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
-        'GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
+        GlobalVars.param_referenciais.Add("G28" + "_X", "0")
+        GlobalVars.param_referenciais.Add("G28" + "_Y", "0")
+        GlobalVars.param_referenciais.Add("G28" + "_Z", "0")
+        GlobalVars.param_referenciais.Add("G28" + "_A", "0")
+        GlobalVars.param_referenciais.Add("G28" + "_B", "0")
+        GlobalVars.param_referenciais.Add("G28" + "_C", "0")
+
+        For i As Integer = 54 To 59
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_X", "")
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_Y", "")
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_Z", "")
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_A", "")
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_B", "")
+            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_C", "")
+        Next
+
     End Sub
 
     Private Sub readParamFerramentas(path As String)
@@ -317,7 +331,7 @@ Public Class MainForm
         ' confirmar os dados numericos
         For i As Integer = 0 To tab_referenciais.Rows.Count - 2
             For j As Integer = 1 To tab_referenciais.Rows(i).Cells.Count - 2
-                If Not IsNumeric(tab_referenciais.Rows(i).Cells(j).Value) Then
+                If Not IsNumeric(tab_referenciais.Rows(i).Cells(j).Value) And Not tab_referenciais.Rows(i).Cells(j).Value = "" Then
                     MessageBox.Show("Valor da coluna """ + tab_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tab_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
@@ -349,10 +363,10 @@ Public Class MainForm
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
     'End Sub
     Private Sub inicializarParamGerais()
-        'GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
+        GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", "RS232")
+        GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", "19200")
+        GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", "COM3")
+        GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", "192.168.1.1")
     End Sub
     Private Sub inicializarParamEixos()
         Dim maxrpm As Integer = 1000
@@ -368,7 +382,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("X" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("X" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("X" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("X" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("X" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("X" + "_ENC_N_PULSE", "200")
 
         GlobalVars.param_eixos.Add("Y" + "_PASSO", CStr(passo))
@@ -378,7 +392,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("Y" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("Y" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("Y" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("Y" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Y" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("Y" + "_ENC_N_PULSE", "200")
 
         GlobalVars.param_eixos.Add("Z" + "_PASSO", CStr(passo))
@@ -388,7 +402,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("Z" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("Z" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("Z" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("Z" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Z" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("Z" + "_ENC_N_PULSE", "200")
 
         GlobalVars.param_eixos.Add("A" + "_PASSO", CStr(passo))
@@ -398,7 +412,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("A" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("A" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("A" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("A" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("A" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("A" + "_ENC_N_PULSE", "200")
 
         GlobalVars.param_eixos.Add("B" + "_PASSO", CStr(passo))
@@ -408,7 +422,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("B" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("B" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("B" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("B" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("B" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("B" + "_ENC_N_PULSE", "200")
 
         GlobalVars.param_eixos.Add("C" + "_PASSO", CStr(passo))
@@ -418,7 +432,7 @@ Public Class MainForm
         GlobalVars.param_eixos.Add("C" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
         GlobalVars.param_eixos.Add("C" + "_LIM_INF", "0")
         GlobalVars.param_eixos.Add("C" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("C" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("C" + "_ENC_PITCH", "0,1")
         GlobalVars.param_eixos.Add("C" + "_ENC_N_PULSE", "200")
     End Sub
 
@@ -526,7 +540,7 @@ Public Class MainForm
         ' confirmar os dados numericos
         For i As Integer = 0 To param_tabela_eixos.Rows.Count - 2
             For j As Integer = 1 To param_tabela_eixos.Rows(i).Cells.Count - 1
-                If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) Then
+                If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) And Not param_tabela_eixos.Rows(i).Cells(j).Value = "" Then
                     MessageBox.Show("Valor da coluna """ + param_tabela_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_tabela_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return

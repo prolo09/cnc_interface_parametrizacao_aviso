@@ -83,7 +83,6 @@ Partial Class MainForm
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
         Me.param_txt_end_ip = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.param_cb_protocolo = New System.Windows.Forms.ComboBox()
         Me.param_lbl_endereçoIP = New System.Windows.Forms.Label()
         Me.param_lbl_protocolo = New System.Windows.Forms.Label()
@@ -119,16 +118,6 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Referencial = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Y = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Z = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -136,6 +125,19 @@ Partial Class MainForm
         Me.limite_superior = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.encoder_pitch = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.encoder_n_pulsos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Referencial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Y = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Z = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.B = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -522,7 +524,7 @@ Partial Class MainForm
         'tab_referenciais
         '
         Me.tab_referenciais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tab_referenciais.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Referencial, Me.X, Me.Y, Me.Z})
+        Me.tab_referenciais.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Referencial, Me.X, Me.Y, Me.Z, Me.A, Me.B, Me.C})
         resources.ApplyResources(Me.tab_referenciais, "tab_referenciais")
         Me.tab_referenciais.Name = "tab_referenciais"
         '
@@ -574,7 +576,6 @@ Partial Class MainForm
         'param_tab_geral
         '
         Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
-        Me.param_tab_geral.Controls.Add(Me.Label13)
         Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
         Me.param_tab_geral.Controls.Add(Me.param_lbl_endereçoIP)
         Me.param_tab_geral.Controls.Add(Me.param_lbl_protocolo)
@@ -591,11 +592,6 @@ Partial Class MainForm
         '
         resources.ApplyResources(Me.param_txt_end_ip, "param_txt_end_ip")
         Me.param_txt_end_ip.Name = "param_txt_end_ip"
-        '
-        'Label13
-        '
-        resources.ApplyResources(Me.Label13, "Label13")
-        Me.Label13.Name = "Label13"
         '
         'param_cb_protocolo
         '
@@ -812,56 +808,6 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'Referencial
-        '
-        resources.ApplyResources(Me.Referencial, "Referencial")
-        Me.Referencial.Name = "Referencial"
-        '
-        'X
-        '
-        resources.ApplyResources(Me.X, "X")
-        Me.X.Name = "X"
-        '
-        'Y
-        '
-        resources.ApplyResources(Me.Y, "Y")
-        Me.Y.Name = "Y"
-        '
-        'Z
-        '
-        resources.ApplyResources(Me.Z, "Z")
-        Me.Z.Name = "Z"
-        '
-        'ID
-        '
-        resources.ApplyResources(Me.ID, "ID")
-        Me.ID.Name = "ID"
-        '
-        'param_dataGrid_nomeFerramentas
-        '
-        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
-        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
-        '
-        'Pocket
-        '
-        resources.ApplyResources(Me.Pocket, "Pocket")
-        Me.Pocket.Name = "Pocket"
-        '
-        'Altura
-        '
-        resources.ApplyResources(Me.Altura, "Altura")
-        Me.Altura.Name = "Altura"
-        '
-        'Diametro
-        '
-        resources.ApplyResources(Me.Diametro, "Diametro")
-        Me.Diametro.Name = "Diametro"
-        '
-        'param_dataGrid_obsercacoes
-        '
-        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
-        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
-        '
         'eixo
         '
         resources.ApplyResources(Me.eixo, "eixo")
@@ -899,6 +845,79 @@ Partial Class MainForm
         '
         resources.ApplyResources(Me.encoder_n_pulsos, "encoder_n_pulsos")
         Me.encoder_n_pulsos.Name = "encoder_n_pulsos"
+        '
+        'Referencial
+        '
+        resources.ApplyResources(Me.Referencial, "Referencial")
+        Me.Referencial.Name = "Referencial"
+        Me.Referencial.ReadOnly = True
+        Me.Referencial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'X
+        '
+        resources.ApplyResources(Me.X, "X")
+        Me.X.Name = "X"
+        Me.X.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Y
+        '
+        resources.ApplyResources(Me.Y, "Y")
+        Me.Y.Name = "Y"
+        Me.Y.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Z
+        '
+        resources.ApplyResources(Me.Z, "Z")
+        Me.Z.Name = "Z"
+        Me.Z.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'A
+        '
+        resources.ApplyResources(Me.A, "A")
+        Me.A.Name = "A"
+        Me.A.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'B
+        '
+        resources.ApplyResources(Me.B, "B")
+        Me.B.Name = "B"
+        Me.B.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'C
+        '
+        resources.ApplyResources(Me.C, "C")
+        Me.C.Name = "C"
+        Me.C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'ID
+        '
+        resources.ApplyResources(Me.ID, "ID")
+        Me.ID.Name = "ID"
+        '
+        'param_dataGrid_nomeFerramentas
+        '
+        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
+        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
+        '
+        'Pocket
+        '
+        resources.ApplyResources(Me.Pocket, "Pocket")
+        Me.Pocket.Name = "Pocket"
+        '
+        'Altura
+        '
+        resources.ApplyResources(Me.Altura, "Altura")
+        Me.Altura.Name = "Altura"
+        '
+        'Diametro
+        '
+        resources.ApplyResources(Me.Diametro, "Diametro")
+        Me.Diametro.Name = "Diametro"
+        '
+        'param_dataGrid_obsercacoes
+        '
+        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
+        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
         '
         'MainForm
         '
@@ -1018,7 +1037,6 @@ Partial Class MainForm
     Friend WithEvents param_tab_control As TabControl
     Friend WithEvents param_tab_geral As TabPage
     Friend WithEvents param_txt_end_ip As TextBox
-    Friend WithEvents Label13 As Label
     Friend WithEvents param_cb_protocolo As ComboBox
     Friend WithEvents param_lbl_endereçoIP As Label
     Friend WithEvents param_lbl_protocolo As Label
@@ -1042,16 +1060,6 @@ Partial Class MainForm
     Friend WithEvents btn_enviar_talebas_ferramentas As Button
     Friend WithEvents param_lbl_n_eixos As Label
     Friend WithEvents param_cbox_n_eixos As ComboBox
-    Friend WithEvents Referencial As DataGridViewTextBoxColumn
-    Friend WithEvents X As DataGridViewTextBoxColumn
-    Friend WithEvents Y As DataGridViewTextBoxColumn
-    Friend WithEvents Z As DataGridViewTextBoxColumn
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents param_dataGrid_nomeFerramentas As DataGridViewTextBoxColumn
-    Friend WithEvents Pocket As DataGridViewTextBoxColumn
-    Friend WithEvents Altura As DataGridViewTextBoxColumn
-    Friend WithEvents Diametro As DataGridViewTextBoxColumn
-    Friend WithEvents param_dataGrid_obsercacoes As DataGridViewTextBoxColumn
     Friend WithEvents eixo As DataGridViewTextBoxColumn
     Friend WithEvents passo As DataGridViewTextBoxColumn
     Friend WithEvents max_rpm As DataGridViewTextBoxColumn
@@ -1059,4 +1067,17 @@ Partial Class MainForm
     Friend WithEvents limite_superior As DataGridViewTextBoxColumn
     Friend WithEvents encoder_pitch As DataGridViewTextBoxColumn
     Friend WithEvents encoder_n_pulsos As DataGridViewTextBoxColumn
+    Friend WithEvents Referencial As DataGridViewTextBoxColumn
+    Friend WithEvents X As DataGridViewTextBoxColumn
+    Friend WithEvents Y As DataGridViewTextBoxColumn
+    Friend WithEvents Z As DataGridViewTextBoxColumn
+    Friend WithEvents A As DataGridViewTextBoxColumn
+    Friend WithEvents B As DataGridViewTextBoxColumn
+    Friend WithEvents C As DataGridViewTextBoxColumn
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents param_dataGrid_nomeFerramentas As DataGridViewTextBoxColumn
+    Friend WithEvents Pocket As DataGridViewTextBoxColumn
+    Friend WithEvents Altura As DataGridViewTextBoxColumn
+    Friend WithEvents Diametro As DataGridViewTextBoxColumn
+    Friend WithEvents param_dataGrid_obsercacoes As DataGridViewTextBoxColumn
 End Class
