@@ -674,15 +674,34 @@ Public Class MainForm
 
         MsgBox(qual_eixo)
 
+        'define as unidades em mm '
+        scriptObject.SetParam("Units", 0)
+
+
         'envia valores relativos a Eixos X'
-
         scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("x_PASSO")))
+        'scriptObject.SetParam("FeedRate", GlobalVars.param_eixos("x_G01_FEED_MAX"))
+        scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("x_G01_FEED_MAX")))
+
+        'envia valores relativos a Eixos Y'
         scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("y_PASSO")))
+        scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("y_G01_FEED_MAX")))
 
+        'envia valores relativos a Eixos Z'
+        scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("z_PASSO")))
+        scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("z_G01_FEED_MAX")))
 
+        'envia valores relativos a Eixos A'
+        scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("a_PASSO")))
+        scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("a_G01_FEED_MAX")))
 
+        'envia valores relativos a Eixos B'
+        scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("b_PASSO")))
+        scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("b_G01_FEED_MAX")))
 
-
+        'envia valores relativos a Eixos C'
+        scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("c_PASSO")))
+        scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("c_G01_FEED_MAX")))
 
     End Sub
 
