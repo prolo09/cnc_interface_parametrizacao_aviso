@@ -102,6 +102,7 @@ Partial Class MainForm
         Me.btd_cancelar = New System.Windows.Forms.Button()
         Me.btd_guardar = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
+        Me.btn_enviar_parametros_Eixos = New System.Windows.Forms.Button()
         Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
         Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
@@ -133,7 +134,7 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_envio_parametros_geral = New System.Windows.Forms.Button()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -607,6 +608,7 @@ Partial Class MainForm
         '
         'param_tab_geral
         '
+        Me.param_tab_geral.Controls.Add(Me.btn_envio_parametros_geral)
         Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
         Me.param_tab_geral.Controls.Add(Me.Label13)
         Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
@@ -686,7 +688,7 @@ Partial Class MainForm
         '
         'param_tab_eixos
         '
-        Me.param_tab_eixos.Controls.Add(Me.Button1)
+        Me.param_tab_eixos.Controls.Add(Me.btn_enviar_parametros_Eixos)
         Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
@@ -698,6 +700,12 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
+        '
+        'btn_enviar_parametros_Eixos
+        '
+        resources.ApplyResources(Me.btn_enviar_parametros_Eixos, "btn_enviar_parametros_Eixos")
+        Me.btn_enviar_parametros_Eixos.Name = "btn_enviar_parametros_Eixos"
+        Me.btn_enviar_parametros_Eixos.UseVisualStyleBackColor = True
         '
         'param_btn_eixos_guardar
         '
@@ -873,11 +881,11 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'Button1
+        'btn_envio_parametros_geral
         '
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.btn_envio_parametros_geral, "btn_envio_parametros_geral")
+        Me.btn_envio_parametros_geral.Name = "btn_envio_parametros_geral"
+        Me.btn_envio_parametros_geral.UseVisualStyleBackColor = True
         '
         'MainForm
         '
@@ -1035,5 +1043,6 @@ Partial Class MainForm
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_enviar_parametros_Eixos As Button
+    Friend WithEvents btn_envio_parametros_geral As Button
 End Class

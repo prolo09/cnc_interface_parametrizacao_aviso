@@ -591,10 +591,33 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs) Handles btn_envio_parametros_geral.Click
+        'enviar os valores dos parametros gerais para o mach 3'
 
-        scriptObject.SetOEMDRO(308, 22)
-        'modar os valores a enviar '
+
 
     End Sub
+
+    Private Sub btn_enviar_parametros_Eixos_Click(sender As Object, e As EventArgs) Handles btn_enviar_parametros_Eixos.Click
+        'enviar os valores dos parametros Eixos para o mach 3'
+
+        Dim qual_eixo As String
+        Dim stepX As Double
+        qual_eixo = (GlobalVars.param_eixos("x_TIPO")).Substring(0, 1)
+
+        MsgBox(qual_eixo)
+
+        'envia valores relativos a Eixos X'
+
+        scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("x_PASSO")))
+
+
+
+
+
+
+
+    End Sub
+
+
 End Class

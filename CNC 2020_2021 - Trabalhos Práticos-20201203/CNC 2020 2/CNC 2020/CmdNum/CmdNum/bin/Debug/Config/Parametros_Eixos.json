@@ -1,13 +1,13 @@
 {
-"f_TIPO": "Rotativo",
-"f_PASSO": "3",
-"f_RPM_MAX": "3",
-"f_G00_FEED_MAX": "9",
-"f_G01_FEED_MAX": "5.4",
-"f_JOG_FEED_MAX": "1.8",
-"f_LIM_INF": "3",
-"f_LIM_SUP": "3",
-"f_ENC_PITCH": "33",
-"f_ENC_N_PULSE": "33",
+"x_TIPO": "Rotativo",
+"x_PASSO": "3",
+"x_RPM_MAX": "3",
+"x_G00_FEED_MAX": "9",
+"x_G01_FEED_MAX": "5,4",
+"x_JOG_FEED_MAX": "1,8",
+"x_LIM_INF": "3",
+"x_LIM_SUP": "3",
+"x_ENC_PITCH": "33",
+"x_ENC_N_PULSE": "33",
 "SPINDLE_RPM_MAX": "33"
 }
