@@ -670,39 +670,70 @@ Public Class MainForm
 
         Dim qual_eixo As String
         Dim stepX As Double
-        qual_eixo = (GlobalVars.param_eixos("x_TIPO")).Substring(0, 1)
 
         MsgBox(qual_eixo)
 
         'define as unidades em mm '
         scriptObject.SetParam("Units", 0)
 
+        'retira o valor de do nomero de eixos '
+
+        Dim numero_eixos As String
+        numero_eixos = GlobalVars.param_eixos("N_EIXOS").Substring(0, 1)
 
         'envia valores relativos a Eixos X'
-        scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("x_PASSO")))
-        'scriptObject.SetParam("FeedRate", GlobalVars.param_eixos("x_G01_FEED_MAX"))
-        scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("x_G01_FEED_MAX")))
+        scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
+        scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
+        'valores de limite minimo e maximo'
+        scriptObject.SetOEMDRO(4, GlobalVars.param_eixos("X_LIM_INF"))
+        scriptObject.SetOEMDRO(10, GlobalVars.param_eixos("X_LIM_SUP"))
+
+
 
         'envia valores relativos a Eixos Y'
-        scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("y_PASSO")))
-        scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("y_G01_FEED_MAX")))
+        scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
+        scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")))
+        'valores de limite minimo e maximo'
+        scriptObject.SetOEMDRO(5, GlobalVars.param_eixos("Y_LIM_INF"))
+        scriptObject.SetOEMDRO(11, GlobalVars.param_eixos("Y_LIM_SUP"))
 
-        'envia valores relativos a Eixos Z'
-        scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("z_PASSO")))
-        scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("z_G01_FEED_MAX")))
+        If numero_eixos = 3 Or numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
+            'envia valores relativos a Eixos Z'
+            scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("Z_PASSO")))
+            scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")))
+            'valores de limite minimo e maximo'
+            scriptObject.SetOEMDRO(6, GlobalVars.param_eixos("Z_LIM_INF"))
+            scriptObject.SetOEMDRO(12, GlobalVars.param_eixos("Z_LIM_SUP"))
+        End If
 
-        'envia valores relativos a Eixos A'
-        scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("a_PASSO")))
-        scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("a_G01_FEED_MAX")))
+        If numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
+            'envia valores relativos a Eixos A'
+            scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("A_PASSO")))
+            scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")))
+            'valores de limite minimo e maximo'
+            scriptObject.SetOEMDRO(7, GlobalVars.param_eixos("A_LIM_INF"))
+            scriptObject.SetOEMDRO(13, GlobalVars.param_eixos("A_LIM_SUP"))
+        End If
 
-        'envia valores relativos a Eixos B'
-        scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("b_PASSO")))
-        scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("b_G01_FEED_MAX")))
+        If numero_eixos = 5 Or numero_eixos = 6 Then
+            'envia valores relativos a Eixos B'
+            scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("B_PASSO")))
+            scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")))
+            'valores de limite minimo e maximo'
+            scriptObject.SetOEMDRO(8, GlobalVars.param_eixos("B_LIM_INF"))
+            scriptObject.SetOEMDRO(14, GlobalVars.param_eixos("B_LIM_SUP"))
 
-        'envia valores relativos a Eixos C'
-        scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("c_PASSO")))
-        scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("c_G01_FEED_MAX")))
 
+        End If
+
+        If numero_eixos = 6 Then
+            'envia valores relativos a Eixos C'
+            scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("C_PASSO")))
+            scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")))
+            'valores de limite minimo e maximo'
+            scriptObject.SetOEMDRO(9, GlobalVars.param_eixos("C_LIM_INF"))
+            scriptObject.SetOEMDRO(15, GlobalVars.param_eixos("C_LIM_SUP"))
+        End If
     End Sub
 
     Private Sub param_tabela_eixos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles param_tabela_eixos.CellContentClick
@@ -728,4 +759,5 @@ Public Class MainForm
     Private Sub tab_ferramentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_ferramentas.CellContentClick
         btn_enviar_talebas_ferramentas.Enabled = False
     End Sub
+
 End Class
