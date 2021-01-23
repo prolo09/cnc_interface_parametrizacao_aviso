@@ -72,6 +72,7 @@ Partial Class MainForm
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.btn_envio_tabela_referenciais = New System.Windows.Forms.Button()
         Me.btn_tabelas_referenciais = New System.Windows.Forms.Button()
         Me.tab_referenciais = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -79,6 +80,7 @@ Partial Class MainForm
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.btn_enviar_talebas_ferramentas = New System.Windows.Forms.Button()
         Me.tab_ferramentas = New System.Windows.Forms.DataGridView()
         Me.param_dataGrid_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -99,9 +101,9 @@ Partial Class MainForm
         Me.param_lbl_baudrate = New System.Windows.Forms.Label()
         Me.param_cb_portcom = New System.Windows.Forms.ComboBox()
         Me.param_lbl_portcom = New System.Windows.Forms.Label()
-        Me.btd_cancelar = New System.Windows.Forms.Button()
         Me.btd_guardar = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
+        Me.param_lbl_n_eixos = New System.Windows.Forms.Label()
         Me.btn_enviar_parametros_Eixos = New System.Windows.Forms.Button()
         Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
@@ -134,8 +136,7 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.btn_envio_tabela_referenciais = New System.Windows.Forms.Button()
-        Me.btn_enviar_talebas_ferramentas = New System.Windows.Forms.Button()
+        Me.param_cbox_n_eixos = New System.Windows.Forms.ComboBox()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -507,6 +508,12 @@ Partial Class MainForm
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
+        'btn_envio_tabela_referenciais
+        '
+        resources.ApplyResources(Me.btn_envio_tabela_referenciais, "btn_envio_tabela_referenciais")
+        Me.btn_envio_tabela_referenciais.Name = "btn_envio_tabela_referenciais"
+        Me.btn_envio_tabela_referenciais.UseVisualStyleBackColor = True
+        '
         'btn_tabelas_referenciais
         '
         resources.ApplyResources(Me.btn_tabelas_referenciais, "btn_tabelas_referenciais")
@@ -548,6 +555,12 @@ Partial Class MainForm
         resources.ApplyResources(Me.TabPage9, "TabPage9")
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'btn_enviar_talebas_ferramentas
+        '
+        resources.ApplyResources(Me.btn_enviar_talebas_ferramentas, "btn_enviar_talebas_ferramentas")
+        Me.btn_enviar_talebas_ferramentas.Name = "btn_enviar_talebas_ferramentas"
+        Me.btn_enviar_talebas_ferramentas.UseVisualStyleBackColor = True
         '
         'tab_ferramentas
         '
@@ -620,7 +633,6 @@ Partial Class MainForm
         Me.param_tab_geral.Controls.Add(Me.param_lbl_baudrate)
         Me.param_tab_geral.Controls.Add(Me.param_cb_portcom)
         Me.param_tab_geral.Controls.Add(Me.param_lbl_portcom)
-        Me.param_tab_geral.Controls.Add(Me.btd_cancelar)
         Me.param_tab_geral.Controls.Add(Me.btd_guardar)
         resources.ApplyResources(Me.param_tab_geral, "param_tab_geral")
         Me.param_tab_geral.Name = "param_tab_geral"
@@ -676,12 +688,6 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_lbl_portcom, "param_lbl_portcom")
         Me.param_lbl_portcom.Name = "param_lbl_portcom"
         '
-        'btd_cancelar
-        '
-        resources.ApplyResources(Me.btd_cancelar, "btd_cancelar")
-        Me.btd_cancelar.Name = "btd_cancelar"
-        Me.btd_cancelar.UseVisualStyleBackColor = True
-        '
         'btd_guardar
         '
         resources.ApplyResources(Me.btd_guardar, "btd_guardar")
@@ -690,6 +696,8 @@ Partial Class MainForm
         '
         'param_tab_eixos
         '
+        Me.param_tab_eixos.Controls.Add(Me.param_cbox_n_eixos)
+        Me.param_tab_eixos.Controls.Add(Me.param_lbl_n_eixos)
         Me.param_tab_eixos.Controls.Add(Me.btn_enviar_parametros_Eixos)
         Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
@@ -702,6 +710,12 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
+        '
+        'param_lbl_n_eixos
+        '
+        resources.ApplyResources(Me.param_lbl_n_eixos, "param_lbl_n_eixos")
+        Me.param_lbl_n_eixos.Name = "param_lbl_n_eixos"
+        Me.param_lbl_n_eixos.UseMnemonic = False
         '
         'btn_enviar_parametros_Eixos
         '
@@ -883,17 +897,12 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'btn_envio_tabela_referenciais
+        'param_cbox_n_eixos
         '
-        resources.ApplyResources(Me.btn_envio_tabela_referenciais, "btn_envio_tabela_referenciais")
-        Me.btn_envio_tabela_referenciais.Name = "btn_envio_tabela_referenciais"
-        Me.btn_envio_tabela_referenciais.UseVisualStyleBackColor = True
-        '
-        'btn_enviar_talebas_ferramentas
-        '
-        resources.ApplyResources(Me.btn_enviar_talebas_ferramentas, "btn_enviar_talebas_ferramentas")
-        Me.btn_enviar_talebas_ferramentas.Name = "btn_enviar_talebas_ferramentas"
-        Me.btn_enviar_talebas_ferramentas.UseVisualStyleBackColor = True
+        Me.param_cbox_n_eixos.FormattingEnabled = True
+        Me.param_cbox_n_eixos.Items.AddRange(New Object() {resources.GetString("param_cbox_n_eixos.Items"), resources.GetString("param_cbox_n_eixos.Items1"), resources.GetString("param_cbox_n_eixos.Items2"), resources.GetString("param_cbox_n_eixos.Items3"), resources.GetString("param_cbox_n_eixos.Items4")})
+        resources.ApplyResources(Me.param_cbox_n_eixos, "param_cbox_n_eixos")
+        Me.param_cbox_n_eixos.Name = "param_cbox_n_eixos"
         '
         'MainForm
         '
@@ -1027,7 +1036,6 @@ Partial Class MainForm
     Friend WithEvents param_lbl_baudrate As Label
     Friend WithEvents param_cb_portcom As ComboBox
     Friend WithEvents param_lbl_portcom As Label
-    Friend WithEvents btd_cancelar As Button
     Friend WithEvents btd_guardar As Button
     Friend WithEvents param_tab_eixos As TabPage
     Friend WithEvents param_btn_eixos_guardar As Button
@@ -1054,4 +1062,6 @@ Partial Class MainForm
     Friend WithEvents btn_enviar_parametros_Eixos As Button
     Friend WithEvents btn_envio_tabela_referenciais As Button
     Friend WithEvents btn_enviar_talebas_ferramentas As Button
+    Friend WithEvents param_lbl_n_eixos As Label
+    Friend WithEvents param_cbox_n_eixos As ComboBox
 End Class

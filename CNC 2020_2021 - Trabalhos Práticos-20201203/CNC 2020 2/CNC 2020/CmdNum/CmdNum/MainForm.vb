@@ -526,9 +526,11 @@ Public Class MainForm
             Me.param_txt_spindle_maxrpm.Enabled = True
             Me.param_txt_laser_power.Enabled = False
             Me.param_radbtn_laser.Checked = False
+            Me.param_cbox_n_eixos.Enabled = True
         Else
             Me.param_txt_spindle_maxrpm.Enabled = False
             Me.param_txt_laser_power.Enabled = True
+            Me.param_cbox_n_eixos.Enabled = False
             'Me.param_radbtn_spindle.Checked = False
         End If
     End Sub
@@ -538,9 +540,11 @@ Public Class MainForm
             Me.param_txt_spindle_maxrpm.Enabled = True
             Me.param_txt_laser_power.Enabled = False
             Me.param_radbtn_laser.Checked = False
+            Me.param_cbox_n_eixos.Enabled = True
         ElseIf Me.param_radbtn_laser.Checked = True Then
             Me.param_txt_spindle_maxrpm.Enabled = False
             Me.param_txt_laser_power.Enabled = True
+            Me.param_cbox_n_eixos.Enabled = False
             'Me.param_radbtn_spindle.Checked = False
         End If
     End Sub
@@ -618,6 +622,5 @@ Public Class MainForm
 
 
     End Sub
-
 
 End Class
