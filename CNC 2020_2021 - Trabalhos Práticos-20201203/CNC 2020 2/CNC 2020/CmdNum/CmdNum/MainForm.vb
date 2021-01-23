@@ -55,86 +55,10 @@ Public Class MainForm
         param_cb_portcom.Items.AddRange(myPort)
 
         'parametros default
-        'GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
-        'GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
-
-        'GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
-        'GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
-        'GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
-
-        'GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
-        'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
-
-        Dim maxrpm As Integer = 1000
-        Dim passo As Integer = 1
-
-        GlobalVars.param_eixos.Add("SPINDLE_RPM_MAX", "2000")
-        GlobalVars.param_eixos.Add("N_EIXOS", "3 (X,Y,Z)")
-
-        GlobalVars.param_eixos.Add("X" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("X" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("X" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("X" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("X" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("X" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("X" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("X" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("X" + "_ENC_N_PULSE", "200")
-
-        GlobalVars.param_eixos.Add("Y" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("Y" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("Y" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("Y" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("Y" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("Y" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("Y" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("Y" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("Y" + "_ENC_N_PULSE", "200")
-
-        GlobalVars.param_eixos.Add("Z" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("Z" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("Z" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("Z" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("Z" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("Z" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("Z" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("Z" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("Z" + "_ENC_N_PULSE", "200")
-
-        GlobalVars.param_eixos.Add("A" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("A" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("A" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("A" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("A" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("A" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("A" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("A" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("A" + "_ENC_N_PULSE", "200")
-
-        GlobalVars.param_eixos.Add("B" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("B" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("B" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("B" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("B" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("B" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("B" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("B" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("B" + "_ENC_N_PULSE", "200")
-
-        GlobalVars.param_eixos.Add("C" + "_PASSO", CStr(passo))
-        GlobalVars.param_eixos.Add("C" + "_RPM_MAX", "200")
-        GlobalVars.param_eixos.Add("C" + "_G00_FEED_MAX", CStr(maxrpm * passo))
-        GlobalVars.param_eixos.Add("C" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("C" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-        GlobalVars.param_eixos.Add("C" + "_LIM_INF", "0")
-        GlobalVars.param_eixos.Add("C" + "_LIM_SUP", "1000")
-        GlobalVars.param_eixos.Add("C" + "_ENC_PITCH", "0.1")
-        GlobalVars.param_eixos.Add("C" + "_ENC_N_PULSE", "200")
+        inicializarParamEixos()
+        inicializarParamFerramentas()
+        inicializarParamGerais()
+        inicializarParamReferenciais()
 
         'ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
@@ -266,6 +190,21 @@ Public Class MainForm
     ' ROTINAS TABELAS
     ' *******************************************
 
+
+    Private Sub inicializarParamFerramentas()
+        'GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(param_dataGrid.Rows(i).Cells(1).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(param_dataGrid.Rows(i).Cells(2).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(param_dataGrid.Rows(i).Cells(3).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(param_dataGrid.Rows(i).Cells(4).FormattedValue))
+        'GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(param_dataGrid.Rows(i).Cells(5).FormattedValue))
+    End Sub
+
+    Private Sub inicializarParamReferenciais()
+        'GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
+        'GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
+        'GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
+    End Sub
+
     Private Sub readParamFerramentas(path As String)
         Dim json As String
         Dim jss = New JavaScriptSerializer()
@@ -274,10 +213,10 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
@@ -311,10 +250,10 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
@@ -409,6 +348,80 @@ Public Class MainForm
     'Private Sub param_dataGrid_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles param_dataGrid.CellFormatting
     '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
     'End Sub
+    Private Sub inicializarParamGerais()
+        'GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", param_cb_protocolo.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", param_cb_baudrate.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", param_cb_portcom.Text)
+        'GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", param_txt_end_ip.Text)
+    End Sub
+    Private Sub inicializarParamEixos()
+        Dim maxrpm As Integer = 1000
+        Dim passo As Integer = 1
+
+        GlobalVars.param_eixos.Add("SPINDLE_RPM_MAX", "2000")
+        GlobalVars.param_eixos.Add("N_EIXOS", "3 (X,Y,Z)")
+
+        GlobalVars.param_eixos.Add("X" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("X" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("X" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("X" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("X" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("X" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("X" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("X" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("X" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("Y" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("Y" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("Y" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("Y" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Y" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Y" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("Y" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("Y" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Y" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("Z" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("Z" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("Z" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("Z" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Z" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("Z" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("Z" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("Z" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("Z" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("A" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("A" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("A" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("A" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("A" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("A" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("A" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("A" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("A" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("B" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("B" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("B" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("B" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("B" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("B" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("B" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("B" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("B" + "_ENC_N_PULSE", "200")
+
+        GlobalVars.param_eixos.Add("C" + "_PASSO", CStr(passo))
+        GlobalVars.param_eixos.Add("C" + "_RPM_MAX", "200")
+        GlobalVars.param_eixos.Add("C" + "_G00_FEED_MAX", CStr(maxrpm * passo))
+        GlobalVars.param_eixos.Add("C" + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("C" + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
+        GlobalVars.param_eixos.Add("C" + "_LIM_INF", "0")
+        GlobalVars.param_eixos.Add("C" + "_LIM_SUP", "1000")
+        GlobalVars.param_eixos.Add("C" + "_ENC_PITCH", "0.1")
+        GlobalVars.param_eixos.Add("C" + "_ENC_N_PULSE", "200")
+    End Sub
+
     Private Sub readParamGerais(path As String)
         Dim json As String
         Dim jss = New JavaScriptSerializer()
@@ -423,10 +436,10 @@ Public Class MainForm
             param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
             param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -441,13 +454,13 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex3 As System.Collections.Generic.KeyNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não contém todos os parametros necessários." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não contém todos os parametros necessários." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
@@ -727,5 +740,16 @@ Public Class MainForm
 
     Private Sub tab_ferramentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_ferramentas.CellContentClick
         btn_enviar_talebas_ferramentas.Enabled = False
+    End Sub
+
+    Private Sub btn_enviar_talebas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_enviar_talebas_ferramentas.Click
+        Dim ID_ferramenta As String
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+            If kvp.Key.Split("_")(1) = "NOME" Then
+                ID_ferramenta = kvp.Key.Split("_")(0)
+
+
+            End If
+        Next
     End Sub
 End Class
