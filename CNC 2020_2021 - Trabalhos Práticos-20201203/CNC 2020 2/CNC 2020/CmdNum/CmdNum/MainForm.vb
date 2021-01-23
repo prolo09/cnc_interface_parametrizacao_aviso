@@ -712,8 +712,8 @@ Public Class MainForm
         scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
         scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
         'valores de limite minimo e maximo'
-        scriptObject.SetOEMDRO(4, GlobalVars.param_eixos("X_LIM_INF"))
-        scriptObject.SetOEMDRO(10, GlobalVars.param_eixos("X_LIM_SUP"))
+        scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_INF"))
+        scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("X_LIM_SUP"))
 
 
 
