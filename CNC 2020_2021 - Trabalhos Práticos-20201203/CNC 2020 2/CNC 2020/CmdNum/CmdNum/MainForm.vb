@@ -591,7 +591,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs) Handles btn_envio_parametros_geral.Click
+    Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
         'enviar os valores dos parametros gerais para o mach 3'
 
 
@@ -610,7 +610,7 @@ Public Class MainForm
         'envia valores relativos a Eixos X'
 
         scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("x_PASSO")))
-
+        scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("y_PASSO")))
 
 
 

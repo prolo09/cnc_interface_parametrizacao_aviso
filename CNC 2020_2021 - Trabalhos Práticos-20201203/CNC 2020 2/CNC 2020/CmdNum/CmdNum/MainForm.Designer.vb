@@ -134,7 +134,8 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.btn_envio_parametros_geral = New System.Windows.Forms.Button()
+        Me.btn_envio_tabela_referenciais = New System.Windows.Forms.Button()
+        Me.btn_enviar_talebas_ferramentas = New System.Windows.Forms.Button()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -499,6 +500,7 @@ Partial Class MainForm
         '
         'TabPage8
         '
+        Me.TabPage8.Controls.Add(Me.btn_envio_tabela_referenciais)
         Me.TabPage8.Controls.Add(Me.btn_tabelas_referenciais)
         Me.TabPage8.Controls.Add(Me.tab_referenciais)
         resources.ApplyResources(Me.TabPage8, "TabPage8")
@@ -540,6 +542,7 @@ Partial Class MainForm
         '
         'TabPage9
         '
+        Me.TabPage9.Controls.Add(Me.btn_enviar_talebas_ferramentas)
         Me.TabPage9.Controls.Add(Me.tab_ferramentas)
         Me.TabPage9.Controls.Add(Me.btn_tabelas_ferramentas)
         resources.ApplyResources(Me.TabPage9, "TabPage9")
@@ -608,7 +611,6 @@ Partial Class MainForm
         '
         'param_tab_geral
         '
-        Me.param_tab_geral.Controls.Add(Me.btn_envio_parametros_geral)
         Me.param_tab_geral.Controls.Add(Me.param_txt_end_ip)
         Me.param_tab_geral.Controls.Add(Me.Label13)
         Me.param_tab_geral.Controls.Add(Me.param_cb_protocolo)
@@ -881,11 +883,17 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'btn_envio_parametros_geral
+        'btn_envio_tabela_referenciais
         '
-        resources.ApplyResources(Me.btn_envio_parametros_geral, "btn_envio_parametros_geral")
-        Me.btn_envio_parametros_geral.Name = "btn_envio_parametros_geral"
-        Me.btn_envio_parametros_geral.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.btn_envio_tabela_referenciais, "btn_envio_tabela_referenciais")
+        Me.btn_envio_tabela_referenciais.Name = "btn_envio_tabela_referenciais"
+        Me.btn_envio_tabela_referenciais.UseVisualStyleBackColor = True
+        '
+        'btn_enviar_talebas_ferramentas
+        '
+        resources.ApplyResources(Me.btn_enviar_talebas_ferramentas, "btn_enviar_talebas_ferramentas")
+        Me.btn_enviar_talebas_ferramentas.Name = "btn_enviar_talebas_ferramentas"
+        Me.btn_enviar_talebas_ferramentas.UseVisualStyleBackColor = True
         '
         'MainForm
         '
@@ -1044,5 +1052,6 @@ Partial Class MainForm
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents btn_enviar_parametros_Eixos As Button
-    Friend WithEvents btn_envio_parametros_geral As Button
+    Friend WithEvents btn_envio_tabela_referenciais As Button
+    Friend WithEvents btn_enviar_talebas_ferramentas As Button
 End Class
