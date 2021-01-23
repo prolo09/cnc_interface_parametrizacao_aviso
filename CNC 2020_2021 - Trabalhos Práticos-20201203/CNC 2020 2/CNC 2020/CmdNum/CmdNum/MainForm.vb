@@ -228,10 +228,10 @@ Public Class MainForm
             GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
             MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
         ' display on GUI
@@ -265,10 +265,10 @@ Public Class MainForm
             GlobalVars.param_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
             MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
         ' display on GUI
@@ -348,6 +348,9 @@ Public Class MainForm
             GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
             GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
             GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_A", CStr(tab_referenciais.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_B", CStr(tab_referenciais.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_C", CStr(tab_referenciais.Rows(i).Cells(6).FormattedValue))
         Next
 
         ' exportar dicionario
@@ -444,18 +447,18 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
             ' display on GUI
-
-            param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
-            param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
-            param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
-            param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
             MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
+
+        param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
+        param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
+        param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
+        param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
     End Sub
 
 
@@ -469,13 +472,13 @@ Public Class MainForm
             GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
             MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex3 As System.Collections.Generic.KeyNotFoundException
             MessageBox.Show("Ficheiro " + path + " não contém todos os parametros necessários." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
         ' display on GUI
