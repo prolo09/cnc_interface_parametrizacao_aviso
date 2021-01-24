@@ -82,6 +82,8 @@ Public Class MainForm
         tmr_match3.Interval = 250
         tmr_match3.Enabled = True
 
+        'define as unidades em mm '
+        scriptObject.SetParam("Units", 0)
 
     End Sub
 
@@ -671,9 +673,6 @@ Public Class MainForm
 
     Private Sub param_btn_eixos_enviar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_enviar.Click
         'enviar os valores dos parametros Eixos para o mach 3'
-
-        'define as unidades em mm '
-        scriptObject.SetParam("Units", 0)
 
         'retira o valor de do nomero de eixos '
 
