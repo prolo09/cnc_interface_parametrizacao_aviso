@@ -72,9 +72,9 @@ Partial Class MainForm
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.btn_envio_tabela_referenciais = New System.Windows.Forms.Button()
-        Me.btn_tabelas_referenciais = New System.Windows.Forms.Button()
-        Me.tab_referenciais = New System.Windows.Forms.DataGridView()
+        Me.tabelas_btn_enviar_referenciais = New System.Windows.Forms.Button()
+        Me.tabelas_btn_guardar_referenciais = New System.Windows.Forms.Button()
+        Me.tabela_dtgrid_referenciais = New System.Windows.Forms.DataGridView()
         Me.Referencial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Y = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -83,15 +83,15 @@ Partial Class MainForm
         Me.B = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
-        Me.btn_enviar_talebas_ferramentas = New System.Windows.Forms.Button()
-        Me.tab_ferramentas = New System.Windows.Forms.DataGridView()
+        Me.tabelas_btn_enviar_ferramentas = New System.Windows.Forms.Button()
+        Me.tabela_dtgrid_ferramentas = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_tabelas_ferramentas = New System.Windows.Forms.Button()
+        Me.tabelas_btn_guardar_ferramentas = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
@@ -103,11 +103,11 @@ Partial Class MainForm
         Me.param_lbl_baudrate = New System.Windows.Forms.Label()
         Me.param_cb_portcom = New System.Windows.Forms.ComboBox()
         Me.param_lbl_portcom = New System.Windows.Forms.Label()
-        Me.btd_guardar = New System.Windows.Forms.Button()
+        Me.param_btn_guardar_gerais = New System.Windows.Forms.Button()
         Me.param_tab_eixos = New System.Windows.Forms.TabPage()
         Me.param_cbox_n_eixos = New System.Windows.Forms.ComboBox()
         Me.param_lbl_n_eixos = New System.Windows.Forms.Label()
-        Me.btn_enviar_parametros_Eixos = New System.Windows.Forms.Button()
+        Me.param_btn_eixos_enviar = New System.Windows.Forms.Button()
         Me.param_btn_eixos_guardar = New System.Windows.Forms.Button()
         Me.param_txt_laser_power = New System.Windows.Forms.TextBox()
         Me.param_txt_spindle_maxrpm = New System.Windows.Forms.TextBox()
@@ -115,7 +115,7 @@ Partial Class MainForm
         Me.param_radbtn_laser = New System.Windows.Forms.RadioButton()
         Me.param_lbl_spindle_maxrpm = New System.Windows.Forms.Label()
         Me.param_radbtn_spindle = New System.Windows.Forms.RadioButton()
-        Me.param_tabela_eixos = New System.Windows.Forms.DataGridView()
+        Me.param_dtgrid_eixos = New System.Windows.Forms.DataGridView()
         Me.eixo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.passo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.max_rpm = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -151,14 +151,14 @@ Partial Class MainForm
         Me.TabPage4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage8.SuspendLayout()
-        CType(Me.tab_referenciais, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tabela_dtgrid_referenciais, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage9.SuspendLayout()
-        CType(Me.tab_ferramentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tabela_dtgrid_ferramentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         Me.param_tab_control.SuspendLayout()
         Me.param_tab_geral.SuspendLayout()
         Me.param_tab_eixos.SuspendLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.param_dtgrid_eixos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -502,31 +502,31 @@ Partial Class MainForm
         '
         'TabPage8
         '
-        Me.TabPage8.Controls.Add(Me.btn_envio_tabela_referenciais)
-        Me.TabPage8.Controls.Add(Me.btn_tabelas_referenciais)
-        Me.TabPage8.Controls.Add(Me.tab_referenciais)
+        Me.TabPage8.Controls.Add(Me.tabelas_btn_enviar_referenciais)
+        Me.TabPage8.Controls.Add(Me.tabelas_btn_guardar_referenciais)
+        Me.TabPage8.Controls.Add(Me.tabela_dtgrid_referenciais)
         resources.ApplyResources(Me.TabPage8, "TabPage8")
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
-        'btn_envio_tabela_referenciais
+        'tabelas_btn_enviar_referenciais
         '
-        resources.ApplyResources(Me.btn_envio_tabela_referenciais, "btn_envio_tabela_referenciais")
-        Me.btn_envio_tabela_referenciais.Name = "btn_envio_tabela_referenciais"
-        Me.btn_envio_tabela_referenciais.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.tabelas_btn_enviar_referenciais, "tabelas_btn_enviar_referenciais")
+        Me.tabelas_btn_enviar_referenciais.Name = "tabelas_btn_enviar_referenciais"
+        Me.tabelas_btn_enviar_referenciais.UseVisualStyleBackColor = True
         '
-        'btn_tabelas_referenciais
+        'tabelas_btn_guardar_referenciais
         '
-        resources.ApplyResources(Me.btn_tabelas_referenciais, "btn_tabelas_referenciais")
-        Me.btn_tabelas_referenciais.Name = "btn_tabelas_referenciais"
-        Me.btn_tabelas_referenciais.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.tabelas_btn_guardar_referenciais, "tabelas_btn_guardar_referenciais")
+        Me.tabelas_btn_guardar_referenciais.Name = "tabelas_btn_guardar_referenciais"
+        Me.tabelas_btn_guardar_referenciais.UseVisualStyleBackColor = True
         '
-        'tab_referenciais
+        'tabela_dtgrid_referenciais
         '
-        Me.tab_referenciais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tab_referenciais.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Referencial, Me.X, Me.Y, Me.Z, Me.A, Me.B, Me.C})
-        resources.ApplyResources(Me.tab_referenciais, "tab_referenciais")
-        Me.tab_referenciais.Name = "tab_referenciais"
+        Me.tabela_dtgrid_referenciais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tabela_dtgrid_referenciais.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Referencial, Me.X, Me.Y, Me.Z, Me.A, Me.B, Me.C})
+        resources.ApplyResources(Me.tabela_dtgrid_referenciais, "tabela_dtgrid_referenciais")
+        Me.tabela_dtgrid_referenciais.Name = "tabela_dtgrid_referenciais"
         '
         'Referencial
         '
@@ -573,26 +573,26 @@ Partial Class MainForm
         '
         'TabPage9
         '
-        Me.TabPage9.Controls.Add(Me.btn_enviar_talebas_ferramentas)
-        Me.TabPage9.Controls.Add(Me.tab_ferramentas)
-        Me.TabPage9.Controls.Add(Me.btn_tabelas_ferramentas)
+        Me.TabPage9.Controls.Add(Me.tabelas_btn_enviar_ferramentas)
+        Me.TabPage9.Controls.Add(Me.tabela_dtgrid_ferramentas)
+        Me.TabPage9.Controls.Add(Me.tabelas_btn_guardar_ferramentas)
         resources.ApplyResources(Me.TabPage9, "TabPage9")
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
         '
-        'btn_enviar_talebas_ferramentas
+        'tabelas_btn_enviar_ferramentas
         '
-        resources.ApplyResources(Me.btn_enviar_talebas_ferramentas, "btn_enviar_talebas_ferramentas")
-        Me.btn_enviar_talebas_ferramentas.Name = "btn_enviar_talebas_ferramentas"
-        Me.btn_enviar_talebas_ferramentas.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.tabelas_btn_enviar_ferramentas, "tabelas_btn_enviar_ferramentas")
+        Me.tabelas_btn_enviar_ferramentas.Name = "tabelas_btn_enviar_ferramentas"
+        Me.tabelas_btn_enviar_ferramentas.UseVisualStyleBackColor = True
         '
-        'tab_ferramentas
+        'tabela_dtgrid_ferramentas
         '
-        Me.tab_ferramentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tab_ferramentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.param_dataGrid_nomeFerramentas, Me.Pocket, Me.Altura, Me.Diametro, Me.param_dataGrid_obsercacoes})
-        resources.ApplyResources(Me.tab_ferramentas, "tab_ferramentas")
-        Me.tab_ferramentas.Name = "tab_ferramentas"
-        Me.tab_ferramentas.RowTemplate.Height = 24
+        Me.tabela_dtgrid_ferramentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tabela_dtgrid_ferramentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.param_dataGrid_nomeFerramentas, Me.Pocket, Me.Altura, Me.Diametro, Me.param_dataGrid_obsercacoes})
+        resources.ApplyResources(Me.tabela_dtgrid_ferramentas, "tabela_dtgrid_ferramentas")
+        Me.tabela_dtgrid_ferramentas.Name = "tabela_dtgrid_ferramentas"
+        Me.tabela_dtgrid_ferramentas.RowTemplate.Height = 24
         '
         'ID
         '
@@ -624,11 +624,11 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
         Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
         '
-        'btn_tabelas_ferramentas
+        'tabelas_btn_guardar_ferramentas
         '
-        resources.ApplyResources(Me.btn_tabelas_ferramentas, "btn_tabelas_ferramentas")
-        Me.btn_tabelas_ferramentas.Name = "btn_tabelas_ferramentas"
-        Me.btn_tabelas_ferramentas.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.tabelas_btn_guardar_ferramentas, "tabelas_btn_guardar_ferramentas")
+        Me.tabelas_btn_guardar_ferramentas.Name = "tabelas_btn_guardar_ferramentas"
+        Me.tabelas_btn_guardar_ferramentas.UseVisualStyleBackColor = True
         '
         'TabPage5
         '
@@ -656,7 +656,7 @@ Partial Class MainForm
         Me.param_tab_geral.Controls.Add(Me.param_lbl_baudrate)
         Me.param_tab_geral.Controls.Add(Me.param_cb_portcom)
         Me.param_tab_geral.Controls.Add(Me.param_lbl_portcom)
-        Me.param_tab_geral.Controls.Add(Me.btd_guardar)
+        Me.param_tab_geral.Controls.Add(Me.param_btn_guardar_gerais)
         resources.ApplyResources(Me.param_tab_geral, "param_tab_geral")
         Me.param_tab_geral.Name = "param_tab_geral"
         Me.param_tab_geral.UseVisualStyleBackColor = True
@@ -707,17 +707,17 @@ Partial Class MainForm
         resources.ApplyResources(Me.param_lbl_portcom, "param_lbl_portcom")
         Me.param_lbl_portcom.Name = "param_lbl_portcom"
         '
-        'btd_guardar
+        'param_btn_guardar_gerais
         '
-        resources.ApplyResources(Me.btd_guardar, "btd_guardar")
-        Me.btd_guardar.Name = "btd_guardar"
-        Me.btd_guardar.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.param_btn_guardar_gerais, "param_btn_guardar_gerais")
+        Me.param_btn_guardar_gerais.Name = "param_btn_guardar_gerais"
+        Me.param_btn_guardar_gerais.UseVisualStyleBackColor = True
         '
         'param_tab_eixos
         '
         Me.param_tab_eixos.Controls.Add(Me.param_cbox_n_eixos)
         Me.param_tab_eixos.Controls.Add(Me.param_lbl_n_eixos)
-        Me.param_tab_eixos.Controls.Add(Me.btn_enviar_parametros_Eixos)
+        Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_enviar)
         Me.param_tab_eixos.Controls.Add(Me.param_btn_eixos_guardar)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_laser_power)
         Me.param_tab_eixos.Controls.Add(Me.param_txt_spindle_maxrpm)
@@ -725,7 +725,7 @@ Partial Class MainForm
         Me.param_tab_eixos.Controls.Add(Me.param_radbtn_laser)
         Me.param_tab_eixos.Controls.Add(Me.param_lbl_spindle_maxrpm)
         Me.param_tab_eixos.Controls.Add(Me.param_radbtn_spindle)
-        Me.param_tab_eixos.Controls.Add(Me.param_tabela_eixos)
+        Me.param_tab_eixos.Controls.Add(Me.param_dtgrid_eixos)
         resources.ApplyResources(Me.param_tab_eixos, "param_tab_eixos")
         Me.param_tab_eixos.Name = "param_tab_eixos"
         Me.param_tab_eixos.UseVisualStyleBackColor = True
@@ -744,11 +744,11 @@ Partial Class MainForm
         Me.param_lbl_n_eixos.Name = "param_lbl_n_eixos"
         Me.param_lbl_n_eixos.UseMnemonic = False
         '
-        'btn_enviar_parametros_Eixos
+        'param_btn_eixos_enviar
         '
-        resources.ApplyResources(Me.btn_enviar_parametros_Eixos, "btn_enviar_parametros_Eixos")
-        Me.btn_enviar_parametros_Eixos.Name = "btn_enviar_parametros_Eixos"
-        Me.btn_enviar_parametros_Eixos.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.param_btn_eixos_enviar, "param_btn_eixos_enviar")
+        Me.param_btn_eixos_enviar.Name = "param_btn_eixos_enviar"
+        Me.param_btn_eixos_enviar.UseVisualStyleBackColor = True
         '
         'param_btn_eixos_guardar
         '
@@ -792,12 +792,12 @@ Partial Class MainForm
         Me.param_radbtn_spindle.TabStop = True
         Me.param_radbtn_spindle.UseVisualStyleBackColor = True
         '
-        'param_tabela_eixos
+        'param_dtgrid_eixos
         '
-        Me.param_tabela_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.param_tabela_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.passo, Me.max_rpm, Me.limite_inferior, Me.limite_superior, Me.encoder_pitch, Me.encoder_n_pulsos})
-        resources.ApplyResources(Me.param_tabela_eixos, "param_tabela_eixos")
-        Me.param_tabela_eixos.Name = "param_tabela_eixos"
+        Me.param_dtgrid_eixos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.param_dtgrid_eixos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eixo, Me.passo, Me.max_rpm, Me.limite_inferior, Me.limite_superior, Me.encoder_pitch, Me.encoder_n_pulsos})
+        resources.ApplyResources(Me.param_dtgrid_eixos, "param_dtgrid_eixos")
+        Me.param_dtgrid_eixos.Name = "param_dtgrid_eixos"
         '
         'eixo
         '
@@ -947,16 +947,16 @@ Partial Class MainForm
         Me.TabPage4.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
-        CType(Me.tab_referenciais, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabela_dtgrid_referenciais, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
-        CType(Me.tab_ferramentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabela_dtgrid_ferramentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.param_tab_control.ResumeLayout(False)
         Me.param_tab_geral.ResumeLayout(False)
         Me.param_tab_geral.PerformLayout()
         Me.param_tab_eixos.ResumeLayout(False)
         Me.param_tab_eixos.PerformLayout()
-        CType(Me.param_tabela_eixos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.param_dtgrid_eixos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -1028,11 +1028,11 @@ Partial Class MainForm
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage8 As TabPage
-    Friend WithEvents btn_tabelas_referenciais As Button
-    Friend WithEvents tab_referenciais As DataGridView
+    Friend WithEvents tabelas_btn_guardar_referenciais As Button
+    Friend WithEvents tabela_dtgrid_referenciais As DataGridView
     Friend WithEvents TabPage9 As TabPage
-    Friend WithEvents btn_tabelas_ferramentas As Button
-    Friend WithEvents tab_ferramentas As DataGridView
+    Friend WithEvents tabelas_btn_guardar_ferramentas As Button
+    Friend WithEvents tabela_dtgrid_ferramentas As DataGridView
     Friend WithEvents param_btn_Guardar As Button
     Friend WithEvents param_tab_control As TabControl
     Friend WithEvents param_tab_geral As TabPage
@@ -1044,7 +1044,7 @@ Partial Class MainForm
     Friend WithEvents param_lbl_baudrate As Label
     Friend WithEvents param_cb_portcom As ComboBox
     Friend WithEvents param_lbl_portcom As Label
-    Friend WithEvents btd_guardar As Button
+    Friend WithEvents param_btn_guardar_gerais As Button
     Friend WithEvents param_tab_eixos As TabPage
     Friend WithEvents param_btn_eixos_guardar As Button
     Friend WithEvents param_txt_laser_power As TextBox
@@ -1053,11 +1053,11 @@ Partial Class MainForm
     Friend WithEvents param_radbtn_laser As RadioButton
     Friend WithEvents param_lbl_spindle_maxrpm As Label
     Friend WithEvents param_radbtn_spindle As RadioButton
-    Friend WithEvents param_tabela_eixos As DataGridView
+    Friend WithEvents param_dtgrid_eixos As DataGridView
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
-    Friend WithEvents btn_enviar_parametros_Eixos As Button
-    Friend WithEvents btn_envio_tabela_referenciais As Button
-    Friend WithEvents btn_enviar_talebas_ferramentas As Button
+    Friend WithEvents param_btn_eixos_enviar As Button
+    Friend WithEvents tabelas_btn_enviar_referenciais As Button
+    Friend WithEvents tabelas_btn_enviar_ferramentas As Button
     Friend WithEvents param_lbl_n_eixos As Label
     Friend WithEvents param_cbox_n_eixos As ComboBox
     Friend WithEvents eixo As DataGridViewTextBoxColumn

@@ -60,7 +60,7 @@ Public Class MainForm
         inicializarParamGerais()
         inicializarParamReferenciais()
 
-        'ficheiros de parametros
+        'ler ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
         readParamEixos(GlobalVars.param_eixos_path)
         readParamFerramentas(GlobalVars.param_ferramentas_path)
@@ -188,11 +188,9 @@ Public Class MainForm
 
     ' *******************************************
     ' ROTINAS TABELAS
-    ' *******************************************
-
 
     Private Sub inicializarParamFerramentas()
-
+        ' ferramentas predefinidas
         GlobalVars.param_ferramentas.Add("1" + "_NOME", "Fresa")
         GlobalVars.param_ferramentas.Add("1" + "_POCKET", "1")
         GlobalVars.param_ferramentas.Add("1" + "_ALTURA", "15")
@@ -201,6 +199,7 @@ Public Class MainForm
     End Sub
 
     Private Sub inicializarParamReferenciais()
+        ' inicializar tabela de referenciais
         GlobalVars.param_referenciais.Add("G28" + "_X", "0")
         GlobalVars.param_referenciais.Add("G28" + "_Y", "0")
         GlobalVars.param_referenciais.Add("G28" + "_Z", "0")
@@ -220,6 +219,8 @@ Public Class MainForm
     End Sub
 
     Private Sub readParamFerramentas(path As String)
+        'ler ficheiro de parametros de ferramentas
+
         Dim json As String
         Dim jss = New JavaScriptSerializer()
         'parametros ferramentas
@@ -239,17 +240,17 @@ Public Class MainForm
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
             If j = 0 Then
-                i = tab_ferramentas.Rows.Add()
-                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                i = tabela_dtgrid_ferramentas.Rows.Add()
+                tabela_dtgrid_ferramentas.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
                 j = j + 1
-                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Value
+                tabela_dtgrid_ferramentas.Rows(i).Cells(j).Value = kvp.Value
                 j = j + 1
             Else
-                tab_ferramentas.Rows(i).Cells(j).Value = kvp.Value
+                tabela_dtgrid_ferramentas.Rows(i).Cells(j).Value = kvp.Value
                 j = j + 1
             End If
 
-            If j = tab_ferramentas.Columns.Count Then
+            If j = tabela_dtgrid_ferramentas.Columns.Count Then
                 j = 0
             End If
         Next
@@ -257,9 +258,11 @@ Public Class MainForm
     End Sub
 
     Private Sub readParamReferenciais(path As String)
+        ' ler ficheiro de parametros de referenciais
+
         Dim json As String
         Dim jss = New JavaScriptSerializer()
-        'parametros ferramentas
+        'parametros referenciais
         Try
             json = File.ReadAllText(path)
             GlobalVars.param_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
@@ -276,31 +279,31 @@ Public Class MainForm
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_referenciais
             If j = 0 Then
-                i = tab_referenciais.Rows.Add()
-                tab_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                i = tabela_dtgrid_referenciais.Rows.Add()
+                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
                 j = j + 1
-                tab_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
                 j = j + 1
             Else
-                tab_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
                 j = j + 1
             End If
 
-            If j = tab_referenciais.Columns.Count Then
+            If j = tabela_dtgrid_referenciais.Columns.Count Then
                 j = 0
             End If
         Next
 
     End Sub
 
-    Private Sub btn_tabelas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_tabelas_ferramentas.Click
+    Private Sub tabelas_btn_guardar_ferramentas_Click(sender As Object, e As EventArgs) Handles tabelas_btn_guardar_ferramentas.Click
         ' ler tabela de propriedades de ferramentas e colocar num dicionario
 
         ' confirmar os dados numericos
-        For i As Integer = 0 To tab_ferramentas.Rows.Count - 2
-            For j As Integer = 0 To tab_ferramentas.Rows(i).Cells.Count - 2
-                If Not IsNumeric(tab_ferramentas.Rows(i).Cells(j).Value) And Not j = 1 Then
-                    MessageBox.Show("Valor da coluna """ + tab_ferramentas.Columns(j).Name + """ da ferramenta " + CStr(tab_ferramentas.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+        For i As Integer = 0 To tabela_dtgrid_ferramentas.Rows.Count - 2
+            For j As Integer = 0 To tabela_dtgrid_ferramentas.Rows(i).Cells.Count - 2
+                If Not IsNumeric(tabela_dtgrid_ferramentas.Rows(i).Cells(j).Value) And Not j = 1 Then
+                    MessageBox.Show("Valor da coluna """ + tabela_dtgrid_ferramentas.Columns(j).Name + """ da ferramenta " + CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
@@ -311,28 +314,28 @@ Public Class MainForm
             End If
 
             ' atualizar o dicionario
-            Dim idTool As String = tab_ferramentas.Rows(i).Cells(0).FormattedValue
+            Dim idTool As String = tabela_dtgrid_ferramentas.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(tab_ferramentas.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(tab_ferramentas.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(tab_ferramentas.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(tab_ferramentas.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(tab_ferramentas.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(5).FormattedValue))
         Next
 
         ' exportar dicionario
         writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
-        btn_enviar_talebas_ferramentas.Enabled = True
+        tabelas_btn_enviar_ferramentas.Enabled = True
     End Sub
 
-    Private Sub btn_tabelas_referenciais_Click(sender As Object, e As EventArgs) Handles btn_tabelas_referenciais.Click
-        ' ler tabela de propriedades de ferramentas e colocar num dicionario
+    Private Sub tabelas_btn_guardar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_guardar_referenciais.Click
+        ' ler tabela de referenciais e colocar num dicionario
 
         ' confirmar os dados numericos
-        For i As Integer = 0 To tab_referenciais.Rows.Count - 2
-            For j As Integer = 1 To tab_referenciais.Rows(i).Cells.Count - 2
-                If Not IsNumeric(tab_referenciais.Rows(i).Cells(j).Value) And Not tab_referenciais.Rows(i).Cells(j).Value = "" Then
-                    MessageBox.Show("Valor da coluna """ + tab_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tab_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+        For i As Integer = 0 To tabela_dtgrid_referenciais.Rows.Count - 2
+            For j As Integer = 1 To tabela_dtgrid_referenciais.Rows(i).Cells.Count - 2
+                If Not IsNumeric(tabela_dtgrid_referenciais.Rows(i).Cells(j).Value) And Not tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = "" Then
+                    MessageBox.Show("Valor da coluna """ + tabela_dtgrid_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tabela_dtgrid_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
@@ -343,35 +346,83 @@ Public Class MainForm
             End If
 
             ' atualizar o dicionario
-            Dim ref_name As String = tab_referenciais.Rows(i).Cells(0).FormattedValue
+            Dim ref_name As String = tabela_dtgrid_referenciais.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tab_referenciais.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tab_referenciais.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tab_referenciais.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_A", CStr(tab_referenciais.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_B", CStr(tab_referenciais.Rows(i).Cells(5).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_C", CStr(tab_referenciais.Rows(i).Cells(6).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_A", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_B", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_referenciais.Add(ref_name + "_C", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(6).FormattedValue))
         Next
 
         ' exportar dicionario
         writeDictionary(GlobalVars.param_referenciais, GlobalVars.param_referenciais_path)
-        btn_envio_tabela_referenciais.Enabled = True
+        tabelas_btn_enviar_referenciais.Enabled = True
+    End Sub
+
+    Private Sub tabelas_btn_enviar_ferramentas_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_ferramentas.Click
+        ' enviar para Mach3 propriedades das ferramentas
+
+        Dim ID_ferramenta As String
+        Dim diametro As String
+        Dim compensa_altura As String
+
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+            If kvp.Key.Split("_")(1) = "NOME" Then
+                ID_ferramenta = kvp.Key.Split("_")(0)
+                diametro = GlobalVars.param_ferramentas(ID_ferramenta & "_DIAMETRO")
+                compensa_altura = GlobalVars.param_ferramentas(ID_ferramenta & "_ALTURA")
+
+                scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
+                scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
+
+            End If
+        Next
+
+    End Sub
+
+    Private Sub tabelas_btn_enviar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_referenciais.Click
+        ' enviar para o Mach3 referenciais
+
+        'scriptObject.SetOEMDRO(184, 46)
+        'scriptObject.SetOEMDRO(185, 46)
+        'scriptObject.SetOEMDRO(186, 46)
+        'scriptObject.SetOEMDRO(187, 46)
+        'scriptObject.SetOEMDRO(188, 46)
+        'scriptObject.SetOEMDRO(189, 46)
+
+        'envia os valores dos eixos relativos ao G28'
+        scriptObject.SetOEMDRO(190, GlobalVars.param_referenciais("G28_X"))
+        scriptObject.SetOEMDRO(191, GlobalVars.param_referenciais("G28_Y"))
+        scriptObject.SetOEMDRO(192, GlobalVars.param_referenciais("G28_Z"))
+        scriptObject.SetOEMDRO(193, GlobalVars.param_referenciais("G28_A"))
+        scriptObject.SetOEMDRO(194, GlobalVars.param_referenciais("G28_B"))
+        scriptObject.SetOEMDRO(195, GlobalVars.param_referenciais("G28_C"))
+    End Sub
+
+    Private Sub tabela_dtgrid_referenciais_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabela_dtgrid_referenciais.CellContentClick
+        tabelas_btn_enviar_referenciais.Enabled = False
+    End Sub
+
+    Private Sub tabela_dtgrid_ferramentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabela_dtgrid_ferramentas.CellContentClick
+        tabelas_btn_enviar_ferramentas.Enabled = False
     End Sub
 
     ' *******************************************
     ' ROTINAS PARAMETROS
 
-    'Formatar Index's da tabela com auto_incremento
-    'Private Sub param_dataGrid_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles param_dataGrid.CellFormatting
-    '    param_dataGrid.Rows(e.RowIndex).HeaderCell.Value = CStr(e.RowIndex + 1)
-    'End Sub
     Private Sub inicializarParamGerais()
+        ' parametros gerais predefinidos
+
         GlobalVars.param_gerais.Add("COMUNICACAO_PROTOCOLO", "RS232")
         GlobalVars.param_gerais.Add("COMUNICACAO_BAUDRATE", "19200")
         GlobalVars.param_gerais.Add("COMUNICACAO_PORTA_COM", "COM3")
         GlobalVars.param_gerais.Add("COMUNICACAO_ENDERECO_IP", "192.168.1.1")
     End Sub
     Private Sub inicializarParamEixos()
+        ' parametros dos eixos predefinidos
+
         Dim maxrpm As Integer = 1000
         Dim passo As Integer = 1
 
@@ -440,6 +491,8 @@ Public Class MainForm
     End Sub
 
     Private Sub readParamGerais(path As String)
+        'ler ficheiro de parametros gerais
+
         Dim json As String
         Dim jss = New JavaScriptSerializer()
         'parametros gerais
@@ -461,9 +514,9 @@ Public Class MainForm
         param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
     End Sub
 
-
-
     Private Sub readParamEixos(path As String)
+        ' ler ficheiro de parametros dos eixos
+
         Dim json As String
         Dim jss = New JavaScriptSerializer()
         'parametros eixos
@@ -503,17 +556,17 @@ Public Class MainForm
                 End If
             Else
                 If j = 0 Then
-                    i = param_tabela_eixos.Rows.Add()
-                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                    i = param_dtgrid_eixos.Rows.Add()
+                    param_dtgrid_eixos.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
                     j = j + 1
-                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                    param_dtgrid_eixos.Rows(i).Cells(j).Value = kvp.Value
                     j = j + 1
                 Else
-                    param_tabela_eixos.Rows(i).Cells(j).Value = kvp.Value
+                    param_dtgrid_eixos.Rows(i).Cells(j).Value = kvp.Value
                     j = j + 1
                 End If
 
-                If j = param_tabela_eixos.Columns.Count Then
+                If j = param_dtgrid_eixos.Columns.Count Then
                     j = 0
                 End If
             End If
@@ -522,8 +575,8 @@ Public Class MainForm
     End Sub
 
 
-    Private Sub btd_guardar_Click(sender As Object, e As EventArgs) Handles btd_guardar.Click
-        ' adicionar parametros gerais
+    Private Sub param_btn_guardar_gerais_Click(sender As Object, e As EventArgs) Handles param_btn_guardar_gerais.Click
+        ' guardar ficheiro de parametros gerais
 
         'atualizar o dicionario
         GlobalVars.param_gerais.Clear() ' clear dictionary to fill with new info
@@ -541,10 +594,10 @@ Public Class MainForm
         ' ler tabela de propriedades de eixos e colocar num dicionario
 
         ' confirmar os dados numericos
-        For i As Integer = 0 To param_tabela_eixos.Rows.Count - 2
-            For j As Integer = 1 To param_tabela_eixos.Rows(i).Cells.Count - 1
-                If Not IsNumeric(param_tabela_eixos.Rows(i).Cells(j).Value) And Not param_tabela_eixos.Rows(i).Cells(j).Value = "" Then
-                    MessageBox.Show("Valor da coluna """ + param_tabela_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_tabela_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+        For i As Integer = 0 To param_dtgrid_eixos.Rows.Count - 2
+            For j As Integer = 1 To param_dtgrid_eixos.Rows(i).Cells.Count - 1
+                If Not IsNumeric(param_dtgrid_eixos.Rows(i).Cells(j).Value) And Not param_dtgrid_eixos.Rows(i).Cells(j).Value = "" Then
+                    MessageBox.Show("Valor da coluna """ + param_dtgrid_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_dtgrid_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
@@ -555,20 +608,20 @@ Public Class MainForm
             End If
 
             ' atualizar o dicionario
-            Dim passo As Decimal = CDec(param_tabela_eixos.Rows(i).Cells(2).FormattedValue)
-            Dim maxrpm As Decimal = CDec(param_tabela_eixos.Rows(i).Cells(3).FormattedValue)
+            Dim passo As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(2).FormattedValue)
+            Dim maxrpm As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(3).FormattedValue)
 
-            Dim axis_name As String = param_tabela_eixos.Rows(i).Cells(0).FormattedValue
+            Dim axis_name As String = param_dtgrid_eixos.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_tabela_eixos.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_tabela_eixos.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_dtgrid_eixos.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_dtgrid_eixos.Rows(i).Cells(2).FormattedValue))
             GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_tabela_eixos.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_tabela_eixos.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_tabela_eixos.Rows(i).Cells(5).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_tabela_eixos.Rows(i).Cells(6).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_INF", CStr(param_dtgrid_eixos.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_LIM_SUP", CStr(param_dtgrid_eixos.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_PITCH", CStr(param_dtgrid_eixos.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_ENC_N_PULSE", CStr(param_dtgrid_eixos.Rows(i).Cells(6).FormattedValue))
 
         Next
 
@@ -608,109 +661,16 @@ Public Class MainForm
 
         ' export dictionary to file
         writeDictionary(GlobalVars.param_eixos, GlobalVars.param_eixos_path)
-        btn_enviar_parametros_Eixos.Enabled = True
-
-    End Sub
-
-    Private Sub param_radbtn_spindle_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_spindle.CheckedChanged
-        If Me.param_radbtn_spindle.Checked = True Then
-            Me.param_txt_spindle_maxrpm.Enabled = True
-            Me.param_txt_laser_power.Enabled = False
-            Me.param_radbtn_laser.Checked = False
-            Me.param_cbox_n_eixos.Enabled = True
-        Else
-            Me.param_txt_spindle_maxrpm.Enabled = False
-            Me.param_txt_laser_power.Enabled = True
-            Me.param_cbox_n_eixos.Enabled = False
-            'Me.param_radbtn_spindle.Checked = False
-        End If
-        btn_enviar_parametros_Eixos.Enabled = False
-    End Sub
-
-    Private Sub param_radbtn_laser_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_laser.CheckedChanged
-        If Me.param_radbtn_spindle.Checked = True Then
-            Me.param_txt_spindle_maxrpm.Enabled = True
-            Me.param_txt_laser_power.Enabled = False
-            Me.param_radbtn_laser.Checked = False
-            Me.param_cbox_n_eixos.Enabled = True
-        ElseIf Me.param_radbtn_laser.Checked = True Then
-            Me.param_txt_spindle_maxrpm.Enabled = False
-            Me.param_txt_laser_power.Enabled = True
-            Me.param_cbox_n_eixos.Enabled = False
-            'Me.param_radbtn_spindle.Checked = False
-        End If
-        btn_enviar_parametros_Eixos.Enabled = False
-    End Sub
-
-    ' *******************************************
-    Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
-        Dim s As String = "{"
-        Dim i As Integer = 1
-        Dim prefix As String = ""
-        For Each kvp As KeyValuePair(Of String, String) In dictionary
-
-            If Not kvp.Key.Split("_")(0) = prefix Then
-                s = s + vbNewLine
-            End If
-
-            s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
-
-            If i < dictionary.Count Then
-                s = s + ","
-            End If
-
-            prefix = kvp.Key.Split("_")(0)
-            i = i + 1
-
-        Next
-        s = s + vbNewLine + "}"
-
-        ' write dictionary to file
-        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
-        param_txt_tabelaFerramentas.WriteLine(s)
-        param_txt_tabelaFerramentas.Close()
-
-        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
-    End Sub
-
-    ' *******************************************
-    ' ROTINAS AVISOS
-    ' *******************************************
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_teste.Click
-        ' Teste ... Teste ... TESTE
-        mach = GetObject(, "Mach3.Document")
-        scriptObject = mach.GetScriptDispatch()
-
-        scriptObject.LoadFile("11 CUX56.TXT")
-
-        scriptObject.RunFile()
-
-        While (scriptObject.IsMoving() <> 0)
-            System.Threading.Thread.Sleep(1)
-        End While
-    End Sub
-
-    Private Sub tmr_match3_Tick(sender As Object, e As EventArgs) Handles tmr_match3.Tick
-        ' Leitura Posição Eixo X
-        ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
+        param_btn_eixos_enviar.Enabled = True
 
     End Sub
 
     Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
         'enviar os valores dos parametros gerais para o mach 3'
-
-
-
     End Sub
 
-    Private Sub btn_enviar_parametros_Eixos_Click(sender As Object, e As EventArgs) Handles btn_enviar_parametros_Eixos.Click
+    Private Sub param_btn_eixos_enviar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_enviar.Click
         'enviar os valores dos parametros Eixos para o mach 3'
-
-        Dim qual_eixo As String
-        Dim stepX As Double
-
-        MsgBox(qual_eixo)
 
         'define as unidades em mm '
         scriptObject.SetParam("Units", 0)
@@ -726,8 +686,6 @@ Public Class MainForm
         'valores de limite minimo e maximo'
         scriptObject.SetOEMDRO(156, GlobalVars.param_eixos("X_LIM_INF"))
         scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_SUP"))
-
-
 
         'envia valores relativos a Eixos Y'
         scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
@@ -761,8 +719,6 @@ Public Class MainForm
             'valores de limite minimo e maximo'
             scriptObject.SetOEMDRO(160, GlobalVars.param_eixos("B_LIM_INF"))
             scriptObject.SetOEMDRO(154, GlobalVars.param_eixos("B_LIM_SUP"))
-
-
         End If
 
         If numero_eixos = 6 Then
@@ -775,68 +731,115 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub param_tabela_eixos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles param_tabela_eixos.CellContentClick
-        btn_enviar_parametros_Eixos.Enabled = False
+    Private Sub param_radbtn_spindle_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_spindle.CheckedChanged
+        If Me.param_radbtn_spindle.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = True
+            Me.param_txt_laser_power.Enabled = False
+            Me.param_radbtn_laser.Checked = False
+            Me.param_cbox_n_eixos.Enabled = True
+        Else
+            Me.param_txt_spindle_maxrpm.Enabled = False
+            Me.param_txt_laser_power.Enabled = True
+            Me.param_cbox_n_eixos.Enabled = False
+            'Me.param_radbtn_spindle.Checked = False
+        End If
+        param_btn_eixos_enviar.Enabled = False
+    End Sub
+
+    Private Sub param_radbtn_laser_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_laser.CheckedChanged
+        If Me.param_radbtn_spindle.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = True
+            Me.param_txt_laser_power.Enabled = False
+            Me.param_radbtn_laser.Checked = False
+            Me.param_cbox_n_eixos.Enabled = True
+        ElseIf Me.param_radbtn_laser.Checked = True Then
+            Me.param_txt_spindle_maxrpm.Enabled = False
+            Me.param_txt_laser_power.Enabled = True
+            Me.param_cbox_n_eixos.Enabled = False
+            'Me.param_radbtn_spindle.Checked = False
+        End If
+        param_btn_eixos_enviar.Enabled = False
+    End Sub
+
+    Private Sub param_tabela_eixos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles param_dtgrid_eixos.CellContentClick
+        param_btn_eixos_enviar.Enabled = False
     End Sub
 
     Private Sub param_txt_spindle_maxrpm_TextChanged(sender As Object, e As EventArgs) Handles param_txt_spindle_maxrpm.TextChanged
-        btn_enviar_parametros_Eixos.Enabled = False
+        param_btn_eixos_enviar.Enabled = False
     End Sub
 
     Private Sub param_cbox_n_eixos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles param_cbox_n_eixos.SelectedIndexChanged
-        btn_enviar_parametros_Eixos.Enabled = False
+        param_btn_eixos_enviar.Enabled = False
     End Sub
 
     Private Sub param_txt_laser_power_TextChanged(sender As Object, e As EventArgs) Handles param_txt_laser_power.TextChanged
-        btn_enviar_parametros_Eixos.Enabled = False
+        param_btn_eixos_enviar.Enabled = False
     End Sub
 
-    Private Sub tab_referenciais_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_referenciais.CellContentClick
-        btn_envio_tabela_referenciais.Enabled = False
-    End Sub
+    ' *******************************************
+    Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
+        ' recebe um dicionario e diretorio e escreve o dicionario nesse diretorio em formato JSON
 
-    Private Sub tab_ferramentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tab_ferramentas.CellContentClick
-        btn_enviar_talebas_ferramentas.Enabled = False
-    End Sub
+        Dim s As String = "{"
+        Dim i As Integer = 1
+        Dim prefix As String = ""
+        For Each kvp As KeyValuePair(Of String, String) In dictionary
 
-    Private Sub btn_enviar_talebas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_enviar_talebas_ferramentas.Click
-        Dim ID_ferramenta As String
-        Dim diametro As String
-        Dim compensa_altura As String
-
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
-            If kvp.Key.Split("_")(1) = "NOME" Then
-                ID_ferramenta = kvp.Key.Split("_")(0)
-                diametro = GlobalVars.param_ferramentas(ID_ferramenta & "_DIAMETRO")
-                compensa_altura = GlobalVars.param_ferramentas(ID_ferramenta & "_ALTURA")
-
-                scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
-                scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
-
-
-
-
+            If Not kvp.Key.Split("_")(0) = prefix Then
+                s = s + vbNewLine
             End If
+
+            s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
+
+            If i < dictionary.Count Then
+                s = s + ","
+            End If
+
+            prefix = kvp.Key.Split("_")(0)
+            i = i + 1
+
         Next
+        s = s + vbNewLine + "}"
 
+        ' write dictionary to file
+        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
+        param_txt_tabelaFerramentas.WriteLine(s)
+        param_txt_tabelaFerramentas.Close()
+
+        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
+    End Sub
+
+
+    ' *******************************************
+    ' ROTINAS AVISOS
+    ' *******************************************
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_teste.Click
+        ' Teste ... Teste ... TESTE
+        mach = GetObject(, "Mach3.Document")
+        scriptObject = mach.GetScriptDispatch()
+
+        scriptObject.LoadFile("11 CUX56.TXT")
+
+        scriptObject.RunFile()
+
+        While (scriptObject.IsMoving() <> 0)
+            System.Threading.Thread.Sleep(1)
+        End While
+    End Sub
+
+    Private Sub tmr_match3_Tick(sender As Object, e As EventArgs) Handles tmr_match3.Tick
+        ' Leitura Posição Eixo X
+        ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
 
-    Private Sub btn_envio_tabela_referenciais_Click(sender As Object, e As EventArgs) Handles btn_envio_tabela_referenciais.Click
 
-        'scriptObject.SetOEMDRO(184, 46)
-        'scriptObject.SetOEMDRO(185, 46)
-        'scriptObject.SetOEMDRO(186, 46)
-        'scriptObject.SetOEMDRO(187, 46)
-        'scriptObject.SetOEMDRO(188, 46)
-        'scriptObject.SetOEMDRO(189, 46)
 
-        'envia os valores dos eixos relativos ao G28'
-        scriptObject.SetOEMDRO(190, GlobalVars.param_referenciais("G28_X"))
-        scriptObject.SetOEMDRO(191, GlobalVars.param_referenciais("G28_Y"))
-        scriptObject.SetOEMDRO(192, GlobalVars.param_referenciais("G28_Z"))
-        scriptObject.SetOEMDRO(193, GlobalVars.param_referenciais("G28_A"))
-        scriptObject.SetOEMDRO(194, GlobalVars.param_referenciais("G28_B"))
-        scriptObject.SetOEMDRO(195, GlobalVars.param_referenciais("G28_C"))
-    End Sub
+
+
+
+
+
 End Class
