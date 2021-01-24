@@ -646,11 +646,20 @@ Public Class MainForm
     Private Sub writeDictionary(dictionary As Dictionary(Of String, String), path As String)
         Dim s As String = "{"
         Dim i As Integer = 1
+        Dim prefix As String = ""
         For Each kvp As KeyValuePair(Of String, String) In dictionary
+
+            If Not kvp.Key.Split("_")(0) = prefix Then
+                s = s + vbNewLine
+            End If
+
             s = s + vbNewLine + """" + kvp.Key + """" + ": " + """" + kvp.Value + """"
+
             If i < dictionary.Count Then
                 s = s + ","
             End If
+
+            prefix = kvp.Key.Split("_")(0)
             i = i + 1
 
         Next

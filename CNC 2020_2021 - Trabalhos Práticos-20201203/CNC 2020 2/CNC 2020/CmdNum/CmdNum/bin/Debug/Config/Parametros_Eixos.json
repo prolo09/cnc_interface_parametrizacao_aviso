@@ -1,4 +1,5 @@
 {
+
 "X_PASSO": "1",
 "X_RPM_MAX": "200",
 "X_G00_FEED_MAX": "0",
@@ -8,6 +9,7 @@
 "X_LIM_SUP": "1000",
 "X_ENC_PITCH": "0,1",
 "X_ENC_N_PULSE": "200",
+
 "Y_PASSO": "1",
 "Y_RPM_MAX": "200",
 "Y_G00_FEED_MAX": "0",
@@ -17,6 +19,7 @@
 "Y_LIM_SUP": "1000",
 "Y_ENC_PITCH": "0,1",
 "Y_ENC_N_PULSE": "200",
+
 "Z_PASSO": "1",
 "Z_RPM_MAX": "200",
 "Z_G00_FEED_MAX": "0",
@@ -26,6 +29,7 @@
 "Z_LIM_SUP": "1000",
 "Z_ENC_PITCH": "0,1",
 "Z_ENC_N_PULSE": "200",
+
 "A_PASSO": "1",
 "A_RPM_MAX": "200",
 "A_G00_FEED_MAX": "0",
@@ -35,6 +39,7 @@
 "A_LIM_SUP": "1000",
 "A_ENC_PITCH": "0,1",
 "A_ENC_N_PULSE": "200",
+
 "B_PASSO": "1",
 "B_RPM_MAX": "200",
 "B_G00_FEED_MAX": "0",
@@ -44,6 +49,7 @@
 "B_LIM_SUP": "1000",
 "B_ENC_PITCH": "0,1",
 "B_ENC_N_PULSE": "200",
+
 "C_PASSO": "1",
 "C_RPM_MAX": "200",
 "C_G00_FEED_MAX": "0",
@@ -53,6 +59,8 @@
 "C_LIM_SUP": "1000",
 "C_ENC_PITCH": "0,1",
 "C_ENC_N_PULSE": "200",
+
 "SPINDLE_RPM_MAX": "2000",
+
 "N_EIXOS": "3 (X,Y,Z)"
 }
