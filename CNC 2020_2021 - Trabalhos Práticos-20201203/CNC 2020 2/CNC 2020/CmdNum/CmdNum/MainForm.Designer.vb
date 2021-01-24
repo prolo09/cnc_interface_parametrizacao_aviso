@@ -67,7 +67,6 @@ Partial Class MainForm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
@@ -146,7 +145,6 @@ Partial Class MainForm
         Me.Panel_PosActual_Man.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage8.SuspendLayout()
@@ -467,14 +465,8 @@ Partial Class MainForm
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.LightGray
-        Me.TabPage3.Controls.Add(Me.MaskedTextBox1)
         resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
-        '
-        'MaskedTextBox1
-        '
-        resources.ApplyResources(Me.MaskedTextBox1, "MaskedTextBox1")
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
         '
         'TabPage4
         '
@@ -951,8 +943,6 @@ Partial Class MainForm
         Me.TabPage2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
@@ -1062,7 +1052,6 @@ Partial Class MainForm
     Friend WithEvents param_lbl_spindle_maxrpm As Label
     Friend WithEvents param_radbtn_spindle As RadioButton
     Friend WithEvents param_dtgrid_eixos As DataGridView
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents param_btn_eixos_enviar As Button
     Friend WithEvents tabelas_btn_enviar_referenciais As Button
     Friend WithEvents tabelas_btn_enviar_ferramentas As Button
