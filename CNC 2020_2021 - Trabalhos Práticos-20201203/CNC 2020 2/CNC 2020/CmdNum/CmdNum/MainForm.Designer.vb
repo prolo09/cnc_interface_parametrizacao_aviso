@@ -83,6 +83,7 @@ Partial Class MainForm
         Me.C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.tabelas_btn_enviar_ferramentas = New System.Windows.Forms.Button()
+        Me.tabelas_btn_guardar_ferramentas = New System.Windows.Forms.Button()
         Me.tabela_dtgrid_ferramentas = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,7 +91,6 @@ Partial Class MainForm
         Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tabelas_btn_guardar_ferramentas = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
@@ -578,6 +578,12 @@ Partial Class MainForm
         Me.tabelas_btn_enviar_ferramentas.Name = "tabelas_btn_enviar_ferramentas"
         Me.tabelas_btn_enviar_ferramentas.UseVisualStyleBackColor = True
         '
+        'tabelas_btn_guardar_ferramentas
+        '
+        resources.ApplyResources(Me.tabelas_btn_guardar_ferramentas, "tabelas_btn_guardar_ferramentas")
+        Me.tabelas_btn_guardar_ferramentas.Name = "tabelas_btn_guardar_ferramentas"
+        Me.tabelas_btn_guardar_ferramentas.UseVisualStyleBackColor = True
+        '
         'tabela_dtgrid_ferramentas
         '
         Me.tabela_dtgrid_ferramentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -615,12 +621,6 @@ Partial Class MainForm
         '
         resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
         Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
-        '
-        'tabelas_btn_guardar_ferramentas
-        '
-        resources.ApplyResources(Me.tabelas_btn_guardar_ferramentas, "tabelas_btn_guardar_ferramentas")
-        Me.tabelas_btn_guardar_ferramentas.Name = "tabelas_btn_guardar_ferramentas"
-        Me.tabelas_btn_guardar_ferramentas.UseVisualStyleBackColor = True
         '
         'TabPage5
         '

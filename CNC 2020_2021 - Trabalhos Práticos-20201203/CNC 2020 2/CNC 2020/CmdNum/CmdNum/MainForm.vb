@@ -815,7 +815,7 @@ Public Class MainForm
     ' ROTINAS AVISOS
     ' *******************************************
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         ' Teste ... Teste ... TESTE
         mach = GetObject(, "Mach3.Document")
         scriptObject = mach.GetScriptDispatch()
