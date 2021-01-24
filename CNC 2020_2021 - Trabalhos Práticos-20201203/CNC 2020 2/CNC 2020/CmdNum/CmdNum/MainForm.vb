@@ -715,8 +715,8 @@ Public Class MainForm
         scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
         scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
         'valores de limite minimo e maximo'
-        scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_INF"))
-        scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("X_LIM_SUP"))
+        scriptObject.SetOEMDRO(156, GlobalVars.param_eixos("X_LIM_INF"))
+        scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_SUP"))
 
 
 
@@ -724,16 +724,16 @@ Public Class MainForm
         scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
         scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")))
         'valores de limite minimo e maximo'
-        scriptObject.SetOEMDRO(5, GlobalVars.param_eixos("Y_LIM_INF"))
-        scriptObject.SetOEMDRO(11, GlobalVars.param_eixos("Y_LIM_SUP"))
+        scriptObject.SetOEMDRO(157, GlobalVars.param_eixos("Y_LIM_INF"))
+        scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("Y_LIM_SUP"))
 
         If numero_eixos = 3 Or numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
             'envia valores relativos a Eixos Z'
             scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("Z_PASSO")))
             scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(6, GlobalVars.param_eixos("Z_LIM_INF"))
-            scriptObject.SetOEMDRO(12, GlobalVars.param_eixos("Z_LIM_SUP"))
+            scriptObject.SetOEMDRO(158, GlobalVars.param_eixos("Z_LIM_INF"))
+            scriptObject.SetOEMDRO(152, GlobalVars.param_eixos("Z_LIM_SUP"))
         End If
 
         If numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
@@ -741,8 +741,8 @@ Public Class MainForm
             scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("A_PASSO")))
             scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(7, GlobalVars.param_eixos("A_LIM_INF"))
-            scriptObject.SetOEMDRO(13, GlobalVars.param_eixos("A_LIM_SUP"))
+            scriptObject.SetOEMDRO(159, GlobalVars.param_eixos("A_LIM_INF"))
+            scriptObject.SetOEMDRO(153, GlobalVars.param_eixos("A_LIM_SUP"))
         End If
 
         If numero_eixos = 5 Or numero_eixos = 6 Then
@@ -750,8 +750,8 @@ Public Class MainForm
             scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("B_PASSO")))
             scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(8, GlobalVars.param_eixos("B_LIM_INF"))
-            scriptObject.SetOEMDRO(14, GlobalVars.param_eixos("B_LIM_SUP"))
+            scriptObject.SetOEMDRO(160, GlobalVars.param_eixos("B_LIM_INF"))
+            scriptObject.SetOEMDRO(154, GlobalVars.param_eixos("B_LIM_SUP"))
 
 
         End If
@@ -761,8 +761,8 @@ Public Class MainForm
             scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("C_PASSO")))
             scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(9, GlobalVars.param_eixos("C_LIM_INF"))
-            scriptObject.SetOEMDRO(15, GlobalVars.param_eixos("C_LIM_SUP"))
+            scriptObject.SetOEMDRO(161, GlobalVars.param_eixos("C_LIM_INF"))
+            scriptObject.SetOEMDRO(155, GlobalVars.param_eixos("C_LIM_SUP"))
         End If
     End Sub
 
@@ -792,12 +792,42 @@ Public Class MainForm
 
     Private Sub btn_enviar_talebas_ferramentas_Click(sender As Object, e As EventArgs) Handles btn_enviar_talebas_ferramentas.Click
         Dim ID_ferramenta As String
+        Dim diametro As String
+        Dim compensa_altura As String
+
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
             If kvp.Key.Split("_")(1) = "NOME" Then
                 ID_ferramenta = kvp.Key.Split("_")(0)
+                diametro = GlobalVars.param_ferramentas(ID_ferramenta & "_DIAMETRO")
+                compensa_altura = GlobalVars.param_ferramentas(ID_ferramenta & "_ALTURA")
+
+                scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
+                scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
+
+
 
 
             End If
         Next
+
+
+    End Sub
+
+    Private Sub btn_envio_tabela_referenciais_Click(sender As Object, e As EventArgs) Handles btn_envio_tabela_referenciais.Click
+
+        'scriptObject.SetOEMDRO(184, 46)
+        'scriptObject.SetOEMDRO(185, 46)
+        'scriptObject.SetOEMDRO(186, 46)
+        'scriptObject.SetOEMDRO(187, 46)
+        'scriptObject.SetOEMDRO(188, 46)
+        'scriptObject.SetOEMDRO(189, 46)
+
+        'envia os valores dos eixos relativos ao G28'
+        scriptObject.SetOEMDRO(190, GlobalVars.param_referenciais("G28_X"))
+        scriptObject.SetOEMDRO(191, GlobalVars.param_referenciais("G28_Y"))
+        scriptObject.SetOEMDRO(192, GlobalVars.param_referenciais("G28_Z"))
+        scriptObject.SetOEMDRO(193, GlobalVars.param_referenciais("G28_A"))
+        scriptObject.SetOEMDRO(194, GlobalVars.param_referenciais("G28_B"))
+        scriptObject.SetOEMDRO(195, GlobalVars.param_referenciais("G28_C"))
     End Sub
 End Class
