@@ -63,8 +63,8 @@ Public Class MainForm
         'ler ficheiros de parametros
         readParamGerais(GlobalVars.param_gerais_path)
         readParamEixos(GlobalVars.param_eixos_path)
-        readParamFerramentas(GlobalVars.param_ferramentas_path)
-        readParamReferenciais(GlobalVars.param_referenciais_path)
+        readParamFerramentas(GlobalVars.tabela_ferramentas_path)
+        readParamReferenciais(GlobalVars.tabela_referenciais_path)
 
         '--------------------------------------------------------------------------------
 
@@ -191,29 +191,29 @@ Public Class MainForm
 
     Private Sub inicializarParamFerramentas()
         ' ferramentas predefinidas
-        GlobalVars.param_ferramentas.Add("1" + "_NOME", "Fresa")
-        GlobalVars.param_ferramentas.Add("1" + "_POCKET", "1")
-        GlobalVars.param_ferramentas.Add("1" + "_ALTURA", "15")
-        GlobalVars.param_ferramentas.Add("1" + "_DIAMETRO", "15")
-        GlobalVars.param_ferramentas.Add("1" + "_OBSERCACOES", "Fresa predefinida")
+        GlobalVars.tabela_ferramentas.Add("1" + "_NOME", "Fresa")
+        GlobalVars.tabela_ferramentas.Add("1" + "_POCKET", "1")
+        GlobalVars.tabela_ferramentas.Add("1" + "_ALTURA", "15")
+        GlobalVars.tabela_ferramentas.Add("1" + "_DIAMETRO", "15")
+        GlobalVars.tabela_ferramentas.Add("1" + "_OBSERCACOES", "Fresa predefinida")
     End Sub
 
     Private Sub inicializarParamReferenciais()
         ' inicializar tabela de referenciais
-        GlobalVars.param_referenciais.Add("G28" + "_X", "0")
-        GlobalVars.param_referenciais.Add("G28" + "_Y", "0")
-        GlobalVars.param_referenciais.Add("G28" + "_Z", "0")
-        GlobalVars.param_referenciais.Add("G28" + "_A", "0")
-        GlobalVars.param_referenciais.Add("G28" + "_B", "0")
-        GlobalVars.param_referenciais.Add("G28" + "_C", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_X", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_Y", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_Z", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_A", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_B", "0")
+        GlobalVars.tabela_referenciais.Add("G28" + "_C", "0")
 
         For i As Integer = 54 To 59
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_X", "")
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_Y", "")
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_Z", "")
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_A", "")
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_B", "")
-            GlobalVars.param_referenciais.Add("G" + CStr(i) + "_C", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_X", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_Y", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_Z", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_A", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_B", "")
+            GlobalVars.tabela_referenciais.Add("G" + CStr(i) + "_C", "")
         Next
 
     End Sub
@@ -226,7 +226,7 @@ Public Class MainForm
         'parametros ferramentas
         Try
             json = File.ReadAllText(path)
-            GlobalVars.param_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
+            GlobalVars.tabela_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -238,7 +238,7 @@ Public Class MainForm
         ' display on GUI
         Dim i As Integer
         Dim j As Integer = 0
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_ferramentas
             If j = 0 Then
                 i = tabela_dtgrid_ferramentas.Rows.Add()
                 tabela_dtgrid_ferramentas.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
@@ -265,7 +265,7 @@ Public Class MainForm
         'parametros referenciais
         Try
             json = File.ReadAllText(path)
-            GlobalVars.param_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+            GlobalVars.tabela_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
             MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Configurações não encontradas",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -277,7 +277,7 @@ Public Class MainForm
         ' display on GUI
         Dim i As Integer
         Dim j As Integer = 0
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_referenciais
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
             If j = 0 Then
                 i = tabela_dtgrid_referenciais.Rows.Add()
                 tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
@@ -310,21 +310,21 @@ Public Class MainForm
             Next
 
             If i = 0 Then
-                GlobalVars.param_ferramentas.Clear()
+                GlobalVars.tabela_ferramentas.Clear()
             End If
 
             ' atualizar o dicionario
             Dim idTool As String = tabela_dtgrid_ferramentas.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_ferramentas.Add(idTool + "_NOME", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_POCKET", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_ALTURA", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_DIAMETRO", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_ferramentas.Add(idTool + "_OBSERCACOES", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.tabela_ferramentas.Add(idTool + "_NOME", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.tabela_ferramentas.Add(idTool + "_POCKET", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.tabela_ferramentas.Add(idTool + "_ALTURA", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.tabela_ferramentas.Add(idTool + "_DIAMETRO", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.tabela_ferramentas.Add(idTool + "_OBSERCACOES", CStr(tabela_dtgrid_ferramentas.Rows(i).Cells(5).FormattedValue))
         Next
 
         ' exportar dicionario
-        writeDictionary(GlobalVars.param_ferramentas, GlobalVars.param_ferramentas_path)
+        writeDictionary(GlobalVars.tabela_ferramentas, GlobalVars.tabela_ferramentas_path)
         tabelas_btn_enviar_ferramentas.Enabled = True
     End Sub
 
@@ -342,22 +342,22 @@ Public Class MainForm
             Next
 
             If i = 0 Then
-                GlobalVars.param_referenciais.Clear()
+                GlobalVars.tabela_referenciais.Clear()
             End If
 
             ' atualizar o dicionario
             Dim ref_name As String = tabela_dtgrid_referenciais.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_referenciais.Add(ref_name + "_X", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_Y", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(2).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_Z", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(3).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_A", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(4).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_B", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(5).FormattedValue))
-            GlobalVars.param_referenciais.Add(ref_name + "_C", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(6).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_X", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(1).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_Y", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_Z", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(3).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_A", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(4).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_B", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(5).FormattedValue))
+            GlobalVars.tabela_referenciais.Add(ref_name + "_C", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(6).FormattedValue))
         Next
 
         ' exportar dicionario
-        writeDictionary(GlobalVars.param_referenciais, GlobalVars.param_referenciais_path)
+        writeDictionary(GlobalVars.tabela_referenciais, GlobalVars.tabela_referenciais_path)
         tabelas_btn_enviar_referenciais.Enabled = True
     End Sub
 
@@ -368,11 +368,11 @@ Public Class MainForm
         Dim diametro As String
         Dim compensa_altura As String
 
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.param_ferramentas
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_ferramentas
             If kvp.Key.Split("_")(1) = "NOME" Then
                 ID_ferramenta = kvp.Key.Split("_")(0)
-                diametro = GlobalVars.param_ferramentas(ID_ferramenta & "_DIAMETRO")
-                compensa_altura = GlobalVars.param_ferramentas(ID_ferramenta & "_ALTURA")
+                diametro = GlobalVars.tabela_ferramentas(ID_ferramenta & "_DIAMETRO")
+                compensa_altura = GlobalVars.tabela_ferramentas(ID_ferramenta & "_ALTURA")
 
                 scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
                 scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
@@ -393,12 +393,12 @@ Public Class MainForm
         'scriptObject.SetOEMDRO(189, 46)
 
         'envia os valores dos eixos relativos ao G28'
-        scriptObject.SetOEMDRO(190, GlobalVars.param_referenciais("G28_X"))
-        scriptObject.SetOEMDRO(191, GlobalVars.param_referenciais("G28_Y"))
-        scriptObject.SetOEMDRO(192, GlobalVars.param_referenciais("G28_Z"))
-        scriptObject.SetOEMDRO(193, GlobalVars.param_referenciais("G28_A"))
-        scriptObject.SetOEMDRO(194, GlobalVars.param_referenciais("G28_B"))
-        scriptObject.SetOEMDRO(195, GlobalVars.param_referenciais("G28_C"))
+        scriptObject.SetOEMDRO(190, GlobalVars.tabela_referenciais("G28_X"))
+        scriptObject.SetOEMDRO(191, GlobalVars.tabela_referenciais("G28_Y"))
+        scriptObject.SetOEMDRO(192, GlobalVars.tabela_referenciais("G28_Z"))
+        scriptObject.SetOEMDRO(193, GlobalVars.tabela_referenciais("G28_A"))
+        scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
+        scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
     End Sub
 
     Private Sub tabela_dtgrid_referenciais_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabela_dtgrid_referenciais.CellContentClick

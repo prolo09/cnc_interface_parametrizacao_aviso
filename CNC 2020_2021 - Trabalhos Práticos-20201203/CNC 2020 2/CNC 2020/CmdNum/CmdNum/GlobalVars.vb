@@ -28,10 +28,10 @@
     ' *******************************************
     ' TABELAS
     ' *******************************************
-    Public param_ferramentas As New Dictionary(Of String, String)
-    Public param_ferramentas_path As String = "Config\Parametros_Ferramentas.json"
-    Public param_referenciais As New Dictionary(Of String, String)
-    Public param_referenciais_path As String = "Config\Parametros_Referenciais.json"
+    Public tabela_ferramentas As New Dictionary(Of String, String)
+    Public tabela_ferramentas_path As String = "Config\Parametros_Ferramentas.json"
+    Public tabela_referenciais As New Dictionary(Of String, String)
+    Public tabela_referenciais_path As String = "Config\Parametros_Referenciais.json"
 
 
     ' *******************************************
