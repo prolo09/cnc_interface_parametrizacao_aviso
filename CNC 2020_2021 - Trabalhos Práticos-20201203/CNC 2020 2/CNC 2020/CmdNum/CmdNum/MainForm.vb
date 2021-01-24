@@ -594,7 +594,7 @@ Public Class MainForm
         ' ler tabela de propriedades de eixos e colocar num dicionario
 
         ' confirmar os dados numericos
-        For i As Integer = 0 To param_dtgrid_eixos.Rows.Count - 2
+        For i As Integer = 0 To param_dtgrid_eixos.Rows.Count - 1
             For j As Integer = 1 To param_dtgrid_eixos.Rows(i).Cells.Count - 1
                 If Not IsNumeric(param_dtgrid_eixos.Rows(i).Cells(j).Value) And Not param_dtgrid_eixos.Rows(i).Cells(j).Value = "" Then
                     MessageBox.Show("Valor da coluna """ + param_dtgrid_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_dtgrid_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",

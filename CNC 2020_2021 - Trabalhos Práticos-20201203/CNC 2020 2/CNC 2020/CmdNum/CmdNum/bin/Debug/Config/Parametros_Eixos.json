@@ -62,5 +62,5 @@
 
 "SPINDLE_RPM_MAX": "2000",
 
-"N_EIXOS": "2 (X,Y)"
+"N_EIXOS": "3 (X,Y,Z)"
 }

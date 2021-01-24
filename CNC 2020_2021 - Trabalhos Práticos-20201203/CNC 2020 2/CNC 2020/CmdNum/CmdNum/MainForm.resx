@@ -1467,47 +1467,47 @@
   <metadata name="Referencial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="Referencial.HeaderText" xml:space="preserve">
+    <value>Referencial</value>
+  </data>
   <data name="Referencial.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Referencial.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="X.HeaderText" xml:space="preserve">
+    <value>X</value>
   </data>
   <data name="X.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="X.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="Y.HeaderText" xml:space="preserve">
+    <value>Y</value>
   </data>
   <data name="Y.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Y.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="Z.HeaderText" xml:space="preserve">
+    <value>Z</value>
   </data>
   <data name="Z.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Z.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="A.HeaderText" xml:space="preserve">
+    <value>A</value>
   </data>
   <data name="A.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="A.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="B.HeaderText" xml:space="preserve">
+    <value>B</value>
   </data>
   <data name="B.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="B.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="C.HeaderText" xml:space="preserve">
+    <value>C</value>
   </data>
   <data name="C.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="C.Width" type="System.Int32, mscorlib">
-    <value>125</value>
   </data>
   <data name="tabela_dtgrid_referenciais.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1645,7 +1645,7 @@
     <value>True</value>
   </metadata>
   <data name="param_dataGrid_nomeFerramentas.HeaderText" xml:space="preserve">
-    <value>Nome Ferramenta</value>
+    <value>Nome da Ferramenta</value>
   </data>
   <data name="param_dataGrid_nomeFerramentas.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1699,7 +1699,7 @@
     <value>6</value>
   </data>
   <data name="param_dataGrid_obsercacoes.Width" type="System.Int32, mscorlib">
-    <value>300</value>
+    <value>365</value>
   </data>
   <data name="tabela_dtgrid_ferramentas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1711,7 +1711,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="tabela_dtgrid_ferramentas.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>30</value>
   </data>
   <data name="tabela_dtgrid_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
     <value>981, 460</value>
@@ -1924,13 +1924,13 @@
     <value>2, 0, 2, 0</value>
   </data>
   <data name="param_lbl_protocolo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>135, 13</value>
   </data>
   <data name="param_lbl_protocolo.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="param_lbl_protocolo.Text" xml:space="preserve">
-    <value>Protocolo</value>
+    <value>Protocolo de Comunicação</value>
   </data>
   <data name="&gt;&gt;param_lbl_protocolo.Name" xml:space="preserve">
     <value>param_lbl_protocolo</value>
@@ -2158,7 +2158,7 @@
     <value>6 (X,Y,Z,A,B,C)</value>
   </data>
   <data name="param_cbox_n_eixos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 464</value>
+    <value>97, 239</value>
   </data>
   <data name="param_cbox_n_eixos.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 21</value>
@@ -2185,7 +2185,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_n_eixos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 468</value>
+    <value>37, 243</value>
   </data>
   <data name="param_lbl_n_eixos.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -2269,7 +2269,7 @@
     <value>3</value>
   </data>
   <data name="param_txt_laser_power.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 427</value>
+    <value>497, 202</value>
   </data>
   <data name="param_txt_laser_power.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -2290,7 +2290,7 @@
     <value>4</value>
   </data>
   <data name="param_txt_spindle_maxrpm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 427</value>
+    <value>97, 202</value>
   </data>
   <data name="param_txt_spindle_maxrpm.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -2317,7 +2317,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_laser_power.Location" type="System.Drawing.Point, System.Drawing">
-    <value>437, 431</value>
+    <value>442, 206</value>
   </data>
   <data name="param_laser_power.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -2347,7 +2347,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_radbtn_laser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 402</value>
+    <value>422, 177</value>
   </data>
   <data name="param_radbtn_laser.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 17</value>
@@ -2380,7 +2380,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_spindle_maxrpm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 431</value>
+    <value>37, 206</value>
   </data>
   <data name="param_lbl_spindle_maxrpm.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -2410,7 +2410,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_radbtn_spindle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 402</value>
+    <value>19, 177</value>
   </data>
   <data name="param_radbtn_spindle.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 17</value>
@@ -2442,9 +2442,6 @@
   <data name="eixo.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="eixo.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="passo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2453,9 +2450,6 @@
   </data>
   <data name="passo.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="passo.Width" type="System.Int32, mscorlib">
-    <value>125</value>
   </data>
   <metadata name="max_rpm.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2466,9 +2460,6 @@
   <data name="max_rpm.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="max_rpm.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="limite_inferior.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2477,9 +2468,6 @@
   </data>
   <data name="limite_inferior.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="limite_inferior.Width" type="System.Int32, mscorlib">
-    <value>125</value>
   </data>
   <metadata name="limite_superior.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2490,9 +2478,6 @@
   <data name="limite_superior.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="limite_superior.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="encoder_pitch.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2502,9 +2487,6 @@
   <data name="encoder_pitch.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="encoder_pitch.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="encoder_n_pulsos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2513,9 +2495,6 @@
   </data>
   <data name="encoder_n_pulsos.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="encoder_n_pulsos.Width" type="System.Int32, mscorlib">
-    <value>125</value>
   </data>
   <data name="param_dtgrid_eixos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2529,8 +2508,11 @@
   <data name="param_dtgrid_eixos.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
+  <data name="param_dtgrid_eixos.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="param_dtgrid_eixos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>981, 379</value>
+    <value>981, 155</value>
   </data>
   <data name="param_dtgrid_eixos.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3508,126 +3490,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
   </data>
-  <data name="&gt;&gt;Referencial.Name" xml:space="preserve">
-    <value>Referencial</value>
-  </data>
-  <data name="&gt;&gt;Referencial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;X.Name" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="&gt;&gt;X.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Y.Name" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="&gt;&gt;Y.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Z.Name" xml:space="preserve">
-    <value>Z</value>
-  </data>
-  <data name="&gt;&gt;Z.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;A.Name" xml:space="preserve">
-    <value>A</value>
-  </data>
-  <data name="&gt;&gt;A.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B.Name" xml:space="preserve">
-    <value>B</value>
-  </data>
-  <data name="&gt;&gt;B.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;C.Name" xml:space="preserve">
-    <value>C</value>
-  </data>
-  <data name="&gt;&gt;C.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ID.Name" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="&gt;&gt;ID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Name" xml:space="preserve">
-    <value>param_dataGrid_nomeFerramentas</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Pocket.Name" xml:space="preserve">
-    <value>Pocket</value>
-  </data>
-  <data name="&gt;&gt;Pocket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Altura.Name" xml:space="preserve">
-    <value>Altura</value>
-  </data>
-  <data name="&gt;&gt;Altura.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Diametro.Name" xml:space="preserve">
-    <value>Diametro</value>
-  </data>
-  <data name="&gt;&gt;Diametro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_obsercacoes.Name" xml:space="preserve">
-    <value>param_dataGrid_obsercacoes</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_obsercacoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eixo.Name" xml:space="preserve">
-    <value>eixo</value>
-  </data>
-  <data name="&gt;&gt;eixo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;passo.Name" xml:space="preserve">
-    <value>passo</value>
-  </data>
-  <data name="&gt;&gt;passo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;max_rpm.Name" xml:space="preserve">
-    <value>max_rpm</value>
-  </data>
-  <data name="&gt;&gt;max_rpm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;limite_inferior.Name" xml:space="preserve">
-    <value>limite_inferior</value>
-  </data>
-  <data name="&gt;&gt;limite_inferior.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;limite_superior.Name" xml:space="preserve">
-    <value>limite_superior</value>
-  </data>
-  <data name="&gt;&gt;limite_superior.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;encoder_pitch.Name" xml:space="preserve">
-    <value>encoder_pitch</value>
-  </data>
-  <data name="&gt;&gt;encoder_pitch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;encoder_n_pulsos.Name" xml:space="preserve">
-    <value>encoder_n_pulsos</value>
-  </data>
-  <data name="&gt;&gt;encoder_n_pulsos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ImageList1.Name" xml:space="preserve">
     <value>ImageList1</value>
   </data>
@@ -3699,6 +3561,126 @@
   </data>
   <data name="&gt;&gt;SerialPort1.Type" xml:space="preserve">
     <value>System.IO.Ports.SerialPort, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ID.Name" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Name" xml:space="preserve">
+    <value>param_dataGrid_nomeFerramentas</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Pocket.Name" xml:space="preserve">
+    <value>Pocket</value>
+  </data>
+  <data name="&gt;&gt;Pocket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Altura.Name" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="&gt;&gt;Altura.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Diametro.Name" xml:space="preserve">
+    <value>Diametro</value>
+  </data>
+  <data name="&gt;&gt;Diametro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_obsercacoes.Name" xml:space="preserve">
+    <value>param_dataGrid_obsercacoes</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_obsercacoes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Referencial.Name" xml:space="preserve">
+    <value>Referencial</value>
+  </data>
+  <data name="&gt;&gt;Referencial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;X.Name" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;X.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Y.Name" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="&gt;&gt;Y.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Z.Name" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="&gt;&gt;Z.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;A.Name" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="&gt;&gt;A.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;B.Name" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="&gt;&gt;B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;C.Name" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="&gt;&gt;C.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eixo.Name" xml:space="preserve">
+    <value>eixo</value>
+  </data>
+  <data name="&gt;&gt;eixo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passo.Name" xml:space="preserve">
+    <value>passo</value>
+  </data>
+  <data name="&gt;&gt;passo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;max_rpm.Name" xml:space="preserve">
+    <value>max_rpm</value>
+  </data>
+  <data name="&gt;&gt;max_rpm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;limite_inferior.Name" xml:space="preserve">
+    <value>limite_inferior</value>
+  </data>
+  <data name="&gt;&gt;limite_inferior.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;limite_superior.Name" xml:space="preserve">
+    <value>limite_superior</value>
+  </data>
+  <data name="&gt;&gt;limite_superior.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;encoder_pitch.Name" xml:space="preserve">
+    <value>encoder_pitch</value>
+  </data>
+  <data name="&gt;&gt;encoder_pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;encoder_n_pulsos.Name" xml:space="preserve">
+    <value>encoder_n_pulsos</value>
+  </data>
+  <data name="&gt;&gt;encoder_n_pulsos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
