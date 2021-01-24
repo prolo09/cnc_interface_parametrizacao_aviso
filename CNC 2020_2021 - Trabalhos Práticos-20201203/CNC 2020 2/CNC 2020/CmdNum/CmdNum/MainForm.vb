@@ -815,7 +815,7 @@ Public Class MainForm
     ' ROTINAS AVISOS
     ' *******************************************
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_teste.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
         ' Teste ... Teste ... TESTE
         mach = GetObject(, "Mach3.Document")
         scriptObject = mach.GetScriptDispatch()
@@ -834,12 +834,5 @@ Public Class MainForm
         ''txt_ManPosX.Text = Format(scriptObject.GetABSPostion(0), "###,##0.#0")
 
     End Sub
-
-
-
-
-
-
-
 
 End Class

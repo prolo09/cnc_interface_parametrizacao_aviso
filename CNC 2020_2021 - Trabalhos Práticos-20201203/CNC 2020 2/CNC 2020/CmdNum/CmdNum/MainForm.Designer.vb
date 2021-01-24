@@ -36,7 +36,6 @@ Partial Class MainForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_PosManEixoX = New System.Windows.Forms.TextBox()
         Me.trackBar_ManFeedRate = New System.Windows.Forms.TrackBar()
-        Me.btn_teste = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txt_AutFeedRate = New System.Windows.Forms.TextBox()
@@ -183,7 +182,6 @@ Partial Class MainForm
         Me.TabPage1.BackColor = System.Drawing.Color.LightGray
         Me.TabPage1.Controls.Add(Me.Label12)
         Me.TabPage1.Controls.Add(Me.Panel3)
-        Me.TabPage1.Controls.Add(Me.btn_teste)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.Panel_PosActual_Man)
@@ -258,12 +256,6 @@ Partial Class MainForm
         resources.ApplyResources(Me.trackBar_ManFeedRate, "trackBar_ManFeedRate")
         Me.trackBar_ManFeedRate.Maximum = 100
         Me.trackBar_ManFeedRate.Name = "trackBar_ManFeedRate"
-        '
-        'btn_teste
-        '
-        resources.ApplyResources(Me.btn_teste, "btn_teste")
-        Me.btn_teste.Name = "btn_teste"
-        Me.btn_teste.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -574,8 +566,8 @@ Partial Class MainForm
         'TabPage9
         '
         Me.TabPage9.Controls.Add(Me.tabelas_btn_enviar_ferramentas)
-        Me.TabPage9.Controls.Add(Me.tabela_dtgrid_ferramentas)
         Me.TabPage9.Controls.Add(Me.tabelas_btn_guardar_ferramentas)
+        Me.TabPage9.Controls.Add(Me.tabela_dtgrid_ferramentas)
         resources.ApplyResources(Me.TabPage9, "TabPage9")
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -639,9 +631,9 @@ Partial Class MainForm
         '
         'param_tab_control
         '
+        resources.ApplyResources(Me.param_tab_control, "param_tab_control")
         Me.param_tab_control.Controls.Add(Me.param_tab_geral)
         Me.param_tab_control.Controls.Add(Me.param_tab_eixos)
-        resources.ApplyResources(Me.param_tab_control, "param_tab_control")
         Me.param_tab_control.Name = "param_tab_control"
         Me.param_tab_control.SelectedIndex = 0
         Me.param_tab_control.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
@@ -1014,7 +1006,6 @@ Partial Class MainForm
     Friend WithEvents ParâmetrosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AvisosToolStripMenuItem As ToolStripMenuItem
     Public WithEvents txt_ManPosX As TextBox
-    Friend WithEvents btn_teste As Button
     Friend WithEvents tmr_match3 As Timer
     Private WithEvents Label10 As Label
     Private WithEvents Label9 As Label

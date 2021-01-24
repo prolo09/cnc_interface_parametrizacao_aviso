@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 240</value>
+    <value>387, 295</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
@@ -408,35 +408,11 @@
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btn_teste.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 473</value>
-  </data>
-  <data name="btn_teste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 81</value>
-  </data>
-  <data name="btn_teste.TabIndex" type="System.Int32, mscorlib">
-    <value>107</value>
-  </data>
-  <data name="btn_teste.Text" xml:space="preserve">
-    <value>TESTE (Para Eliminar)</value>
-  </data>
-  <data name="&gt;&gt;btn_teste.Name" xml:space="preserve">
-    <value>btn_teste</value>
-  </data>
-  <data name="&gt;&gt;btn_teste.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_teste.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;btn_teste.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="Label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 240</value>
+    <value>13, 295</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
@@ -460,7 +436,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="txt_AutFeedRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>89, 25</value>
@@ -757,7 +733,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txt_ManPosY.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -997,10 +973,10 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;Panel_PosActual_Man.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label125.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 15</value>
+    <value>13, 17</value>
   </data>
   <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
@@ -1024,7 +1000,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;label125.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="TabPage1.ImageKey" xml:space="preserve">
     <value>man1.png</value>
@@ -1042,7 +1018,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1003, 698</value>
+    <value>1003, 546</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1432,7 +1408,7 @@
     <value>Katakana</value>
   </data>
   <data name="tabelas_btn_enviar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 452</value>
+    <value>818, 467</value>
   </data>
   <data name="tabelas_btn_enviar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1462,7 +1438,7 @@
     <value>Katakana</value>
   </data>
   <data name="tabelas_btn_guardar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>810, 452</value>
+    <value>902, 467</value>
   </data>
   <data name="tabelas_btn_guardar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1543,7 +1519,7 @@
     <value>51</value>
   </data>
   <data name="tabela_dtgrid_referenciais.Size" type="System.Drawing.Size, System.Drawing">
-    <value>981, 445</value>
+    <value>981, 460</value>
   </data>
   <data name="tabela_dtgrid_referenciais.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1570,7 +1546,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TabPage8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>987, 664</value>
+    <value>987, 512</value>
   </data>
   <data name="TabPage8.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1597,13 +1573,13 @@
     <value>Katakana</value>
   </data>
   <data name="tabelas_btn_enviar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>763, 601</value>
+    <value>815, 467</value>
   </data>
   <data name="tabelas_btn_enviar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="tabelas_btn_enviar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 41</value>
+    <value>80, 41</value>
   </data>
   <data name="tabelas_btn_enviar_ferramentas.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1622,6 +1598,39 @@
   </data>
   <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>901, 467</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 41</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Name" xml:space="preserve">
+    <value>tabelas_btn_guardar_ferramentas</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Parent" xml:space="preserve">
+    <value>TabPage9</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ID.HeaderText" xml:space="preserve">
     <value>ID</value>
@@ -1705,7 +1714,7 @@
     <value>51</value>
   </data>
   <data name="tabela_dtgrid_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>981, 456</value>
+    <value>981, 460</value>
   </data>
   <data name="tabela_dtgrid_ferramentas.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1720,39 +1729,6 @@
     <value>TabPage9</value>
   </data>
   <data name="&gt;&gt;tabela_dtgrid_ferramentas.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Katakana</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>876, 601</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 41</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Text" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Name" xml:space="preserve">
-    <value>tabelas_btn_guardar_ferramentas</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Parent" xml:space="preserve">
-    <value>TabPage9</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="TabPage9.Location" type="System.Drawing.Point, System.Drawing">
@@ -1765,7 +1741,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TabPage9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>987, 664</value>
+    <value>987, 512</value>
   </data>
   <data name="TabPage9.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1795,7 +1771,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>995, 690</value>
+    <value>995, 538</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1825,7 +1801,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="TabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1003, 698</value>
+    <value>1003, 546</value>
   </data>
   <data name="TabPage4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1844,6 +1820,9 @@
   </data>
   <data name="&gt;&gt;TabPage4.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="param_tab_control.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="param_txt_end_ip.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 199</value>
@@ -2100,11 +2079,14 @@
   <data name="&gt;&gt;param_lbl_portcom.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="param_btn_guardar_gerais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="param_btn_guardar_gerais.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Katakana</value>
   </data>
   <data name="param_btn_guardar_gerais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>807, 481</value>
+    <value>902, 467</value>
   </data>
   <data name="param_btn_guardar_gerais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2140,7 +2122,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="param_tab_geral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>987, 664</value>
+    <value>987, 512</value>
   </data>
   <data name="param_tab_geral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2230,7 +2212,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_btn_eixos_enviar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>727, 481</value>
+    <value>818, 467</value>
   </data>
   <data name="param_btn_eixos_enviar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2260,7 +2242,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_btn_eixos_guardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>809, 481</value>
+    <value>902, 467</value>
   </data>
   <data name="param_btn_eixos_guardar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2548,7 +2530,7 @@
     <value>51</value>
   </data>
   <data name="param_dtgrid_eixos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>981, 452</value>
+    <value>981, 379</value>
   </data>
   <data name="param_dtgrid_eixos.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2575,7 +2557,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="param_tab_eixos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>987, 664</value>
+    <value>987, 512</value>
   </data>
   <data name="param_tab_eixos.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2595,9 +2577,6 @@
   <data name="&gt;&gt;param_tab_eixos.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="param_tab_control.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="param_tab_control.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
@@ -2605,7 +2584,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="param_tab_control.Size" type="System.Drawing.Size, System.Drawing">
-    <value>995, 690</value>
+    <value>995, 538</value>
   </data>
   <data name="param_tab_control.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2635,7 +2614,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="TabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1003, 698</value>
+    <value>1003, 546</value>
   </data>
   <data name="TabPage5.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2696,7 +2675,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        mwAAAk1TRnQBSQFMAgEBCAEAAXgBAQF4AQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
+        mwAAAk1TRnQBSQFMAgEBCAEAAaABAQGgAQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
         AQECAAGWAwABAQEAARgFAAEgAb8BAv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -3377,7 +3356,7 @@
     <value>0, 0</value>
   </data>
   <data name="TabCtrl_Option.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1011, 756</value>
+    <value>1011, 604</value>
   </data>
   <data name="TabCtrl_Option.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3404,7 +3383,7 @@
     <value>ToolStripStatusLabel1</value>
   </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 769</value>
+    <value>0, 633</value>
   </data>
   <data name="StatusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>1022, 22</value>
@@ -3520,8 +3499,11 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1022, 791</value>
+    <value>1022, 655</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
