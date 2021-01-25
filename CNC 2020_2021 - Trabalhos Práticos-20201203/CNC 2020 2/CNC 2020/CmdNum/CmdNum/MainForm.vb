@@ -73,10 +73,15 @@ Public Class MainForm
         StatusStripLbl_Modo.Text = "Modo Manual"
 
         ' Abertura das comunicações com o Match3
-        mach = GetObject(, "Mach4.Document")
-        scriptObject = mach.GetScriptDispatch()
+        Try
+            mach = GetObject(, "Mach4.Document")
+        Catch ex As Exception
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e reinicie esta aplicação.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End Try
 
-        ' Necessário confirmar se o Match3 está OK
+        scriptObject = mach.GetScriptDispatch()
 
         ' Definições do temporizador para leitura de posição dos eixos (Match3)
         tmr_match3.Interval = 250

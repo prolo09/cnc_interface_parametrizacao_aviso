@@ -1,10 +1,10 @@
 {
 
-"X_PASSO": "1",
+"X_PASSO": "1.4",
 "X_RPM_MAX": "200",
-"X_G00_FEED_MAX": "200",
-"X_G01_FEED_MAX": "120",
-"X_JOG_FEED_MAX": "40",
+"X_G00_FEED_MAX": "280.0",
+"X_G01_FEED_MAX": "168",
+"X_JOG_FEED_MAX": "56",
 "X_LIM_INF": "0",
 "X_LIM_SUP": "1000",
 "X_ENC_PITCH": "0,1",
