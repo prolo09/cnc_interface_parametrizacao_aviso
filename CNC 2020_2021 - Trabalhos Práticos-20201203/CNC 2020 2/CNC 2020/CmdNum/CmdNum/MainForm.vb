@@ -1,4 +1,4 @@
-﻿Imports Mach4
+Imports Mach4
 Imports System.IO
 Imports System
 Imports System.Threading
