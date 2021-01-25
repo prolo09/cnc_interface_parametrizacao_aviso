@@ -318,6 +318,360 @@
   <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="Label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>615, 472</value>
+  </data>
+  <data name="Label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label18.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Label18.Text" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="&gt;&gt;Label18.Name" xml:space="preserve">
+    <value>Label18</value>
+  </data>
+  <data name="&gt;&gt;Label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label18.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label18.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 472</value>
+  </data>
+  <data name="Label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label17.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="Label17.Text" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="&gt;&gt;Label17.Name" xml:space="preserve">
+    <value>Label17</value>
+  </data>
+  <data name="&gt;&gt;Label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label17.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label17.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>403, 472</value>
+  </data>
+  <data name="Label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label16.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="&gt;&gt;Label16.Name" xml:space="preserve">
+    <value>Label16</value>
+  </data>
+  <data name="&gt;&gt;Label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label16.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label16.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 472</value>
+  </data>
+  <data name="Label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label15.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="Label15.Text" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="&gt;&gt;Label15.Name" xml:space="preserve">
+    <value>Label15</value>
+  </data>
+  <data name="&gt;&gt;Label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label15.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label15.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 472</value>
+  </data>
+  <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label14.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="&gt;&gt;Label14.Name" xml:space="preserve">
+    <value>Label14</value>
+  </data>
+  <data name="&gt;&gt;Label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label14.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 472</value>
+  </data>
+  <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="Label13.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;Label13.Name" xml:space="preserve">
+    <value>Label13</value>
+  </data>
+  <data name="&gt;&gt;Label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label13.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;Label13.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tab_lbl_G28.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tab_lbl_G28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 491</value>
+  </data>
+  <data name="tab_lbl_G28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="tab_lbl_G28.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="tab_lbl_G28.Text" xml:space="preserve">
+    <value>G28</value>
+  </data>
+  <data name="&gt;&gt;tab_lbl_G28.Name" xml:space="preserve">
+    <value>tab_lbl_G28</value>
+  </data>
+  <data name="&gt;&gt;tab_lbl_G28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_lbl_G28.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_lbl_G28.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tab_txt_g28_c.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 488</value>
+  </data>
+  <data name="tab_txt_g28_c.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_c.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_c.Name" xml:space="preserve">
+    <value>tab_txt_g28_c</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_c.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_c.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_c.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tab_txt_g28_b.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 488</value>
+  </data>
+  <data name="tab_txt_g28_b.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_b.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_b.Name" xml:space="preserve">
+    <value>tab_txt_g28_b</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_b.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_b.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_b.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tab_txt_g28_a.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 488</value>
+  </data>
+  <data name="tab_txt_g28_a.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_a.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_a.Name" xml:space="preserve">
+    <value>tab_txt_g28_a</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_a.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_a.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_a.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tab_txt_g28_z.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 488</value>
+  </data>
+  <data name="tab_txt_g28_z.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_z.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_z.Name" xml:space="preserve">
+    <value>tab_txt_g28_z</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_z.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_z.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_z.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="tab_txt_g28_y.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 488</value>
+  </data>
+  <data name="tab_txt_g28_y.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_y.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_y.Name" xml:space="preserve">
+    <value>tab_txt_g28_y</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_y.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_y.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_y.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tab_txt_g28_x.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 488</value>
+  </data>
+  <data name="tab_txt_g28_x.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tab_txt_g28_x.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_x.Name" xml:space="preserve">
+    <value>tab_txt_g28_x</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_x.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_x.Parent" xml:space="preserve">
+    <value>TabPage8</value>
+  </data>
+  <data name="&gt;&gt;tab_txt_g28_x.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
+    <value>818, 467</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 41</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="tabelas_btn_enviar_referenciais.Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
   <data name="&gt;&gt;tabelas_btn_enviar_referenciais.Name" xml:space="preserve">
     <value>tabelas_btn_enviar_referenciais</value>
   </data>
@@ -328,7 +682,28 @@
     <value>TabPage8</value>
   </data>
   <data name="&gt;&gt;tabelas_btn_enviar_referenciais.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>13</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
+    <value>902, 467</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 41</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tabelas_btn_guardar_referenciais.Text" xml:space="preserve">
+    <value>Guardar</value>
   </data>
   <data name="&gt;&gt;tabelas_btn_guardar_referenciais.Name" xml:space="preserve">
     <value>tabelas_btn_guardar_referenciais</value>
@@ -340,7 +715,25 @@
     <value>TabPage8</value>
   </data>
   <data name="&gt;&gt;tabelas_btn_guardar_referenciais.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>14</value>
+  </data>
+  <metadata name="Referencial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="tabela_dtgrid_referenciais.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tabela_dtgrid_referenciais.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
+  </data>
+  <data name="tabela_dtgrid_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabela_dtgrid_referenciais.Size" type="System.Drawing.Size, System.Drawing">
+    <value>983, 461</value>
+  </data>
+  <data name="tabela_dtgrid_referenciais.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;tabela_dtgrid_referenciais.Name" xml:space="preserve">
     <value>tabela_dtgrid_referenciais</value>
@@ -352,7 +745,7 @@
     <value>TabPage8</value>
   </data>
   <data name="&gt;&gt;tabela_dtgrid_referenciais.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>15</value>
   </data>
   <data name="TabPage8.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -384,27 +777,6 @@
   <data name="&gt;&gt;TabPage8.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabelas_btn_enviar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Katakana</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>817, 470</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 41</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabelas_btn_enviar_ferramentas.Text" xml:space="preserve">
-    <value>Enviar</value>
-  </data>
   <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.Name" xml:space="preserve">
     <value>tabelas_btn_enviar_ferramentas</value>
   </data>
@@ -417,27 +789,6 @@
   <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabelas_btn_guardar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Katakana</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>902, 470</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 41</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabelas_btn_guardar_ferramentas.Text" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
   <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Name" xml:space="preserve">
     <value>tabelas_btn_guardar_ferramentas</value>
   </data>
@@ -449,93 +800,6 @@
   </data>
   <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="ID.HeaderText" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="ID.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ID.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <metadata name="param_dataGrid_nomeFerramentas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="param_dataGrid_nomeFerramentas.HeaderText" xml:space="preserve">
-    <value>Nome da Ferramenta</value>
-  </data>
-  <data name="param_dataGrid_nomeFerramentas.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="param_dataGrid_nomeFerramentas.Width" type="System.Int32, mscorlib">
-    <value>230</value>
-  </data>
-  <metadata name="Pocket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Pocket.HeaderText" xml:space="preserve">
-    <value>Pocket</value>
-  </data>
-  <data name="Pocket.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Pocket.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <metadata name="Altura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Altura.HeaderText" xml:space="preserve">
-    <value>Altura</value>
-  </data>
-  <data name="Altura.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Altura.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <metadata name="Diametro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Diametro.HeaderText" xml:space="preserve">
-    <value>Diâmero</value>
-  </data>
-  <data name="Diametro.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Diametro.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <metadata name="param_dataGrid_obsercacoes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="param_dataGrid_obsercacoes.HeaderText" xml:space="preserve">
-    <value>Observações</value>
-  </data>
-  <data name="param_dataGrid_obsercacoes.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="param_dataGrid_obsercacoes.Width" type="System.Int32, mscorlib">
-    <value>365</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 2</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>983, 460</value>
-  </data>
-  <data name="tabela_dtgrid_ferramentas.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;tabela_dtgrid_ferramentas.Name" xml:space="preserve">
     <value>tabela_dtgrid_ferramentas</value>
@@ -719,7 +983,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        mwAAAk1TRnQBSQFMAgEBCAEAAbABAQGwAQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
+        mwAAAk1TRnQBSQFMAgEBCAEAAcgBAQHIAQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
         AQECAAGWAwABAQEAARgFAAEgAb8BAv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -2947,72 +3211,6 @@
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabelas_btn_enviar_referenciais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Katakana</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>818, 467</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 41</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tabelas_btn_enviar_referenciais.Text" xml:space="preserve">
-    <value>Enviar</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_enviar_referenciais.Name" xml:space="preserve">
-    <value>tabelas_btn_enviar_referenciais</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_enviar_referenciais.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_enviar_referenciais.Parent" xml:space="preserve">
-    <value>TabPage8</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_enviar_referenciais.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Katakana</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>902, 467</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 41</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tabelas_btn_guardar_referenciais.Text" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_referenciais.Name" xml:space="preserve">
-    <value>tabelas_btn_guardar_referenciais</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_referenciais.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_referenciais.Parent" xml:space="preserve">
-    <value>TabPage8</value>
-  </data>
-  <data name="&gt;&gt;tabelas_btn_guardar_referenciais.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="Referencial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3058,35 +3256,236 @@
   <data name="C.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="tabela_dtgrid_referenciais.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tabelas_btn_enviar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>817, 470</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 41</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabelas_btn_enviar_ferramentas.Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.Name" xml:space="preserve">
+    <value>tabelas_btn_enviar_ferramentas</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.Parent" xml:space="preserve">
+    <value>TabPage9</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_enviar_ferramentas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Katakana</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>902, 470</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 41</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabelas_btn_guardar_ferramentas.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Name" xml:space="preserve">
+    <value>tabelas_btn_guardar_ferramentas</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.Parent" xml:space="preserve">
+    <value>TabPage9</value>
+  </data>
+  <data name="&gt;&gt;tabelas_btn_guardar_ferramentas.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="param_dataGrid_nomeFerramentas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Pocket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Altura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Diametro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="param_dataGrid_obsercacoes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="tabela_dtgrid_ferramentas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="tabela_dtgrid_referenciais.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabela_dtgrid_ferramentas.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>
   </data>
-  <data name="tabela_dtgrid_referenciais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="tabela_dtgrid_ferramentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
-  <data name="tabela_dtgrid_referenciais.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabela_dtgrid_ferramentas.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="tabela_dtgrid_ferramentas.Size" type="System.Drawing.Size, System.Drawing">
     <value>983, 460</value>
   </data>
-  <data name="tabela_dtgrid_referenciais.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="tabela_dtgrid_ferramentas.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;tabela_dtgrid_referenciais.Name" xml:space="preserve">
-    <value>tabela_dtgrid_referenciais</value>
+  <data name="&gt;&gt;tabela_dtgrid_ferramentas.Name" xml:space="preserve">
+    <value>tabela_dtgrid_ferramentas</value>
   </data>
-  <data name="&gt;&gt;tabela_dtgrid_referenciais.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabela_dtgrid_ferramentas.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabela_dtgrid_referenciais.Parent" xml:space="preserve">
-    <value>TabPage8</value>
+  <data name="&gt;&gt;tabela_dtgrid_ferramentas.Parent" xml:space="preserve">
+    <value>TabPage9</value>
   </data>
-  <data name="&gt;&gt;tabela_dtgrid_referenciais.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabela_dtgrid_ferramentas.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ID.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="param_dataGrid_nomeFerramentas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="param_dataGrid_nomeFerramentas.HeaderText" xml:space="preserve">
+    <value>Nome da Ferramenta</value>
+  </data>
+  <data name="param_dataGrid_nomeFerramentas.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="param_dataGrid_nomeFerramentas.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
+  <metadata name="Pocket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Pocket.HeaderText" xml:space="preserve">
+    <value>Pocket</value>
+  </data>
+  <data name="Pocket.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Pocket.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="Altura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Altura.HeaderText" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="Altura.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Altura.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="Diametro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Diametro.HeaderText" xml:space="preserve">
+    <value>Diâmero</value>
+  </data>
+  <data name="Diametro.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Diametro.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="param_dataGrid_obsercacoes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="param_dataGrid_obsercacoes.HeaderText" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="param_dataGrid_obsercacoes.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="param_dataGrid_obsercacoes.Width" type="System.Int32, mscorlib">
+    <value>365</value>
   </data>
   <data name="param_tab_control.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;param_tab_geral.Name" xml:space="preserve">
+    <value>param_tab_geral</value>
+  </data>
+  <data name="&gt;&gt;param_tab_geral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_tab_geral.Parent" xml:space="preserve">
+    <value>param_tab_control</value>
+  </data>
+  <data name="&gt;&gt;param_tab_geral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Name" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Parent" xml:space="preserve">
+    <value>param_tab_control</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="param_tab_control.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="param_tab_control.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="param_tab_control.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1001, 553</value>
+  </data>
+  <data name="param_tab_control.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;param_tab_control.Name" xml:space="preserve">
+    <value>param_tab_control</value>
+  </data>
+  <data name="&gt;&gt;param_tab_control.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_tab_control.Parent" xml:space="preserve">
+    <value>TabPage5</value>
+  </data>
+  <data name="&gt;&gt;param_tab_control.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;param_txt_end_ip.Name" xml:space="preserve">
     <value>param_txt_end_ip</value>
@@ -3224,192 +3623,6 @@
     <value>param_tab_control</value>
   </data>
   <data name="&gt;&gt;param_tab_geral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;param_cbox_n_eixos.Name" xml:space="preserve">
-    <value>param_cbox_n_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_cbox_n_eixos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_cbox_n_eixos.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_cbox_n_eixos.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_n_eixos.Name" xml:space="preserve">
-    <value>param_lbl_n_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_n_eixos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_n_eixos.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_n_eixos.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_enviar.Name" xml:space="preserve">
-    <value>param_btn_eixos_enviar</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_enviar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_enviar.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_enviar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_guardar.Name" xml:space="preserve">
-    <value>param_btn_eixos_guardar</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_guardar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_guardar.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_btn_eixos_guardar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;param_txt_laser_power.Name" xml:space="preserve">
-    <value>param_txt_laser_power</value>
-  </data>
-  <data name="&gt;&gt;param_txt_laser_power.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_txt_laser_power.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_txt_laser_power.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;param_txt_spindle_maxrpm.Name" xml:space="preserve">
-    <value>param_txt_spindle_maxrpm</value>
-  </data>
-  <data name="&gt;&gt;param_txt_spindle_maxrpm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_txt_spindle_maxrpm.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_txt_spindle_maxrpm.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;param_laser_power.Name" xml:space="preserve">
-    <value>param_laser_power</value>
-  </data>
-  <data name="&gt;&gt;param_laser_power.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_laser_power.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_laser_power.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_laser.Name" xml:space="preserve">
-    <value>param_radbtn_laser</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_laser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_laser.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_laser.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Name" xml:space="preserve">
-    <value>param_lbl_spindle_maxrpm</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_lbl_spindle_maxrpm.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_spindle.Name" xml:space="preserve">
-    <value>param_radbtn_spindle</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_spindle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_spindle.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_radbtn_spindle.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;param_dtgrid_eixos.Name" xml:space="preserve">
-    <value>param_dtgrid_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_dtgrid_eixos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_dtgrid_eixos.Parent" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_dtgrid_eixos.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="param_tab_eixos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="param_tab_eixos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="param_tab_eixos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="param_tab_eixos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>993, 527</value>
-  </data>
-  <data name="param_tab_eixos.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="param_tab_eixos.Text" xml:space="preserve">
-    <value>Eixos</value>
-  </data>
-  <data name="&gt;&gt;param_tab_eixos.Name" xml:space="preserve">
-    <value>param_tab_eixos</value>
-  </data>
-  <data name="&gt;&gt;param_tab_eixos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_tab_eixos.Parent" xml:space="preserve">
-    <value>param_tab_control</value>
-  </data>
-  <data name="&gt;&gt;param_tab_eixos.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="param_tab_control.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="param_tab_control.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="param_tab_control.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1001, 553</value>
-  </data>
-  <data name="param_tab_control.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;param_tab_control.Name" xml:space="preserve">
-    <value>param_tab_control</value>
-  </data>
-  <data name="&gt;&gt;param_tab_control.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_tab_control.Parent" xml:space="preserve">
-    <value>TabPage5</value>
-  </data>
-  <data name="&gt;&gt;param_tab_control.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="param_txt_end_ip.Location" type="System.Drawing.Point, System.Drawing">
@@ -3699,6 +3912,168 @@
   </data>
   <data name="&gt;&gt;param_btn_guardar_gerais.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;param_cbox_n_eixos.Name" xml:space="preserve">
+    <value>param_cbox_n_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_cbox_n_eixos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_cbox_n_eixos.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_cbox_n_eixos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_n_eixos.Name" xml:space="preserve">
+    <value>param_lbl_n_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_n_eixos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_n_eixos.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_n_eixos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_enviar.Name" xml:space="preserve">
+    <value>param_btn_eixos_enviar</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_enviar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_enviar.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_enviar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_guardar.Name" xml:space="preserve">
+    <value>param_btn_eixos_guardar</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_guardar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_guardar.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_btn_eixos_guardar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;param_txt_laser_power.Name" xml:space="preserve">
+    <value>param_txt_laser_power</value>
+  </data>
+  <data name="&gt;&gt;param_txt_laser_power.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_txt_laser_power.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_txt_laser_power.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;param_txt_spindle_maxrpm.Name" xml:space="preserve">
+    <value>param_txt_spindle_maxrpm</value>
+  </data>
+  <data name="&gt;&gt;param_txt_spindle_maxrpm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_txt_spindle_maxrpm.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_txt_spindle_maxrpm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;param_laser_power.Name" xml:space="preserve">
+    <value>param_laser_power</value>
+  </data>
+  <data name="&gt;&gt;param_laser_power.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_laser_power.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_laser_power.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_laser.Name" xml:space="preserve">
+    <value>param_radbtn_laser</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_laser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_laser.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_laser.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Name" xml:space="preserve">
+    <value>param_lbl_spindle_maxrpm</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_spindle_maxrpm.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_lbl_spindle_maxrpm.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_spindle.Name" xml:space="preserve">
+    <value>param_radbtn_spindle</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_spindle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_spindle.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_radbtn_spindle.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;param_dtgrid_eixos.Name" xml:space="preserve">
+    <value>param_dtgrid_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_dtgrid_eixos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_dtgrid_eixos.Parent" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_dtgrid_eixos.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="param_tab_eixos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="param_tab_eixos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="param_tab_eixos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="param_tab_eixos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>993, 527</value>
+  </data>
+  <data name="param_tab_eixos.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="param_tab_eixos.Text" xml:space="preserve">
+    <value>Eixos</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Name" xml:space="preserve">
+    <value>param_tab_eixos</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.Parent" xml:space="preserve">
+    <value>param_tab_control</value>
+  </data>
+  <data name="&gt;&gt;param_tab_eixos.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="param_cbox_n_eixos.Items" xml:space="preserve">
     <value>2 (X,Y)</value>
@@ -4291,6 +4666,42 @@
   <data name="&gt;&gt;C.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ID.Name" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Name" xml:space="preserve">
+    <value>param_dataGrid_nomeFerramentas</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Pocket.Name" xml:space="preserve">
+    <value>Pocket</value>
+  </data>
+  <data name="&gt;&gt;Pocket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Altura.Name" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="&gt;&gt;Altura.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Diametro.Name" xml:space="preserve">
+    <value>Diametro</value>
+  </data>
+  <data name="&gt;&gt;Diametro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_obsercacoes.Name" xml:space="preserve">
+    <value>param_dataGrid_obsercacoes</value>
+  </data>
+  <data name="&gt;&gt;param_dataGrid_obsercacoes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;eixo.Name" xml:space="preserve">
     <value>eixo</value>
   </data>
@@ -4404,42 +4815,6 @@
   </data>
   <data name="&gt;&gt;SerialPort1.Type" xml:space="preserve">
     <value>System.IO.Ports.SerialPort, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ID.Name" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="&gt;&gt;ID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Name" xml:space="preserve">
-    <value>param_dataGrid_nomeFerramentas</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_nomeFerramentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Pocket.Name" xml:space="preserve">
-    <value>Pocket</value>
-  </data>
-  <data name="&gt;&gt;Pocket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Altura.Name" xml:space="preserve">
-    <value>Altura</value>
-  </data>
-  <data name="&gt;&gt;Altura.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Diametro.Name" xml:space="preserve">
-    <value>Diametro</value>
-  </data>
-  <data name="&gt;&gt;Diametro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_obsercacoes.Name" xml:space="preserve">
-    <value>param_dataGrid_obsercacoes</value>
-  </data>
-  <data name="&gt;&gt;param_dataGrid_obsercacoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

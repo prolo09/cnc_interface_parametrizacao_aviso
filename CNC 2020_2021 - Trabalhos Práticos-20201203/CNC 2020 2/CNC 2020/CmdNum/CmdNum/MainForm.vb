@@ -285,21 +285,30 @@ Public Class MainForm
         Dim i As Integer
         Dim j As Integer = 0
         For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
-            If j = 0 Then
-                i = tabela_dtgrid_referenciais.Rows.Add()
-                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
-                j = j + 1
-                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
-            Else
-                tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                j = j + 1
-            End If
+            If Not kvp.Key.Split("_")(0) = "G28" Then
+                If j = 0 Then
+                    i = tabela_dtgrid_referenciais.Rows.Add()
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                    j = j + 1
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                Else
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                End If
 
-            If j = tabela_dtgrid_referenciais.Columns.Count Then
-                j = 0
+                If j = tabela_dtgrid_referenciais.Columns.Count Then
+                    j = 0
+                End If
             End If
         Next
+
+        tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
+        tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
+        tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
+        tab_txt_g28_a.Text = GlobalVars.tabela_referenciais("G28_A")
+        tab_txt_g28_b.Text = GlobalVars.tabela_referenciais("G28_B")
+        tab_txt_g28_c.Text = GlobalVars.tabela_referenciais("G28_C")
 
     End Sub
 
@@ -338,19 +347,50 @@ Public Class MainForm
     Private Sub tabelas_btn_guardar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_guardar_referenciais.Click
         ' ler tabela de referenciais e colocar num dicionario
 
+        If Not IsNumeric(tab_txt_g28_x.Text) Then
+            MessageBox.Show("O valor ""X"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        ElseIf Not IsNumeric(tab_txt_g28_y.Text) Then
+            MessageBox.Show("O valor ""Y"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        ElseIf Not IsNumeric(tab_txt_g28_z.Text) Then
+            MessageBox.Show("O valor ""Z"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        ElseIf Not IsNumeric(tab_txt_g28_a.Text) Then
+            MessageBox.Show("O valor ""A"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        ElseIf Not IsNumeric(tab_txt_g28_b.Text) Then
+            MessageBox.Show("O valor ""B"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        ElseIf Not IsNumeric(tab_txt_g28_c.Text) Then
+            MessageBox.Show("O valor ""C"" do referencial G28 deve ser um número.", "Parametros não guardados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        GlobalVars.tabela_referenciais.Clear()
+
+        GlobalVars.tabela_referenciais.Add("G28" + "_X", tab_txt_g28_x.Text)
+        GlobalVars.tabela_referenciais.Add("G28" + "_Y", tab_txt_g28_y.Text)
+        GlobalVars.tabela_referenciais.Add("G28" + "_Z", tab_txt_g28_z.Text)
+        GlobalVars.tabela_referenciais.Add("G28" + "_A", tab_txt_g28_a.Text)
+        GlobalVars.tabela_referenciais.Add("G28" + "_B", tab_txt_g28_b.Text)
+        GlobalVars.tabela_referenciais.Add("G28" + "_C", tab_txt_g28_c.Text)
+
         ' confirmar os dados numericos
         For i As Integer = 0 To tabela_dtgrid_referenciais.Rows.Count - 2
             For j As Integer = 1 To tabela_dtgrid_referenciais.Rows(i).Cells.Count - 2
                 If Not IsNumeric(tabela_dtgrid_referenciais.Rows(i).Cells(j).Value) And Not tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = "" Then
-                    MessageBox.Show("Valor da coluna """ + tabela_dtgrid_referenciais.Columns(j).Name + """ da ferramenta " + CStr(tabela_dtgrid_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+                    MessageBox.Show("Valor da coluna """ + tabela_dtgrid_referenciais.Columns(j).Name + """ do referencial " + CStr(tabela_dtgrid_referenciais.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
             Next
-
-            If i = 0 Then
-                GlobalVars.tabela_referenciais.Clear()
-            End If
 
             ' atualizar o dicionario
             Dim ref_name As String = tabela_dtgrid_referenciais.Rows(i).Cells(0).FormattedValue

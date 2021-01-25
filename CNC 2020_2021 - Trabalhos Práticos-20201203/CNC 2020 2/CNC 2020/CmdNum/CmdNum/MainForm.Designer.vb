@@ -70,6 +70,19 @@ Partial Class MainForm
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.tab_lbl_G28 = New System.Windows.Forms.Label()
+        Me.tab_txt_g28_c = New System.Windows.Forms.TextBox()
+        Me.tab_txt_g28_b = New System.Windows.Forms.TextBox()
+        Me.tab_txt_g28_a = New System.Windows.Forms.TextBox()
+        Me.tab_txt_g28_z = New System.Windows.Forms.TextBox()
+        Me.tab_txt_g28_y = New System.Windows.Forms.TextBox()
+        Me.tab_txt_g28_x = New System.Windows.Forms.TextBox()
         Me.tabelas_btn_enviar_referenciais = New System.Windows.Forms.Button()
         Me.tabelas_btn_guardar_referenciais = New System.Windows.Forms.Button()
         Me.tabela_dtgrid_referenciais = New System.Windows.Forms.DataGridView()
@@ -84,6 +97,12 @@ Partial Class MainForm
         Me.tabelas_btn_enviar_ferramentas = New System.Windows.Forms.Button()
         Me.tabelas_btn_guardar_ferramentas = New System.Windows.Forms.Button()
         Me.tabela_dtgrid_ferramentas = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.param_tab_control = New System.Windows.Forms.TabControl()
         Me.param_tab_geral = New System.Windows.Forms.TabPage()
@@ -130,12 +149,6 @@ Partial Class MainForm
         Me.AvisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmr_match3 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_nomeFerramentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pocket = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.param_dataGrid_obsercacoes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabCtrl_Option.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -486,12 +499,90 @@ Partial Class MainForm
         '
         'TabPage8
         '
+        Me.TabPage8.Controls.Add(Me.Label18)
+        Me.TabPage8.Controls.Add(Me.Label17)
+        Me.TabPage8.Controls.Add(Me.Label16)
+        Me.TabPage8.Controls.Add(Me.Label15)
+        Me.TabPage8.Controls.Add(Me.Label14)
+        Me.TabPage8.Controls.Add(Me.Label13)
+        Me.TabPage8.Controls.Add(Me.tab_lbl_G28)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_c)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_b)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_a)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_z)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_y)
+        Me.TabPage8.Controls.Add(Me.tab_txt_g28_x)
         Me.TabPage8.Controls.Add(Me.tabelas_btn_enviar_referenciais)
         Me.TabPage8.Controls.Add(Me.tabelas_btn_guardar_referenciais)
         Me.TabPage8.Controls.Add(Me.tabela_dtgrid_referenciais)
         resources.ApplyResources(Me.TabPage8, "TabPage8")
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        resources.ApplyResources(Me.Label18, "Label18")
+        Me.Label18.Name = "Label18"
+        '
+        'Label17
+        '
+        resources.ApplyResources(Me.Label17, "Label17")
+        Me.Label17.Name = "Label17"
+        '
+        'Label16
+        '
+        resources.ApplyResources(Me.Label16, "Label16")
+        Me.Label16.Name = "Label16"
+        '
+        'Label15
+        '
+        resources.ApplyResources(Me.Label15, "Label15")
+        Me.Label15.Name = "Label15"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'tab_lbl_G28
+        '
+        resources.ApplyResources(Me.tab_lbl_G28, "tab_lbl_G28")
+        Me.tab_lbl_G28.Name = "tab_lbl_G28"
+        '
+        'tab_txt_g28_c
+        '
+        resources.ApplyResources(Me.tab_txt_g28_c, "tab_txt_g28_c")
+        Me.tab_txt_g28_c.Name = "tab_txt_g28_c"
+        '
+        'tab_txt_g28_b
+        '
+        resources.ApplyResources(Me.tab_txt_g28_b, "tab_txt_g28_b")
+        Me.tab_txt_g28_b.Name = "tab_txt_g28_b"
+        '
+        'tab_txt_g28_a
+        '
+        resources.ApplyResources(Me.tab_txt_g28_a, "tab_txt_g28_a")
+        Me.tab_txt_g28_a.Name = "tab_txt_g28_a"
+        '
+        'tab_txt_g28_z
+        '
+        resources.ApplyResources(Me.tab_txt_g28_z, "tab_txt_g28_z")
+        Me.tab_txt_g28_z.Name = "tab_txt_g28_z"
+        '
+        'tab_txt_g28_y
+        '
+        resources.ApplyResources(Me.tab_txt_g28_y, "tab_txt_g28_y")
+        Me.tab_txt_g28_y.Name = "tab_txt_g28_y"
+        '
+        'tab_txt_g28_x
+        '
+        resources.ApplyResources(Me.tab_txt_g28_x, "tab_txt_g28_x")
+        Me.tab_txt_g28_x.Name = "tab_txt_g28_x"
         '
         'tabelas_btn_enviar_referenciais
         '
@@ -583,6 +674,42 @@ Partial Class MainForm
         resources.ApplyResources(Me.tabela_dtgrid_ferramentas, "tabela_dtgrid_ferramentas")
         Me.tabela_dtgrid_ferramentas.Name = "tabela_dtgrid_ferramentas"
         Me.tabela_dtgrid_ferramentas.RowTemplate.Height = 24
+        '
+        'ID
+        '
+        Me.ID.FillWeight = 13.27713!
+        resources.ApplyResources(Me.ID, "ID")
+        Me.ID.Name = "ID"
+        '
+        'param_dataGrid_nomeFerramentas
+        '
+        Me.param_dataGrid_nomeFerramentas.FillWeight = 49.00303!
+        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
+        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
+        '
+        'Pocket
+        '
+        Me.Pocket.FillWeight = 83.93834!
+        resources.ApplyResources(Me.Pocket, "Pocket")
+        Me.Pocket.Name = "Pocket"
+        '
+        'Altura
+        '
+        Me.Altura.FillWeight = 118.1006!
+        resources.ApplyResources(Me.Altura, "Altura")
+        Me.Altura.Name = "Altura"
+        '
+        'Diametro
+        '
+        Me.Diametro.FillWeight = 151.5069!
+        resources.ApplyResources(Me.Diametro, "Diametro")
+        Me.Diametro.Name = "Diametro"
+        '
+        'param_dataGrid_obsercacoes
+        '
+        Me.param_dataGrid_obsercacoes.FillWeight = 184.1739!
+        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
+        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
         '
         'TabPage5
         '
@@ -884,42 +1011,6 @@ Partial Class MainForm
         'tmr_match3
         '
         '
-        'ID
-        '
-        Me.ID.FillWeight = 13.27713!
-        resources.ApplyResources(Me.ID, "ID")
-        Me.ID.Name = "ID"
-        '
-        'param_dataGrid_nomeFerramentas
-        '
-        Me.param_dataGrid_nomeFerramentas.FillWeight = 49.00303!
-        resources.ApplyResources(Me.param_dataGrid_nomeFerramentas, "param_dataGrid_nomeFerramentas")
-        Me.param_dataGrid_nomeFerramentas.Name = "param_dataGrid_nomeFerramentas"
-        '
-        'Pocket
-        '
-        Me.Pocket.FillWeight = 83.93834!
-        resources.ApplyResources(Me.Pocket, "Pocket")
-        Me.Pocket.Name = "Pocket"
-        '
-        'Altura
-        '
-        Me.Altura.FillWeight = 118.1006!
-        resources.ApplyResources(Me.Altura, "Altura")
-        Me.Altura.Name = "Altura"
-        '
-        'Diametro
-        '
-        Me.Diametro.FillWeight = 151.5069!
-        resources.ApplyResources(Me.Diametro, "Diametro")
-        Me.Diametro.Name = "Diametro"
-        '
-        'param_dataGrid_obsercacoes
-        '
-        Me.param_dataGrid_obsercacoes.FillWeight = 184.1739!
-        resources.ApplyResources(Me.param_dataGrid_obsercacoes, "param_dataGrid_obsercacoes")
-        Me.param_dataGrid_obsercacoes.Name = "param_dataGrid_obsercacoes"
-        '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
@@ -946,6 +1037,7 @@ Partial Class MainForm
         Me.TabPage4.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
+        Me.TabPage8.PerformLayout()
         CType(Me.tabela_dtgrid_referenciais, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
         CType(Me.tabela_dtgrid_ferramentas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1077,4 +1169,17 @@ Partial Class MainForm
     Friend WithEvents Altura As DataGridViewTextBoxColumn
     Friend WithEvents Diametro As DataGridViewTextBoxColumn
     Friend WithEvents param_dataGrid_obsercacoes As DataGridViewTextBoxColumn
+    Friend WithEvents tab_lbl_G28 As Label
+    Friend WithEvents tab_txt_g28_c As TextBox
+    Friend WithEvents tab_txt_g28_b As TextBox
+    Friend WithEvents tab_txt_g28_a As TextBox
+    Friend WithEvents tab_txt_g28_z As TextBox
+    Friend WithEvents tab_txt_g28_y As TextBox
+    Friend WithEvents tab_txt_g28_x As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
 End Class
