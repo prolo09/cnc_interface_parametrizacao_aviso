@@ -610,13 +610,13 @@ Public Class MainForm
             End If
 
             ' atualizar o dicionario
-            Dim passo As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(2).FormattedValue)
-            Dim maxrpm As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(3).FormattedValue)
+            Dim passo As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(1).FormattedValue)
+            Dim maxrpm As Decimal = CDec(param_dtgrid_eixos.Rows(i).Cells(2).FormattedValue)
 
             Dim axis_name As String = param_dtgrid_eixos.Rows(i).Cells(0).FormattedValue
 
-            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(param_dtgrid_eixos.Rows(i).Cells(1).FormattedValue))
-            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(param_dtgrid_eixos.Rows(i).Cells(2).FormattedValue))
+            GlobalVars.param_eixos.Add(axis_name + "_PASSO", CStr(passo))
+            GlobalVars.param_eixos.Add(axis_name + "_RPM_MAX", CStr(maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G00_FEED_MAX", CStr(passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_G01_FEED_MAX", CStr(0.6 * passo * maxrpm))
             GlobalVars.param_eixos.Add(axis_name + "_JOG_FEED_MAX", CStr(0.2 * passo * maxrpm))
