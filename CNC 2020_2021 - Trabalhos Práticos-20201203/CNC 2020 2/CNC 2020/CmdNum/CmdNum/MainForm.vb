@@ -387,6 +387,7 @@ Public Class MainForm
             End If
         Next
 
+        MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
 
     Private Sub tabelas_btn_enviar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_referenciais.Click
@@ -406,6 +407,8 @@ Public Class MainForm
         scriptObject.SetOEMDRO(193, GlobalVars.tabela_referenciais("G28_A"))
         scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
         scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
+
+        MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
 
     Private Sub tabela_dtgrid_referenciais_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabela_dtgrid_referenciais.CellContentClick
@@ -674,6 +677,7 @@ Public Class MainForm
 
     Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
         'enviar os valores dos parametros gerais para o mach 3'
+        'MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
 
     Private Sub param_btn_eixos_enviar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_enviar.Click
@@ -733,6 +737,8 @@ Public Class MainForm
             scriptObject.SetOEMDRO(161, GlobalVars.param_eixos("C_LIM_INF"))
             scriptObject.SetOEMDRO(155, GlobalVars.param_eixos("C_LIM_SUP"))
         End If
+
+        MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
 
     Private Sub param_radbtn_spindle_CheckedChanged(sender As Object, e As EventArgs) Handles param_radbtn_spindle.CheckedChanged
@@ -811,7 +817,7 @@ Public Class MainForm
         param_txt_tabelaFerramentas.WriteLine(s)
         param_txt_tabelaFerramentas.Close()
 
-        MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
+        'MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
     End Sub
 
 
