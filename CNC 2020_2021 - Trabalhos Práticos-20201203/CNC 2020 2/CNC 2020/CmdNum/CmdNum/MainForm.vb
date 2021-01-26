@@ -75,20 +75,17 @@ Public Class MainForm
         ' Abertura das comunicações com o Match3
         Try
             mach = GetObject(, "Mach4.Document")
+            scriptObject = mach.GetScriptDispatch()
+            'define as unidades em mm '
+            scriptObject.SetParam("Units", 0)
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e reinicie esta aplicação.", "Mach3 não ligado",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Pode continuar a utilizar a aplicação, mas não poderá comunicar com o Mach3.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
-
-        scriptObject = mach.GetScriptDispatch()
 
         ' Definições do temporizador para leitura de posição dos eixos (Match3)
         tmr_match3.Interval = 250
         tmr_match3.Enabled = True
-
-        'define as unidades em mm '
-        scriptObject.SetParam("Units", 0)
 
     End Sub
 
@@ -235,10 +232,14 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.tabela_ferramentas = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Ficheiro de configurações não encontrado",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Catch ex As System.IO.DirectoryNotFoundException
+            MessageBox.Show("Diretório " + path + " não existe." + vbNewLine + "Crie os diretórios necessários e reinicie o programa.", "Diretório de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página da tabela de ferramentas são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
@@ -271,44 +272,54 @@ Public Class MainForm
         Dim jss = New JavaScriptSerializer()
         'parametros referenciais
         Try
+
             json = File.ReadAllText(path)
             GlobalVars.tabela_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+            ' display on GUI
+            Dim i As Integer
+            Dim j As Integer = 0
+            For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
+                If Not kvp.Key.Split("_")(0) = "G28" Then
+                    If j = 0 Then
+                        i = tabela_dtgrid_referenciais.Rows.Add()
+                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                        j = j + 1
+                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                        j = j + 1
+                    Else
+                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                        j = j + 1
+                    End If
+
+                    If j = tabela_dtgrid_referenciais.Columns.Count Then
+                        j = 0
+                    End If
+                End If
+            Next
+
+            tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
+            tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
+            tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
+            tab_txt_g28_a.Text = GlobalVars.tabela_referenciais("G28_A")
+            tab_txt_g28_b.Text = GlobalVars.tabela_referenciais("G28_B")
+            tab_txt_g28_c.Text = GlobalVars.tabela_referenciais("G28_C")
+
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Ficheiro de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Catch ex As System.IO.DirectoryNotFoundException
+            MessageBox.Show("Diretório " + path + " não existe." + vbNewLine + "Crie os diretórios necessários e reinicie o programa.", "Diretório de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        Catch ex As System.Collections.Generic.KeyNotFoundException
+            MessageBox.Show("Ficheiro " + path + " Não contém todas as chaves necessárias." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Parâmetros não encontrados",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página da tabela de referenciais são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
-        ' display on GUI
-        Dim i As Integer
-        Dim j As Integer = 0
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
-            If Not kvp.Key.Split("_")(0) = "G28" Then
-                If j = 0 Then
-                    i = tabela_dtgrid_referenciais.Rows.Add()
-                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
-                    j = j + 1
-                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                    j = j + 1
-                Else
-                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                    j = j + 1
-                End If
 
-                If j = tabela_dtgrid_referenciais.Columns.Count Then
-                    j = 0
-                End If
-            End If
-        Next
-
-        tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
-        tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
-        tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
-        tab_txt_g28_a.Text = GlobalVars.tabela_referenciais("G28_A")
-        tab_txt_g28_b.Text = GlobalVars.tabela_referenciais("G28_B")
-        tab_txt_g28_c.Text = GlobalVars.tabela_referenciais("G28_C")
 
     End Sub
 
@@ -428,7 +439,7 @@ Public Class MainForm
                 End If
             Next
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
@@ -455,7 +466,7 @@ Public Class MainForm
             scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
             scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
@@ -559,21 +570,29 @@ Public Class MainForm
         Dim jss = New JavaScriptSerializer()
         'parametros gerais
         Try
+
             json = File.ReadAllText(path)
             GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
-            ' display on GUI
+            param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
+            param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
+            param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
+            param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
+
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Ficheiro de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Catch ex As System.IO.DirectoryNotFoundException
+            MessageBox.Show("Diretório " + path + " não existe." + vbNewLine + "Crie os diretórios necessários e reinicie o programa.", "Diretório de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        Catch ex As System.Collections.Generic.KeyNotFoundException
+            MessageBox.Show("Ficheiro " + path + " Não contém todas as chaves necessárias." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Parâmetros não encontrados",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Erro na leitura de ficheiro",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
-        param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
-        param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
-        param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
-        param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
     End Sub
 
     Private Sub readParamEixos(path As String)
@@ -586,13 +605,14 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.param_eixos = jss.Deserialize(Of Dictionary(Of String, String))(json)
         Catch ex As System.IO.FileNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " não existe." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Ficheiro de configurações não encontrado",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Catch ex As System.IO.DirectoryNotFoundException
+            MessageBox.Show("Diretório " + path + " não existe." + vbNewLine + "Crie os diretórios necessários e reinicie o programa.", "Diretório de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
         Catch ex2 As System.ArgumentException
-            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Erro na leitura de ficheiro",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Catch ex3 As System.Collections.Generic.KeyNotFoundException
-            MessageBox.Show("Ficheiro " + path + " não contém todos os parametros necessários." + vbNewLine + "Faça a parametrização da máquina antes de prosseguir." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Configurações não encontradas",
+            MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configuração dos eixos são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
@@ -731,7 +751,7 @@ Public Class MainForm
         Try
             'enviar os valores dos parametros gerais para o mach 3'
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
@@ -809,7 +829,7 @@ Public Class MainForm
 
 
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
@@ -888,10 +908,16 @@ Public Class MainForm
         Next
         s = s + vbNewLine + "}"
 
-        ' write dictionary to file
-        Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
-        param_txt_tabelaFerramentas.WriteLine(s)
-        param_txt_tabelaFerramentas.Close()
+
+        Try
+            ' write dictionary to file
+            Dim param_txt_tabelaFerramentas As TextWriter = New StreamWriter(path)
+            param_txt_tabelaFerramentas.WriteLine(s)
+            param_txt_tabelaFerramentas.Close()
+        Catch ex As System.IO.DirectoryNotFoundException
+            MessageBox.Show("Diretório " + path + " não existe." + vbNewLine + "Crie os diretórios necessários e reinicie o programa." + vbNewLine + "Configurações não guardadas.", "Diretório de configurações não encontrado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
         'MessageBox.Show("Ficheiro de parametros guardado com sucesso em " + path, "Guardado")
     End Sub
