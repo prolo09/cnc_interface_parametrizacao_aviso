@@ -2140,7 +2140,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="param_txt_end_ip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 199</value>
+    <value>20, 197</value>
   </data>
   <data name="param_txt_end_ip.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 20</value>
@@ -2170,7 +2170,7 @@
     <value>RS485</value>
   </data>
   <data name="param_cb_protocolo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 145</value>
+    <value>20, 41</value>
   </data>
   <data name="param_cb_protocolo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2200,7 +2200,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_endereçoIP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 183</value>
+    <value>17, 182</value>
   </data>
   <data name="param_lbl_endereçoIP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2233,7 +2233,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_protocolo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 130</value>
+    <value>17, 27</value>
   </data>
   <data name="param_lbl_protocolo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2281,7 +2281,7 @@
     <value>250000</value>
   </data>
   <data name="param_cb_baudrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 91</value>
+    <value>20, 93</value>
   </data>
   <data name="param_cb_baudrate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2311,7 +2311,7 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_baudrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 76</value>
+    <value>17, 78</value>
   </data>
   <data name="param_lbl_baudrate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2338,7 +2338,7 @@
     <value>5</value>
   </data>
   <data name="param_cb_portcom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 37</value>
+    <value>20, 145</value>
   </data>
   <data name="param_cb_portcom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -2368,19 +2368,19 @@
     <value>Katakana</value>
   </data>
   <data name="param_lbl_portcom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 22</value>
+    <value>17, 130</value>
   </data>
   <data name="param_lbl_portcom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="param_lbl_portcom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>62, 13</value>
   </data>
   <data name="param_lbl_portcom.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="param_lbl_portcom.Text" xml:space="preserve">
-    <value>Porta COM</value>
+    <value>Porta COM </value>
   </data>
   <data name="&gt;&gt;param_lbl_portcom.Name" xml:space="preserve">
     <value>param_lbl_portcom</value>
@@ -2972,7 +2972,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        mwAAAk1TRnQBSQFMAgEBCAEAAdABAQHQAQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
+        mwAAAk1TRnQBSQFMAgEBCAEAAdgBAQHYAQEBZAEAATIBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGQ
         AQECAAGWAwABAQEAARgFAAEgAb8BAv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A

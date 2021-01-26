@@ -961,4 +961,16 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub param_cb_protocolo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles param_cb_protocolo.SelectedIndexChanged
+        If param_cb_protocolo.Text = "TCP/IP" Then
+            param_cb_baudrate.Enabled = False
+            param_cb_portcom.Enabled = False
+            param_txt_end_ip.Enabled = True
+        Else
+            param_cb_baudrate.Enabled = True
+            param_cb_portcom.Enabled = True
+            param_txt_end_ip.Enabled = False
+        End If
+    End Sub
+
 End Class
