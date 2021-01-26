@@ -415,17 +415,23 @@ Public Class MainForm
         Dim diametro As String
         Dim compensa_altura As String
 
-        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_ferramentas
-            If kvp.Key.Split("_")(1) = "NOME" Then
-                ID_ferramenta = kvp.Key.Split("_")(0)
-                diametro = GlobalVars.tabela_ferramentas(ID_ferramenta & "_DIAMETRO")
-                compensa_altura = GlobalVars.tabela_ferramentas(ID_ferramenta & "_ALTURA")
+        Try
+            For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_ferramentas
+                If kvp.Key.Split("_")(1) = "NOME" Then
+                    ID_ferramenta = kvp.Key.Split("_")(0)
+                    diametro = GlobalVars.tabela_ferramentas(ID_ferramenta & "_DIAMETRO")
+                    compensa_altura = GlobalVars.tabela_ferramentas(ID_ferramenta & "_ALTURA")
 
-                scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
-                scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
+                    scriptObject.SetToolParam(CInt(ID_ferramenta), 1, CDbl(diametro))
+                    scriptObject.SetToolParam(CInt(ID_ferramenta), 2, CDbl(compensa_altura))
 
-            End If
-        Next
+                End If
+            Next
+        Catch ex As Exception
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
 
         MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
@@ -433,20 +439,26 @@ Public Class MainForm
     Private Sub tabelas_btn_enviar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_referenciais.Click
         ' enviar para o Mach3 referenciais
 
-        'scriptObject.SetOEMDRO(184, 46)
-        'scriptObject.SetOEMDRO(185, 46)
-        'scriptObject.SetOEMDRO(186, 46)
-        'scriptObject.SetOEMDRO(187, 46)
-        'scriptObject.SetOEMDRO(188, 46)
-        'scriptObject.SetOEMDRO(189, 46)
+        Try
+            'scriptObject.SetOEMDRO(184, 46)
+            'scriptObject.SetOEMDRO(185, 46)
+            'scriptObject.SetOEMDRO(186, 46)
+            'scriptObject.SetOEMDRO(187, 46)
+            'scriptObject.SetOEMDRO(188, 46)
+            'scriptObject.SetOEMDRO(189, 46)
 
-        'envia os valores dos eixos relativos ao G28'
-        scriptObject.SetOEMDRO(190, GlobalVars.tabela_referenciais("G28_X"))
-        scriptObject.SetOEMDRO(191, GlobalVars.tabela_referenciais("G28_Y"))
-        scriptObject.SetOEMDRO(192, GlobalVars.tabela_referenciais("G28_Z"))
-        scriptObject.SetOEMDRO(193, GlobalVars.tabela_referenciais("G28_A"))
-        scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
-        scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
+            'envia os valores dos eixos relativos ao G28'
+            scriptObject.SetOEMDRO(190, GlobalVars.tabela_referenciais("G28_X"))
+            scriptObject.SetOEMDRO(191, GlobalVars.tabela_referenciais("G28_Y"))
+            scriptObject.SetOEMDRO(192, GlobalVars.tabela_referenciais("G28_Z"))
+            scriptObject.SetOEMDRO(193, GlobalVars.tabela_referenciais("G28_A"))
+            scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
+            scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
+        Catch ex As Exception
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
 
         MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
@@ -716,8 +728,16 @@ Public Class MainForm
     End Sub
 
     Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
-        'enviar os valores dos parametros gerais para o mach 3'
-        'MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
+        Try
+            'enviar os valores dos parametros gerais para o mach 3'
+        Catch ex As Exception
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
+
+        MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
+
     End Sub
 
     Private Sub param_btn_eixos_enviar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_enviar.Click
@@ -725,58 +745,65 @@ Public Class MainForm
 
         'retira o valor de do nomero de eixos '
 
-        Dim numero_eixos As String
-        numero_eixos = GlobalVars.param_eixos("N_EIXOS").Substring(0, 1)
+        Try
+            Dim numero_eixos As String
+            numero_eixos = GlobalVars.param_eixos("N_EIXOS").Substring(0, 1)
 
-        'envia valores relativos a Eixos X'
-        scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
-        scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
-        'valores de limite minimo e maximo'
-        scriptObject.SetOEMDRO(156, GlobalVars.param_eixos("X_LIM_INF"))
-        scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_SUP"))
-
-        'envia valores relativos a Eixos Y'
-        scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
-        scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")))
-        'valores de limite minimo e maximo'
-        scriptObject.SetOEMDRO(157, GlobalVars.param_eixos("Y_LIM_INF"))
-        scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("Y_LIM_SUP"))
-
-        If numero_eixos = 3 Or numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
-            'envia valores relativos a Eixos Z'
-            scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("Z_PASSO")))
-            scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")))
+            'envia valores relativos a Eixos X'
+            scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
+            scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(158, GlobalVars.param_eixos("Z_LIM_INF"))
-            scriptObject.SetOEMDRO(152, GlobalVars.param_eixos("Z_LIM_SUP"))
-        End If
+            scriptObject.SetOEMDRO(156, GlobalVars.param_eixos("X_LIM_INF"))
+            scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_SUP"))
 
-        If numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
-            'envia valores relativos a Eixos A'
-            scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("A_PASSO")))
-            scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")))
+            'envia valores relativos a Eixos Y'
+            scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
+            scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")))
             'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(159, GlobalVars.param_eixos("A_LIM_INF"))
-            scriptObject.SetOEMDRO(153, GlobalVars.param_eixos("A_LIM_SUP"))
-        End If
+            scriptObject.SetOEMDRO(157, GlobalVars.param_eixos("Y_LIM_INF"))
+            scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("Y_LIM_SUP"))
 
-        If numero_eixos = 5 Or numero_eixos = 6 Then
-            'envia valores relativos a Eixos B'
-            scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("B_PASSO")))
-            scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")))
-            'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(160, GlobalVars.param_eixos("B_LIM_INF"))
-            scriptObject.SetOEMDRO(154, GlobalVars.param_eixos("B_LIM_SUP"))
-        End If
+            If numero_eixos = 3 Or numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
+                'envia valores relativos a Eixos Z'
+                scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("Z_PASSO")))
+                scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")))
+                'valores de limite minimo e maximo'
+                scriptObject.SetOEMDRO(158, GlobalVars.param_eixos("Z_LIM_INF"))
+                scriptObject.SetOEMDRO(152, GlobalVars.param_eixos("Z_LIM_SUP"))
+            End If
 
-        If numero_eixos = 6 Then
-            'envia valores relativos a Eixos C'
-            scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("C_PASSO")))
-            scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")))
-            'valores de limite minimo e maximo'
-            scriptObject.SetOEMDRO(161, GlobalVars.param_eixos("C_LIM_INF"))
-            scriptObject.SetOEMDRO(155, GlobalVars.param_eixos("C_LIM_SUP"))
-        End If
+            If numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
+                'envia valores relativos a Eixos A'
+                scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("A_PASSO")))
+                scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")))
+                'valores de limite minimo e maximo'
+                scriptObject.SetOEMDRO(159, GlobalVars.param_eixos("A_LIM_INF"))
+                scriptObject.SetOEMDRO(153, GlobalVars.param_eixos("A_LIM_SUP"))
+            End If
+
+            If numero_eixos = 5 Or numero_eixos = 6 Then
+                'envia valores relativos a Eixos B'
+                scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("B_PASSO")))
+                scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")))
+                'valores de limite minimo e maximo'
+                scriptObject.SetOEMDRO(160, GlobalVars.param_eixos("B_LIM_INF"))
+                scriptObject.SetOEMDRO(154, GlobalVars.param_eixos("B_LIM_SUP"))
+            End If
+
+            If numero_eixos = 6 Then
+                'envia valores relativos a Eixos C'
+                scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("C_PASSO")))
+                scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")))
+                'valores de limite minimo e maximo'
+                scriptObject.SetOEMDRO(161, GlobalVars.param_eixos("C_LIM_INF"))
+                scriptObject.SetOEMDRO(155, GlobalVars.param_eixos("C_LIM_SUP"))
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
 
         MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
     End Sub
