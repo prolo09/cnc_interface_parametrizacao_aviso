@@ -809,7 +809,7 @@ Public Class MainForm
 
 
         Catch ex As Exception
-                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
