@@ -276,27 +276,6 @@ Public Class MainForm
             json = File.ReadAllText(path)
             GlobalVars.tabela_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
             ' display on GUI
-            Dim i As Integer
-            Dim j As Integer = 0
-            For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
-                If Not kvp.Key.Split("_")(0) = "G28" Then
-                    If j = 0 Then
-                        i = tabela_dtgrid_referenciais.Rows.Add()
-                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
-                        j = j + 1
-                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                        j = j + 1
-                    Else
-                        tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
-                        j = j + 1
-                    End If
-
-                    If j = tabela_dtgrid_referenciais.Columns.Count Then
-                        j = 0
-                    End If
-                End If
-            Next
-
             tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
             tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
             tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
@@ -312,6 +291,8 @@ Public Class MainForm
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         Catch ex As System.Collections.Generic.KeyNotFoundException
+            GlobalVars.tabela_referenciais.Clear()
+            inicializarParamReferenciais()
             MessageBox.Show("Ficheiro " + path + " Não contém todas as chaves necessárias." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Parâmetros não encontrados",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
@@ -319,7 +300,33 @@ Public Class MainForm
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
+        tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
+        tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
+        tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
+        tab_txt_g28_a.Text = GlobalVars.tabela_referenciais("G28_A")
+        tab_txt_g28_b.Text = GlobalVars.tabela_referenciais("G28_B")
+        tab_txt_g28_c.Text = GlobalVars.tabela_referenciais("G28_C")
 
+        Dim i As Integer
+        Dim j As Integer = 0
+        For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_referenciais
+            If Not kvp.Key.Split("_")(0) = "G28" Then
+                If j = 0 Then
+                    i = tabela_dtgrid_referenciais.Rows.Add()
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Key.Split("_")(0)
+                    j = j + 1
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                Else
+                    tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = kvp.Value
+                    j = j + 1
+                End If
+
+                If j = tabela_dtgrid_referenciais.Columns.Count Then
+                    j = 0
+                End If
+            End If
+        Next
 
     End Sub
 
@@ -586,12 +593,19 @@ Public Class MainForm
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         Catch ex As System.Collections.Generic.KeyNotFoundException
+            GlobalVars.param_gerais.Clear()
+            inicializarParamGerais()
             MessageBox.Show("Ficheiro " + path + " Não contém todas as chaves necessárias." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Parâmetros não encontrados",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex2 As System.ArgumentException
             MessageBox.Show("Ficheiro " + path + " contém erros de formatação." + vbNewLine + "Verifique a formatação do ficheiro e reinicie o programa ou faça a configuração e guarde novamente." + vbNewLine + "Os valores apresentados na página de configurações gerais são os valores predefinidos.", "Erro na leitura de ficheiro",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
+
+        param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
+        param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
+        param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
+        param_txt_end_ip.Text = GlobalVars.param_gerais("COMUNICACAO_ENDERECO_IP")
 
     End Sub
 
