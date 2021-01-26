@@ -751,14 +751,14 @@ Public Class MainForm
 
             'envia valores relativos a Eixos X'
             scriptObject.SetParam("StepsPerAxisX", CDbl(GlobalVars.param_eixos("X_PASSO")))
-            scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")))
+            scriptObject.SetParam("VelocitiesX", CDbl(GlobalVars.param_eixos("X_G01_FEED_MAX")) / 60)
             'valores de limite minimo e maximo'
             scriptObject.SetOEMDRO(156, GlobalVars.param_eixos("X_LIM_INF"))
             scriptObject.SetOEMDRO(150, GlobalVars.param_eixos("X_LIM_SUP"))
 
             'envia valores relativos a Eixos Y'
             scriptObject.SetParam("StepsPerAxisY", CDbl(GlobalVars.param_eixos("Y_PASSO")))
-            scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")))
+            scriptObject.SetParam("VelocitiesY", CDbl(GlobalVars.param_eixos("Y_G01_FEED_MAX")) / 60)
             'valores de limite minimo e maximo'
             scriptObject.SetOEMDRO(157, GlobalVars.param_eixos("Y_LIM_INF"))
             scriptObject.SetOEMDRO(151, GlobalVars.param_eixos("Y_LIM_SUP"))
@@ -766,7 +766,7 @@ Public Class MainForm
             If numero_eixos = 3 Or numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
                 'envia valores relativos a Eixos Z'
                 scriptObject.SetParam("StepsPerAxisZ", CDbl(GlobalVars.param_eixos("Z_PASSO")))
-                scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")))
+                scriptObject.SetParam("VelocitiesZ", CDbl(GlobalVars.param_eixos("Z_G01_FEED_MAX")) / 60)
                 'valores de limite minimo e maximo'
                 scriptObject.SetOEMDRO(158, GlobalVars.param_eixos("Z_LIM_INF"))
                 scriptObject.SetOEMDRO(152, GlobalVars.param_eixos("Z_LIM_SUP"))
@@ -775,7 +775,7 @@ Public Class MainForm
             If numero_eixos = 4 Or numero_eixos = 5 Or numero_eixos = 6 Then
                 'envia valores relativos a Eixos A'
                 scriptObject.SetParam("StepsPerAxisA", CDbl(GlobalVars.param_eixos("A_PASSO")))
-                scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")))
+                scriptObject.SetParam("VelocitiesA", CDbl(GlobalVars.param_eixos("A_G01_FEED_MAX")) / 60)
                 'valores de limite minimo e maximo'
                 scriptObject.SetOEMDRO(159, GlobalVars.param_eixos("A_LIM_INF"))
                 scriptObject.SetOEMDRO(153, GlobalVars.param_eixos("A_LIM_SUP"))
@@ -784,7 +784,7 @@ Public Class MainForm
             If numero_eixos = 5 Or numero_eixos = 6 Then
                 'envia valores relativos a Eixos B'
                 scriptObject.SetParam("StepsPerAxisB", CDbl(GlobalVars.param_eixos("B_PASSO")))
-                scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")))
+                scriptObject.SetParam("VelocitiesB", CDbl(GlobalVars.param_eixos("B_G01_FEED_MAX")) / 60)
                 'valores de limite minimo e maximo'
                 scriptObject.SetOEMDRO(160, GlobalVars.param_eixos("B_LIM_INF"))
                 scriptObject.SetOEMDRO(154, GlobalVars.param_eixos("B_LIM_SUP"))
@@ -793,14 +793,23 @@ Public Class MainForm
             If numero_eixos = 6 Then
                 'envia valores relativos a Eixos C'
                 scriptObject.SetParam("StepsPerAxisC", CDbl(GlobalVars.param_eixos("C_PASSO")))
-                scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")))
+                scriptObject.SetParam("VelocitiesC", CDbl(GlobalVars.param_eixos("C_G01_FEED_MAX")) / 60)
                 'valores de limite minimo e maximo'
                 scriptObject.SetOEMDRO(161, GlobalVars.param_eixos("C_LIM_INF"))
                 scriptObject.SetOEMDRO(155, GlobalVars.param_eixos("C_LIM_SUP"))
+
             End If
 
+
+            Try
+                scriptObject.SetPulley(1)
+                scriptObject.SetOEMDRO(57, CDbl(GlobalVars.param_eixos("SPINDLE_RPM_MAX")))
+            Catch
+            End Try
+
+
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
+                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e volte a enviar.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
