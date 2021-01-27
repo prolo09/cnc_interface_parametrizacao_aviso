@@ -277,7 +277,7 @@ Public Class MainForm
 
             json = File.ReadAllText(path)
             GlobalVars.tabela_referenciais = jss.Deserialize(Of Dictionary(Of String, String))(json)
-            ' display on GUI
+            ' verificar existência de chaves
             tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
             tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
             tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
@@ -302,6 +302,7 @@ Public Class MainForm
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
+        ' display on GUI
         tab_txt_g28_x.Text = GlobalVars.tabela_referenciais("G28_X")
         tab_txt_g28_y.Text = GlobalVars.tabela_referenciais("G28_Y")
         tab_txt_g28_z.Text = GlobalVars.tabela_referenciais("G28_Z")
@@ -367,6 +368,7 @@ Public Class MainForm
     Private Sub tabelas_btn_guardar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_guardar_referenciais.Click
         ' ler tabela de referenciais e colocar num dicionario
 
+        ' verificar valores numericos de G28
         If Not IsNumeric(tab_txt_g28_x.Text) Then
             MessageBox.Show("O valor ""X"" do referencial G28 deve ser um número.", "Parametros não guardados",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -393,6 +395,7 @@ Public Class MainForm
             Return
         End If
 
+        ' atualizar dicionatio G28
         GlobalVars.tabela_referenciais.Clear()
 
         GlobalVars.tabela_referenciais.Add("G28" + "_X", tab_txt_g28_x.Text)
@@ -402,7 +405,7 @@ Public Class MainForm
         GlobalVars.tabela_referenciais.Add("G28" + "_B", tab_txt_g28_b.Text)
         GlobalVars.tabela_referenciais.Add("G28" + "_C", tab_txt_g28_c.Text)
 
-        ' confirmar os dados numericos
+        ' confirmar os dados numericos de referenciais
         For i As Integer = 0 To tabela_dtgrid_referenciais.Rows.Count - 2
             For j As Integer = 1 To tabela_dtgrid_referenciais.Rows(i).Cells.Count - 2
                 If Not IsNumeric(tabela_dtgrid_referenciais.Rows(i).Cells(j).Value) And Not tabela_dtgrid_referenciais.Rows(i).Cells(j).Value = "" Then
@@ -412,7 +415,7 @@ Public Class MainForm
                 End If
             Next
 
-            ' atualizar o dicionario
+            ' atualizar o dicionario referenciais
             Dim ref_name As String = tabela_dtgrid_referenciais.Rows(i).Cells(0).FormattedValue
 
             GlobalVars.tabela_referenciais.Add(ref_name + "_X", CStr(tabela_dtgrid_referenciais.Rows(i).Cells(1).FormattedValue))
@@ -431,6 +434,7 @@ Public Class MainForm
     Private Sub tabelas_btn_enviar_ferramentas_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_ferramentas.Click
         ' enviar para Mach3 propriedades das ferramentas
 
+        'conectar com Mach3 se nao estiver conectado
         If Not GlobalVars.mach3_connected Then
             Try
                 mach = GetObject(, "Mach4.Document")
@@ -450,6 +454,7 @@ Public Class MainForm
         Dim diametro As String
         Dim compensa_altura As String
 
+        ' enviar parametros para o mach3
         Try
             For Each kvp As KeyValuePair(Of String, String) In GlobalVars.tabela_ferramentas
                 If kvp.Key.Split("_")(1) = "NOME" Then
@@ -475,6 +480,7 @@ Public Class MainForm
     Private Sub tabelas_btn_enviar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_referenciais.Click
         ' enviar para o Mach3 referenciais
 
+        'conectar com Mach3 se nao estiver conectado
         If Not GlobalVars.mach3_connected Then
             Try
                 mach = GetObject(, "Mach4.Document")
@@ -490,6 +496,7 @@ Public Class MainForm
             End Try
         End If
 
+        ' enviar parametros para o mach3
         Try
             'scriptObject.SetOEMDRO(184, 46)
             'scriptObject.SetOEMDRO(185, 46)
@@ -609,11 +616,13 @@ Public Class MainForm
 
         Dim json As String
         Dim jss = New JavaScriptSerializer()
+
         'parametros gerais
         Try
 
             json = File.ReadAllText(path)
             GlobalVars.param_gerais = jss.Deserialize(Of Dictionary(Of String, String))(json)
+            'verificar existencia de chaves
             param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
             param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
             param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
@@ -636,6 +645,7 @@ Public Class MainForm
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
+        'display on GUI
         param_cb_protocolo.Text = GlobalVars.param_gerais("COMUNICACAO_PROTOCOLO")
         param_cb_baudrate.Text = GlobalVars.param_gerais("COMUNICACAO_BAUDRATE")
         param_cb_portcom.Text = GlobalVars.param_gerais("COMUNICACAO_PORTA_COM")
@@ -796,31 +806,33 @@ Public Class MainForm
     End Sub
 
     Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
-        If Not GlobalVars.mach3_connected Then
-            Try
-                mach = GetObject(, "Mach4.Document")
-                scriptObject = mach.GetScriptDispatch()
-                'define as unidades em mm '
-                scriptObject.SetParam("Units", 0)
-                GlobalVars.mach3_connected = True
-            Catch ex As Exception
-                GlobalVars.mach3_connected = False
-                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return
-            End Try
-        End If
 
-        Try
-            'enviar os valores dos parametros gerais para o mach 3'
-        Catch ex As Exception
-            GlobalVars.mach3_connected = False
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End Try
+        ''conectar com mach3 se nao conectado
+        'If Not GlobalVars.mach3_connected Then
+        '    Try
+        '        mach = GetObject(, "Mach4.Document")
+        '        scriptObject = mach.GetScriptDispatch()
+        '        'define as unidades em mm '
+        '        scriptObject.SetParam("Units", 0)
+        '        GlobalVars.mach3_connected = True
+        '    Catch ex As Exception
+        '        GlobalVars.mach3_connected = False
+        '        MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+        '                        MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '        Return
+        '    End Try
+        'End If
 
-        MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
+        'Try
+        '    'enviar os valores dos parametros gerais para o mach 3'
+        'Catch ex As Exception
+        '    GlobalVars.mach3_connected = False
+        '    MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+        '                        MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Return
+        'End Try
+
+        'MessageBox.Show("Parâmetros enviados com sucesso para o Mach3", "Enviado")
 
     End Sub
 
