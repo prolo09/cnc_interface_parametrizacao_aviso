@@ -5,7 +5,7 @@
     ' *******************************************
 
     Public PaginaSelecionada As String = "0"  ' Pagina modo funcionamento
-
+    Public mach3_connected As Boolean = False
 
 
     ' *******************************************

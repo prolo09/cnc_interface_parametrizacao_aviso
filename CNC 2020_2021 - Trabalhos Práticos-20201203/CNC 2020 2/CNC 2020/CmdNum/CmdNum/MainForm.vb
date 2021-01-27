@@ -78,7 +78,9 @@ Public Class MainForm
             scriptObject = mach.GetScriptDispatch()
             'define as unidades em mm '
             scriptObject.SetParam("Units", 0)
+            GlobalVars.mach3_connected = True
         Catch ex As Exception
+            GlobalVars.mach3_connected = False
             MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Pode continuar a utilizar a aplicação, mas não poderá comunicar com o Mach3.", "Mach3 não ligado",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
@@ -429,6 +431,21 @@ Public Class MainForm
     Private Sub tabelas_btn_enviar_ferramentas_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_ferramentas.Click
         ' enviar para Mach3 propriedades das ferramentas
 
+        If Not GlobalVars.mach3_connected Then
+            Try
+                mach = GetObject(, "Mach4.Document")
+                scriptObject = mach.GetScriptDispatch()
+                'define as unidades em mm '
+                scriptObject.SetParam("Units", 0)
+                GlobalVars.mach3_connected = True
+            Catch ex As Exception
+                GlobalVars.mach3_connected = False
+                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End Try
+        End If
+
         Dim ID_ferramenta As String
         Dim diametro As String
         Dim compensa_altura As String
@@ -446,7 +463,8 @@ Public Class MainForm
                 End If
             Next
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
+            GlobalVars.mach3_connected = False
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
@@ -456,6 +474,21 @@ Public Class MainForm
 
     Private Sub tabelas_btn_enviar_referenciais_Click(sender As Object, e As EventArgs) Handles tabelas_btn_enviar_referenciais.Click
         ' enviar para o Mach3 referenciais
+
+        If Not GlobalVars.mach3_connected Then
+            Try
+                mach = GetObject(, "Mach4.Document")
+                scriptObject = mach.GetScriptDispatch()
+                'define as unidades em mm '
+                scriptObject.SetParam("Units", 0)
+                GlobalVars.mach3_connected = True
+            Catch ex As Exception
+                GlobalVars.mach3_connected = False
+                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End Try
+        End If
 
         Try
             'scriptObject.SetOEMDRO(184, 46)
@@ -473,8 +506,9 @@ Public Class MainForm
             scriptObject.SetOEMDRO(194, GlobalVars.tabela_referenciais("G28_B"))
             scriptObject.SetOEMDRO(195, GlobalVars.tabela_referenciais("G28_C"))
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalVars.mach3_connected = False
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
 
@@ -693,7 +727,7 @@ Public Class MainForm
         For i As Integer = 0 To param_dtgrid_eixos.Rows.Count - 1
             For j As Integer = 1 To param_dtgrid_eixos.Rows(i).Cells.Count - 1
                 If Not IsNumeric(param_dtgrid_eixos.Rows(i).Cells(j).Value) And Not param_dtgrid_eixos.Rows(i).Cells(j).Value = "" Then
-                    MessageBox.Show("Valor da coluna """ + param_dtgrid_eixos.Columns(j).Name + """ da ferramenta " + CStr(param_dtgrid_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
+                    MessageBox.Show("Valor da coluna """ + param_dtgrid_eixos.Columns(j).Name + """ do eixo " + CStr(param_dtgrid_eixos.Rows(i).Cells(0).Value) + " deve ser um número.", "Parametros não guardados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
@@ -749,7 +783,7 @@ Public Class MainForm
             Me.param_radbtn_spindle.Checked = False
             info_laser_spindle = Me.param_txt_laser_power.Text
             laser_ou_spindle = "LASER_POTENCIA"
-            n_eixos = "2 (X,V)"
+            n_eixos = "2 (X,Y)"
         End If
 
         GlobalVars.param_eixos.Add(laser_ou_spindle, info_laser_spindle)
@@ -762,11 +796,27 @@ Public Class MainForm
     End Sub
 
     Private Sub btn_envio_parametros_geral_Click(sender As Object, e As EventArgs)
+        If Not GlobalVars.mach3_connected Then
+            Try
+                mach = GetObject(, "Mach4.Document")
+                scriptObject = mach.GetScriptDispatch()
+                'define as unidades em mm '
+                scriptObject.SetParam("Units", 0)
+                GlobalVars.mach3_connected = True
+            Catch ex As Exception
+                GlobalVars.mach3_connected = False
+                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End Try
+        End If
+
         Try
             'enviar os valores dos parametros gerais para o mach 3'
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalVars.mach3_connected = False
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
 
@@ -776,6 +826,20 @@ Public Class MainForm
 
     Private Sub param_btn_eixos_enviar_Click(sender As Object, e As EventArgs) Handles param_btn_eixos_enviar.Click
         'enviar os valores dos parametros Eixos para o mach 3'
+        If Not GlobalVars.mach3_connected Then
+            Try
+                mach = GetObject(, "Mach4.Document")
+                scriptObject = mach.GetScriptDispatch()
+                'define as unidades em mm '
+                scriptObject.SetParam("Units", 0)
+                GlobalVars.mach3_connected = True
+            Catch ex As Exception
+                GlobalVars.mach3_connected = False
+                MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End Try
+        End If
 
         'retira o valor de do nomero de eixos '
 
@@ -843,8 +907,9 @@ Public Class MainForm
 
 
         Catch ex As Exception
-            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3, reinicie este programa e volte a enviar.", "Mach3 não ligado",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalVars.mach3_connected = False
+            MessageBox.Show("O Programa Mach3 deve estar a correr para correr esta aplicação." + vbNewLine + "Inicie o programa Mach3 e tente enviar os dados novamente.", "Dados não enviados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
 
